@@ -1,19 +1,15 @@
-import IndexPage from "../components/IndexPage"
+import Head from 'next/head'
+import { NextPage } from 'next'
+import IndexPage from 'src/components/IndexPage'
 
-const Home = () => (
-  <>
-  <style jsx global>{`
-      html, body {
-        padding: 0;
-        margin: 0;
-      }
+const Index: NextPage = () => (
+    <>
+        <Head>
+            <title>#БЕРЕГУРАЙ</title>
+        </Head>
 
-      * {
-        box-sizing: border-box;
-      }
-    `}</style>
-  <IndexPage />
-  </>
+        <IndexPage />
+    </>
 )
 
-export default Home
+export default Index

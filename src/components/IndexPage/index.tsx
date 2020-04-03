@@ -1,13 +1,7 @@
-import Head from 'next/head'
 import styles from './index.module.css'
 
 const IndexPage = () => (
   <>
-    <Head>
-      <title>#БЕРЕГУРАЙ</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </Head>
-
     <div className={styles.layout}>
       <header className={styles.header}>
         <div className={`${styles.section} ${styles.navigation}`}>

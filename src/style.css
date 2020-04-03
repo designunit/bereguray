@@ -1,0 +1,13 @@
+:root {
+    --button-border-radius: 10px;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
