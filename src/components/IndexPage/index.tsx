@@ -29,8 +29,10 @@ const IndexPage = () => (
                 <div style={{
                     width: '100%',
                     height: '100%',
-                    backgroundImage: 'url("/hero.jpg")',
-                    backgroundSize: 'cover',
+                    backgroundImage: 'url("/static/uray1.jpg")',
+                    backgroundSize: '90%',
+                    backgroundPosition: '400% 0',
+                    backgroundRepeat: 'no-repeat',
                 }} />
             )}
         >
