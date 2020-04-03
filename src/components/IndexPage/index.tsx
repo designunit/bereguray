@@ -9,9 +9,9 @@ const IndexPage = () => (
         <Header
             menu={(
                 <>
-                    <Button theme={'link'}>Карта идей</Button>
-                    <Button theme={'link'}>Вопрос/Ответ</Button>
-                    <Button theme={'link'}>Команда</Button>
+                    <Button disabled theme={'link'}>Карта идей</Button>
+                    <Button disabled theme={'link'}>Вопрос/Ответ</Button>
+                    <Button disabled theme={'link'}>Команда</Button>
                 </>
             )}
             actions={(
