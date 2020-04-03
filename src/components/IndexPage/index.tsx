@@ -1,5 +1,6 @@
 import styles from './index.module.css'
 import { Button } from '../Button'
+import { Logo } from '../Logo'
 
 const IndexPage = () => (
     <>
@@ -12,9 +13,7 @@ const IndexPage = () => (
                 </div>
 
                 <div className={styles.section}>
-                    <h2>
-                        #БЕРЕГУРАЙ
-          </h2>
+                    <Logo/>
                 </div>
 
                 <div className={styles.section}>
