@@ -13,15 +13,13 @@ export const Header: React.SFC<HeaderProps> = props => (
         size: 'small'
     }}>
         <header className={s.header}>
-            <nav style={{ flex: 1 }}>
+            <nav className={s.left}>
                 {props.menu}
             </nav>
 
             <Logo style={{ flex: 1 }} />
 
-            <div
-                style={{ flex: 1 }}
-            >
+            <div className={s.right} >
                 {props.actions}
             </div>
         </header>
