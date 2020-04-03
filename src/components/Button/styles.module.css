@@ -25,3 +25,8 @@
     color: var(--color-button);
     background: none;
 }
+
+.disabled {
+    pointer-events: none;
+    --color-button: #b6b8c1;
+}

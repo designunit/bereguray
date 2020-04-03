@@ -7,6 +7,7 @@ export type ButtonTheme = 'default' | 'primary' | 'link'
 export type ButtonProps = {
     style?: React.CSSProperties
     theme?: 'default' | 'primary' | 'link'
+    disabled?: boolean
 }
 
 const themeClass = {
@@ -15,11 +16,14 @@ const themeClass = {
     link: s.themeLink,
 }
 
-export const Button: React.SFC<ButtonProps> = ({ theme = 'default', ...props }) => {
+export const Button: React.SFC<ButtonProps> = ({ theme = 'default', disabled = false, ...props }) => {
     return (
         <button
-            className={cx(s.button, themeClass[theme])}
+            className={cx(s.button, themeClass[theme], {
+                [s.disabled]: disabled,
+            })}
             style={props.style}
+            disabled={disabled}
         >
             {props.children}
         </button>
