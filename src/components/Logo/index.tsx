@@ -1,7 +1,11 @@
 import s from './styles.module.css'
 
-export const Logo: React.SFC = props => (
-    <h1 className={s.logo}>
+export type LogoProps = {
+    style?: React.CSSProperties
+}
+
+export const Logo: React.SFC<LogoProps> = props => (
+    <h1 className={s.logo} style={props.style}>
         #БЕРЕГУРАЙ
     </h1>
 )

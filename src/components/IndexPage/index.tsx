@@ -6,17 +6,17 @@ const IndexPage = () => (
     <>
         <div className={styles.layout}>
             <header className={styles.header}>
-                <div className={`${styles.section} ${styles.navigation}`}>
+                <nav style={{ flex: 1 }}>
                     <Button theme={'link'}>Карта идей</Button>
                     <Button theme={'link'}>Вопрос/Ответ</Button>
                     <Button theme={'link'}>Команда</Button>
-                </div>
+                </nav>
 
-                <div className={styles.section}>
-                    <Logo/>
-                </div>
+                <Logo style={{ flex: 1 }} />
 
-                <div className={styles.section}>
+                <div
+                    style={{ flex: 1 }}
+                >
                     <Button
                         theme={'primary'}
                     >
