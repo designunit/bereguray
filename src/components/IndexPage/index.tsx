@@ -20,6 +20,7 @@ const IndexPage = () => (
                 >
                     <Button
                         theme={'primary'}
+                        disabled={true}
                     >
                         оставить историю
                     </Button>
@@ -34,14 +35,14 @@ const IndexPage = () => (
                             <br />
                             набережная г.Урай
                         </Title>
-                        <span className={styles.description}>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                            penatibus et magnis dis parturient montes, nascetur ridiculus
 
-                            mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-                            sem. Nulla consequat massa quis enim.
-                        </span>
+                        <p className={styles.description}>
+                            Жители - главные участники процесса преобразования своего города.
+                        </p>
+                        <p className={styles.description}>
+                            Предлагайте идеи и делитесь своими историями Урая и берега реки Конда.
+                        </p>
+
                         <div className={styles.heroButtons}>
                             <Button
                                 style={{
@@ -56,8 +57,6 @@ const IndexPage = () => (
                             </Button>
                         </div>
                     </div>
-
-                    <div className={styles.empty} />
                 </div>
 
                 <div className={styles.about}>
