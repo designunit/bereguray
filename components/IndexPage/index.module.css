@@ -1,0 +1,104 @@
+.layout {
+    --padding: 0 128px;
+}
+
+.title {
+    color: darkblue
+}
+ .description {
+    color: darkslateblue
+ }
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hero {
+    width: 100%;
+    height: 120vh;
+
+    background-image: url('/hero.jpg');
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.hero .content {
+    flex: 1 1 33%;
+
+    padding: 0 10%;
+}
+
+.hero .heroButtons {
+    padding-top: 64px;
+}
+
+.hero .empty {
+    flex: 1 1 33%;
+}
+
+.about {
+    margin: 120px 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.about img {
+    width: 400px;
+}
+
+.about .aboutText {
+    width: 500px;
+    min-height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.steps {
+    margin-top: 128px;
+
+    padding: 0 10%;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.steps .step {
+    height: 150px;
+    width: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.step img {
+    margin-bottom: 24px;
+}
+
+.step .stepTitle {
+    margin-bottom: 24px;
+}
+
+.cards {
+    margin: 128px 0;
+    padding: var(--padding);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    background-color: lightsteelblue;
+}
