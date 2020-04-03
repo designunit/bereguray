@@ -1,6 +1,7 @@
 import styles from './index.module.css'
 import { Button } from '../Button'
 import { Logo } from '../Logo'
+import { Title } from '../Title'
 
 const IndexPage = () => (
     <>
@@ -28,9 +29,11 @@ const IndexPage = () => (
             <main>
                 <div className={styles.hero}>
                     <div className={styles.content}>
-                        <h1 className={styles.title}>
-                            Картирование набережной г.Урай
-                        </h1>
+                        <Title>
+                            #берегурай
+                            <br />
+                            набережная г.Урай
+                        </Title>
                         <span className={styles.description}>
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
                             commodo ligula eget dolor. Aenean massa. Cum sociis natoque

@@ -5,7 +5,7 @@ export type LogoProps = {
 }
 
 export const Logo: React.SFC<LogoProps> = props => (
-    <h1 className={s.logo} style={props.style}>
+    <span className={s.logo} style={props.style}>
         #БЕРЕГУРАЙ
-    </h1>
+    </span>
 )
