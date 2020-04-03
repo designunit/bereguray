@@ -1,4 +1,5 @@
 import styles from './index.module.css'
+import { Button } from '../Button'
 
 const IndexPage = () => (
   <>
@@ -15,9 +16,9 @@ const IndexPage = () => (
         </div>
 
         <div className={styles.section}>
-          <button>
+          <Button>
             оставить историю
-          </button>
+          </Button>
         </div>
       </header>
 
@@ -36,12 +37,12 @@ const IndexPage = () => (
               sem. Nulla consequat massa quis enim.
             </span>
             <div className={styles.heroButtons}>
-              <button style={{marginRight: '100px'}}>
-                кнопка раз
-              </button>
-              <button>
-                кнопка два
-              </button>
+              <Button style={{marginRight: '20px'}}>
+                Оставить историю
+              </Button>
+              <Button>
+                Добавить мнение
+              </Button>
             </div>
           </div>
 
