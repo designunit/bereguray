@@ -1,33 +1,29 @@
 import styles from './index.module.css'
 import { Button } from '../Button'
-import { Logo } from '../Logo'
 import { Title } from '../Title'
 import { PageSection } from '../PageSection'
+import { Header } from '../Header'
 
 const IndexPage = () => (
     <>
         <div className={styles.layout}>
-            <header className={styles.header}>
-                <nav style={{ flex: 1 }}>
-                    <Button theme={'link'}>Карта идей</Button>
-                    <Button theme={'link'}>Вопрос/Ответ</Button>
-                    <Button theme={'link'}>Команда</Button>
-                </nav>
-
-                <Logo style={{ flex: 1 }} />
-
-                <div
-                    style={{ flex: 1 }}
-                >
+            <Header
+                menu={(
+                    <>
+                        <Button theme={'link'}>Карта идей</Button>
+                        <Button theme={'link'}>Вопрос/Ответ</Button>
+                        <Button theme={'link'}>Команда</Button>
+                    </>
+                )}
+                actions={(
                     <Button
                         theme={'primary'}
-                        size={'small'}
                         disabled={true}
                     >
                         оставить историю
                     </Button>
-                </div>
-            </header>
+                )}
+            />
 
             <main>
                 <PageSection
