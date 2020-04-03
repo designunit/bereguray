@@ -3,11 +3,12 @@
 }
 
 .title {
-    color: darkblue
+    color: darkblue;
 }
- .description {
-    color: darkslateblue
- }
+
+.description {
+    color: darkslateblue;
+}
 
 .header {
     display: flex;
@@ -25,7 +26,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .hero .content {
@@ -57,7 +57,7 @@
 .about .aboutText {
     width: 500px;
     min-height: 100%;
-    
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -94,7 +94,7 @@
 .cards {
     margin: 128px 0;
     padding: var(--padding);
-    
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
