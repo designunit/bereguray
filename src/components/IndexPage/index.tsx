@@ -6,7 +6,9 @@ const IndexPage = () => (
         <div className={styles.layout}>
             <header className={styles.header}>
                 <div className={`${styles.section} ${styles.navigation}`}>
-                    <span>ТУТ БУДУТ КНОПКИ НАВИГАЦИИ</span>
+                    <Button theme={'link'}>Карта идей</Button>
+                    <Button theme={'link'}>Вопрос/Ответ</Button>
+                    <Button theme={'link'}>Команда</Button>
                 </div>
 
                 <div className={styles.section}>
