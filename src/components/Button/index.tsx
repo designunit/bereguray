@@ -7,6 +7,7 @@ export type ButtonTheme = 'default' | 'primary' | 'link'
 export type ButtonProps = {
     style?: React.CSSProperties
     theme?: 'default' | 'primary' | 'link'
+    size?: 'default' | 'small' | 'big'
     disabled?: boolean
 }
 
@@ -16,10 +17,16 @@ const themeClass = {
     link: s.themeLink,
 }
 
-export const Button: React.SFC<ButtonProps> = ({ theme = 'default', disabled = false, ...props }) => {
+const sizeClass = {
+    default: s.sizeDefault,
+    small: s.sizeSmall,
+    big: s.sizeBig,
+}
+
+export const Button: React.SFC<ButtonProps> = ({ theme = 'default', size = 'default', disabled = false, ...props }) => {
     return (
         <button
-            className={cx(s.button, themeClass[theme], {
+            className={cx(s.button, themeClass[theme], sizeClass[size], {
                 [s.disabled]: disabled,
             })}
             style={props.style}

@@ -21,6 +21,7 @@ const IndexPage = () => (
                 >
                     <Button
                         theme={'primary'}
+                        size={'small'}
                         disabled={true}
                     >
                         оставить историю
@@ -60,10 +61,10 @@ const IndexPage = () => (
                             theme={'primary'}
                         >
                             Оставить историю
-                            </Button>
+                        </Button>
                         <Button>
                             Добавить мнение
-                            </Button>
+                        </Button>
                     </div>
                 </PageSection>
 
@@ -142,6 +143,24 @@ const IndexPage = () => (
                             </span>
                         </div>
                     </div>
+                </PageSection>
+                <PageSection>
+                    <Button
+                        theme={'primary'}
+                        size={'big'}
+                        style={{
+                            marginRight: '24px',
+                        }}
+                    >
+                        Оставить историю
+                    </Button>
+                    <Button
+                        theme={'default'}
+                        size={'big'}
+                    >
+                        Присоединиться к проекту
+                    </Button>
+
                 </PageSection>
             </main>
         </div>

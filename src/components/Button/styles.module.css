@@ -3,11 +3,6 @@
 
     border-radius: var(--button-border-radius);
     color: var(--color-text-opposite);
-
-    padding: 5px 20px;
-
-    font-size: 12px;
-    line-height: 18px;
 }
 
 .themeDefault {
@@ -24,6 +19,28 @@
 .themeLink {
     color: var(--color-button);
     background: none;
+}
+
+.sizeSmall {
+    padding: 4px 20px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.sizeDefault {
+    padding: 4px 24px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.sizeBig {
+    padding: 20px 60px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
 }
 
 .disabled {
