@@ -47,18 +47,23 @@ const IndexPage = () => (
                 Предлагайте идеи и делитесь своими историями Урая и берега реки Конда.
             </p>
 
-            <div className={styles.heroButtons}>
+            <div
+                style={{
+                    paddingTop: '64px'
+                }}
+            >
                 <Button
+                    disabled
                     style={{
                         marginRight: '20px'
                     }}
                     theme={'primary'}
                 >
                     Оставить историю
-                        </Button>
-                <Button>
+                </Button>
+                <Button disabled>
                     Добавить мнение
-                        </Button>
+                </Button>
             </div>
         </PageSection>
 
