@@ -5,66 +5,64 @@ import { PageSection } from '../PageSection'
 import { Header } from '../Header'
 
 const IndexPage = () => (
-    <>
-        <div className={styles.layout}>
-            <Header
-                menu={(
-                    <>
-                        <Button theme={'link'}>Карта идей</Button>
-                        <Button theme={'link'}>Вопрос/Ответ</Button>
-                        <Button theme={'link'}>Команда</Button>
-                    </>
-                )}
-                actions={(
-                    <Button
-                        theme={'primary'}
-                        disabled={true}
-                    >
-                        оставить историю
-                    </Button>
-                )}
-            />
-
-            <main>
-                <PageSection
-                    back={(
-                        <div style={{
-                            width: '100%',
-                            height: '100%',
-                            backgroundImage: 'url("/hero.jpg")',
-                            backgroundSize: 'cover',
-                        }} />
-                    )}
+    <main className={styles.layout}>
+        <Header
+            menu={(
+                <>
+                    <Button theme={'link'}>Карта идей</Button>
+                    <Button theme={'link'}>Вопрос/Ответ</Button>
+                    <Button theme={'link'}>Команда</Button>
+                </>
+            )}
+            actions={(
+                <Button
+                    theme={'primary'}
+                    disabled={true}
                 >
-                    <Title>
-                        #берегурай
-                            <br />
-                            набережная г.Урай
-                        </Title>
+                    оставить историю
+                </Button>
+            )}
+        />
 
-                    <p className={styles.description}>
-                        Жители - главные участники процесса преобразования своего города.
-                    </p>
-                    <p className={styles.description}>
-                        Предлагайте идеи и делитесь своими историями Урая и берега реки Конда.
-                    </p>
+        <PageSection
+            back={(
+                <div style={{
+                    width: '100%',
+                    height: '100%',
+                    backgroundImage: 'url("/hero.jpg")',
+                    backgroundSize: 'cover',
+                }} />
+            )}
+        >
+            <Title>
+                #берегурай
+                <br />
+                набережная г.Урай
+            </Title>
 
-                    <div className={styles.heroButtons}>
-                        <Button
-                            style={{
-                                marginRight: '20px'
-                            }}
-                            theme={'primary'}
-                        >
-                            Оставить историю
+            <p className={styles.description}>
+                Жители - главные участники процесса преобразования своего города.
+            </p>
+            <p className={styles.description}>
+                Предлагайте идеи и делитесь своими историями Урая и берега реки Конда.
+            </p>
+
+            <div className={styles.heroButtons}>
+                <Button
+                    style={{
+                        marginRight: '20px'
+                    }}
+                    theme={'primary'}
+                >
+                    Оставить историю
                         </Button>
-                        <Button>
-                            Добавить мнение
+                <Button>
+                    Добавить мнение
                         </Button>
-                    </div>
-                </PageSection>
+            </div>
+        </PageSection>
 
-                <PageSection>
+        {/* <PageSection>
                     <div className={styles.about}>
                         <img src='/unit.jpg' />
                         <div className={styles.aboutText}>
@@ -81,9 +79,9 @@ const IndexPage = () => (
                             </span>
                         </div>
                     </div>
-                </PageSection>
+                </PageSection> */}
 
-                <PageSection>
+        {/* <PageSection>
                     <div className={styles.steps}>
                         <div className={styles.step}>
                             <img src='/icon.svg' />
@@ -139,8 +137,9 @@ const IndexPage = () => (
                             </span>
                         </div>
                     </div>
-                </PageSection>
-                <PageSection>
+                </PageSection> */}
+
+        {/* <PageSection>
                     <Button
                         theme={'primary'}
                         size={'big'}
@@ -157,10 +156,8 @@ const IndexPage = () => (
                         Присоединиться к проекту
                     </Button>
 
-                </PageSection>
-            </main>
-        </div>
-    </>
+                </PageSection> */}
+    </main>
 )
 
 export default IndexPage
