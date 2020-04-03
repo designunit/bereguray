@@ -1,8 +1,12 @@
 .header {
+    position: absolute;
+    width: 100%;
+
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
 
-    padding: 0 128px;
-    margin-top: 5px;
+    padding: 4px 128px;
+
+    background-color: var(--color-background);
 }
