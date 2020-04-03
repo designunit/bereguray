@@ -1,7 +1,6 @@
 .button {
     border: none;
 
-    background: var(--button-background-primary);
     border-radius: var(--button-border-radius);
     color: var(--color-text-opposite);
 
@@ -9,4 +8,20 @@
 
     font-size: 12px;
     line-height: 18px;
+}
+
+.themeDefault {
+    background: none;
+    color: var(--color-button);
+    border: 2px solid var(--color-button);
+}
+
+.themePrimary {
+    background: var(--color-button);
+    border: 2px solid var(--color-button);
+}
+
+.themeLink {
+    color: var(--color-button);
+    background: none;
 }

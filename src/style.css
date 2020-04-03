@@ -3,7 +3,9 @@
 :root {
     --button-border-radius: 10px;
     --button-background-primary: #111b47;
+    --color-text: black;
     --color-text-opposite: white;
+    --color-button: #111b47;
 
     --font-family: 'Roboto', sans-serif;
 }

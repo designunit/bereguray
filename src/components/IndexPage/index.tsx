@@ -16,7 +16,9 @@ const IndexPage = () => (
                 </div>
 
                 <div className={styles.section}>
-                    <Button>
+                    <Button
+                        theme={'primary'}
+                    >
                         оставить историю
                     </Button>
                 </div>
@@ -37,7 +39,12 @@ const IndexPage = () => (
                             sem. Nulla consequat massa quis enim.
                         </span>
                         <div className={styles.heroButtons}>
-                            <Button style={{ marginRight: '20px' }}>
+                            <Button
+                                style={{
+                                    marginRight: '20px'
+                                }}
+                                theme={'primary'}
+                            >
                                 Оставить историю
                             </Button>
                             <Button>
