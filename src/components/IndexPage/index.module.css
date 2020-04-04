@@ -12,37 +12,20 @@
     color: #091133;
 }
 
+.layout h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #091133;
+}
+
 .description {
     color: #505f98;
 }
 
 .content {
     padding: 0 128px;
-}
-
-.steps {
-    /* margin-top: 128px; */
-
-    padding: 0 10%;
-
-    display: flex;
-    justify-content: space-around;
-}
-
-.steps .step {
-    height: 150px;
-    width: 150px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.step img {
-    margin-bottom: 24px;
-}
-
-.step .stepTitle {
-    margin-bottom: 24px;
 }

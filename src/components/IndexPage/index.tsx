@@ -3,6 +3,7 @@ import { Button } from '../Button'
 import { Title } from '../Title'
 import { PageSection } from '../PageSection'
 import { Header } from '../Header'
+import { Step } from '../Step'
 
 const IndexPage = () => (
     <main className={styles.layout}>
@@ -77,7 +78,7 @@ const IndexPage = () => (
                     alignContent: 'center'
                 }}
             >
-                <img src='/unit.jpg' 
+                <img src='/static/unit.jpg' 
                     style={{
                         minWidth: '480px',
                         maxWidth: '33%', 
@@ -100,66 +101,65 @@ const IndexPage = () => (
                         Собранные предложения лягут в основу разработки проекта набережной на Всероссийский конкурс Минстрой РФ в 2020 году.
                     </p>
                 </div>
-            </div>       
+            </div>
+
+            <div 
+                style={{
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+
+                    marginTop: '128px',
+                }}
+            >
+                <Step>
+                    <img src='/static/stepIcon.png' />
+                    <h3>
+                        Шаг 1 - ПЕРВЫЙ
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor.
+                    </p>
+                </Step>
+                <Step>
+                    <img src='/static/stepIcon.png' />
+                    <h3>
+                        Шаг 2 - ВТОРОЙ
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor.
+                    </p>
+                </Step>
+                <Step>
+                    <img src='/static/stepIcon.png' />
+                    <h3>
+                        Шаг 3 - ТРЕТИЙ
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor.
+                    </p>
+                </Step>
+                <Step arrow={false}>
+                    <img src='/static/stepIcon.png' />
+                    <h3>
+                        Шаг 4 - ПОСЛЕДНИЙ
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor.
+                    </p>
+                </Step>
+            </div>
+
         </PageSection>
-
-        {/* <PageSection>
-                    <div className={styles.steps}>
-                        <div className={styles.step}>
-                            <img src='/icon.svg' />
-                            <span className={styles.stepTitle}>
-                                Шаг 1 - ХОП
-                            </span>
-                            <span className={styles.stepDescription}>
-                                Lorem ipsum dolor sit amet,
-                                consectetuer adipiscing elit.
-                                Aenean commodo ligula eget dolor.
-                            </span>
-                        </div>
-
-                        <img src='/icon.svg' />
-
-                        <div className={styles.step}>
-                            <img src='/icon.svg' />
-                            <span className={styles.stepTitle}>
-                                Шаг 2 - ХЕЙ
-                            </span>
-                            <span className={styles.stepDescription}>
-                                Lorem ipsum dolor sit amet,
-                                consectetuer adipiscing elit.
-                                Aenean commodo ligula eget dolor.
-                            </span>
-                        </div>
-
-                        <img src='/icon.svg' />
-
-                        <div className={styles.step}>
-                            <img src='/icon.svg' />
-                            <span className={styles.stepTitle}>
-                                Шаг 3 - ЛАЛА
-                            </span>
-                            <span className={styles.stepDescription}>
-                                Lorem ipsum dolor sit amet,
-                                consectetuer adipiscing elit.
-                                Aenean commodo ligula eget dolor.
-                            </span>
-                        </div>
-
-                        <img src='/icon.svg' />
-
-                        <div className={styles.step}>
-                            <img src='/icon.svg' />
-                            <span className={styles.stepTitle}>
-                                Шаг 4 - ЛЕЙ
-                            </span>
-                            <span className={styles.stepDescription}>
-                                Lorem ipsum dolor sit amet,
-                                consectetuer adipiscing elit.
-                                Aenean commodo ligula eget dolor.
-                            </span>
-                        </div>
-                    </div>
-                </PageSection> */}
 
         {/* <PageSection>
                     <Button

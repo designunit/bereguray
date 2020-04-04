@@ -1,0 +1,21 @@
+.step {
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    width: 190px;
+    margin-right: 24px;
+}
+
+.content p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.arrow {
+    margin-right: 24px;
+}
