@@ -31,9 +31,7 @@ export const Button: React.SFC<ButtonProps> = ({ theme = 'default', disabled = f
 
     return (
         <button
-            className={cx(s.button, themeClass[theme], sizeClass[size], {
-                [s.disabled]: disabled,
-            })}
+            className={cx(s.button, themeClass[theme], sizeClass[size])}
             style={props.style}
             disabled={disabled}
         >
