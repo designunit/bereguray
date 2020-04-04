@@ -69,24 +69,39 @@ const IndexPage = () => (
             </div>
         </PageSection>
 
-        {/* <PageSection>
-                    <div className={styles.about}>
-                        <img src='/unit.jpg' />
-                        <div className={styles.aboutText}>
-                            <h3 className={styles.title}>
-                                Что это? и зачем это?
-                            </h3>
-                            <span className={styles.description}>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-                                dis parturient montes, nascetur ridiculus
+        <PageSection>
+            <div 
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignContent: 'center'
+                }}
+            >
+                <img src='/unit.jpg' 
+                    style={{
+                        minWidth: '480px',
+                        maxWidth: '33%', 
+                        objectFit: 'contain',
 
-                                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                                Nulla consequat massa quis enim.
-                            </span>
-                        </div>
-                    </div>
-                </PageSection> */}
+                        marginRight: '128px'
+                    }}
+                />
+                <div style={{maxWidth: '500px'}}>
+                    <h2>
+                        Что такое #берегурай?
+                    </h2>
+                    <p className={styles.description}>
+                        #берегурай - общественная кампания для жителей города Урай
+                    </p>
+                    <p className={styles.description}>
+                        Здесь вы сможете поделиться своим мнением и вместе определить проблемы, потенциалы и ценности для формирования нового общественного городского центра на набережной реки Конды в городе Урай.
+                    </p>
+                    <p className={styles.description}>
+                        Собранные предложения лягут в основу разработки проекта набережной на Всероссийский конкурс Минстрой РФ в 2020 году.
+                    </p>
+                </div>
+            </div>       
+        </PageSection>
 
         {/* <PageSection>
                     <div className={styles.steps}>
