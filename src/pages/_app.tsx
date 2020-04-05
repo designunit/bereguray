@@ -14,6 +14,8 @@ const App: AppType = props => {
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
 
+                <meta name="yandex-verification" content="819101876637a93a" />
+
                 {!metrika ? null : (
                     <YMetrika
                         number={metrika}
