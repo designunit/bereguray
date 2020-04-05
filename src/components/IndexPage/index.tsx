@@ -29,9 +29,9 @@ const IndexPage = () => (
                 <div style={{
                     width: '100%',
                     height: '100%',
-                    backgroundImage: 'url("/static/uray1.jpg")',
-                    backgroundSize: '90%',
-                    backgroundPosition: '400% 0',
+                    backgroundImage: 'url("/static/uray2.jpg")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: '30% top',
                     backgroundRepeat: 'no-repeat',
                 }} />
             )}
@@ -57,7 +57,8 @@ const IndexPage = () => (
                 <Button
                     disabled
                     style={{
-                        marginRight: '20px'
+                        marginRight: '20px',
+                        marginBottom: '24px',
                     }}
                     theme={'primary'}
                 >
