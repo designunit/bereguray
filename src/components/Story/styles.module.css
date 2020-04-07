@@ -1,6 +1,7 @@
 .container{
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 10% 64px 10%;
 }
 
@@ -13,7 +14,7 @@
 }
 
 .text {
-    max-width: 77%;
+    
 }
 
 .header {
@@ -27,4 +28,23 @@
 
 .subtitle > h3 {
     margin-top: 0;
+}
+
+@media screen and (max-width : 480px) {
+    .container {
+        flex-wrap: wrap;
+        padding: 0 0 64px 0;
+    }
+
+    .picture {
+        order: -1
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin-bottom: 24px;
+    }
 }
