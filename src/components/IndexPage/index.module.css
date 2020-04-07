@@ -1,76 +1,39 @@
-.layout {
-    --padding: 0 128px;
-}
-
 .description {
     color: #505f98;
 }
 
-.hero {
-    width: 100%;
-    height: 100vh;
+.layout h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 48px;
+}
 
-    background-image: url('/hero.jpg');
-    background-size: cover;
+.layout h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+}
 
+.stories {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    padding: 5%;
+
+    background-color: #E7ECFF;
 }
 
-.content {
-    /* flex: 1 1 33%; */
-    /* flex: 1; */
-    /* width: 50%; */
-
-    padding: 0 128px;
+.storiesButton {
+    margin-right: 24px
 }
 
-.about {
-    /* margin: 120px 0; */
-    width: 100%;
-
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.about img {
-    width: 400px;
-}
-
-.about .aboutText {
-    width: 500px;
-    min-height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.steps {
-    /* margin-top: 128px; */
-
-    padding: 0 10%;
-
-    display: flex;
-    justify-content: space-around;
-}
-
-.steps .step {
-    height: 150px;
-    width: 150px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.step img {
-    margin-bottom: 24px;
-}
-
-.step .stepTitle {
-    margin-bottom: 24px;
+@media screen and (max-width : 480px) {
+    .storiesButton {
+        margin-right: 0;
+        margin-bottom: 24px;
+    }
 }

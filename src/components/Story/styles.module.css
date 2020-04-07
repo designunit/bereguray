@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    align-items: center;
+    padding: 0 10% 64px 10%;
+}
+
+.left {
+    margin-right: 5%;
+}
+
+.picture {
+    max-width: 33%;
+}
+
+.text {
+    max-width: 77%;
+}
+
+.header {
+    margin-bottom: 48px;
+    color: #091133;
+}
+
+.title > h2 {
+    margin-bottom: 4px;
+}
+
+.subtitle > h3 {
+    margin-top: 0;
+}
