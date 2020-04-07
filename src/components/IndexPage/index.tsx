@@ -4,6 +4,7 @@ import { Title } from '../Title'
 import { PageSection } from '../PageSection'
 import { Header } from '../Header'
 import { Story } from '../Story'
+import { JoinForm } from '../JoinForm'
 
 const IndexPage = () => (
     <main className={styles.layout}>
@@ -138,6 +139,13 @@ const IndexPage = () => (
                     Присоедениться к проекту
                 </Button>
             </div>
+        </div>
+
+        <div className={styles.form}>
+            <Title>
+                Присоединяйся к движению
+            </Title>
+            <JoinForm />
         </div>
 
         {/* <PageSection>
