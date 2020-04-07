@@ -39,6 +39,10 @@
 }
 
 @media screen and (max-width : 480px) {
+    .heroSubtitle{
+        display: none;
+    }
+
     .storiesButton {
         width: 100%;
         margin-right: 0;
