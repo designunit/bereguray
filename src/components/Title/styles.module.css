@@ -9,3 +9,9 @@
 
     color: #091133;
 }
+
+@media screen and (max-width : 480px) {
+    .title {
+        text-align: center;
+    }
+}
