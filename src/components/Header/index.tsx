@@ -17,7 +17,7 @@ export const Header: React.SFC<HeaderProps> = props => (
                 {props.menu}
             </nav>
 
-            <Logo style={{ flex: 1 }} />
+            <Logo style={{ flex: 1, padding: '0 5%' }} />
 
             <div className={s.right} >
                 {props.actions}

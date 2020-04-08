@@ -1,9 +1,26 @@
 .button {
+    cursor: pointer;
     border: none;
 
     border-radius: var(--button-border-radius);
     color: var(--color-text-opposite);
 }
+
+.button[disabled] {
+    --color-button: #b6b8c1;
+    cursor: not-allowed;
+}
+
+.button:hover:not([disabled]) {
+    --color-button: #1a52ca;
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
+}
+
+/* THEME */
 
 .themeDefault {
     background: none;
@@ -20,6 +37,8 @@
     color: var(--color-button);
     background: none;
 }
+
+/* SIZE */
 
 .sizeSmall {
     padding: 4px 20px;
@@ -41,9 +60,4 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
-}
-
-.disabled {
-    pointer-events: none;
-    --color-button: #b6b8c1;
 }
