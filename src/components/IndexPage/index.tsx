@@ -8,7 +8,7 @@ import { About } from '../About'
 
 const IndexPage = () => (
     <main className={styles.layout}>
-        {/* <Header
+        <Header
             menu={(
                 <>
                     <Button disabled theme={'link'}>Карта идей</Button>
@@ -24,7 +24,7 @@ const IndexPage = () => (
                     оставить историю
                 </Button>
             )}
-        /> */}
+        />
 
         <PageSection
             back={(
@@ -73,7 +73,7 @@ const IndexPage = () => (
         </PageSection>
 
         <About />
-        
+
         <Steps />
     </main>
 )
