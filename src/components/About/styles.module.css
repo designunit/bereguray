@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 5%;
+
+}
+
+.picture {
+    max-width: 45%;
+    object-fit: contain;
+
+    margin-right: 128px;
+}
+
+.text {
+    color: #505f98;
+}
+
+@media screen and (max-width : 480px) {
+    .container {
+        flex-direction: column-reverse;
+        margin-bottom: 48px;
+    }
+
+    .picture {
+        max-width: 100%;
+        margin-right: 0;
+    }
+}

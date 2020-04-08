@@ -2,75 +2,30 @@
     --padding: 0 128px;
 }
 
+.layout h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 48px;
+
+    color: #091133;
+}
+
+.layout h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #091133;
+}
+
 .description {
     color: #505f98;
 }
 
-.hero {
-    width: 100%;
-    height: 100vh;
-
-    background-image: url('/hero.jpg');
-    background-size: cover;
-
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-}
-
 .content {
-    /* flex: 1 1 33%; */
-    /* flex: 1; */
-    /* width: 50%; */
-
     padding: 0 128px;
-}
-
-.about {
-    /* margin: 120px 0; */
-    width: 100%;
-
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.about img {
-    width: 400px;
-}
-
-.about .aboutText {
-    width: 500px;
-    min-height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.steps {
-    /* margin-top: 128px; */
-
-    padding: 0 10%;
-
-    display: flex;
-    justify-content: space-around;
-}
-
-.steps .step {
-    height: 150px;
-    width: 150px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.step img {
-    margin-bottom: 24px;
-}
-
-.step .stepTitle {
-    margin-bottom: 24px;
 }
