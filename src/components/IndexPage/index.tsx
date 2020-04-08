@@ -3,11 +3,11 @@ import { Button } from '../Button'
 import { Title } from '../Title'
 import { PageSection } from '../PageSection'
 import { Header } from '../Header'
-import { Step } from '../Step'
+import { Steps } from '../Steps'
 
 const IndexPage = () => (
     <main className={styles.layout}>
-        <Header
+        {/* <Header
             menu={(
                 <>
                     <Button disabled theme={'link'}>Карта идей</Button>
@@ -23,7 +23,7 @@ const IndexPage = () => (
                     оставить историю
                 </Button>
             )}
-        />
+        /> */}
 
         <PageSection
             back={(
@@ -71,7 +71,7 @@ const IndexPage = () => (
             </div>
         </PageSection>
 
-        <PageSection>
+        {/* <PageSection>
             <div 
                 style={{
                     display: 'flex',
@@ -102,65 +102,10 @@ const IndexPage = () => (
                         Собранные предложения лягут в основу разработки проекта набережной на Всероссийский конкурс Минстрой РФ в 2020 году.
                     </p>
                 </div>
-            </div>
-
-            <div 
-                style={{
-                    display: 'flex',
-                    justifyContent: 'space-around',
-                    alignItems: 'center',
-                    flexWrap: 'wrap',
-
-                    marginTop: '128px',
-                }}
-            >
-                <Step>
-                    <img src='/static/stepIcon.png' />
-                    <h3>
-                        Шаг 1 - ПЕРВЫЙ
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet,
-                        consectetuer adipiscing elit.
-                        Aenean commodo ligula eget dolor.
-                    </p>
-                </Step>
-                <Step>
-                    <img src='/static/stepIcon.png' />
-                    <h3>
-                        Шаг 2 - ВТОРОЙ
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet,
-                        consectetuer adipiscing elit.
-                        Aenean commodo ligula eget dolor.
-                    </p>
-                </Step>
-                <Step>
-                    <img src='/static/stepIcon.png' />
-                    <h3>
-                        Шаг 3 - ТРЕТИЙ
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet,
-                        consectetuer adipiscing elit.
-                        Aenean commodo ligula eget dolor.
-                    </p>
-                </Step>
-                <Step arrow={false}>
-                    <img src='/static/stepIcon.png' />
-                    <h3>
-                        Шаг 4 - ПОСЛЕДНИЙ
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet,
-                        consectetuer adipiscing elit.
-                        Aenean commodo ligula eget dolor.
-                    </p>
-                </Step>
-            </div>
-
-        </PageSection>
+            </div> 
+        </PageSection> */}
+        
+        <Steps />
 
         {/* <PageSection>
                     <Button
