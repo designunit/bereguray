@@ -5,6 +5,8 @@ import { PageSection } from '../PageSection'
 import { Header } from '../Header'
 import { Steps } from '../Steps'
 import { About } from '../About'
+import { Bubble } from '../Bubble'
+import { Step } from '../Step'
 
 const IndexPage = () => (
     <main className={styles.layout}>
@@ -28,14 +30,23 @@ const IndexPage = () => (
 
         <PageSection
             back={(
-                <div style={{
-                    width: '100%',
-                    height: '100%',
-                    backgroundImage: 'url("/static/uray2.jpg")',
-                    backgroundSize: 'cover',
-                    backgroundPosition: '30% top',
-                    backgroundRepeat: 'no-repeat',
-                }} />
+                <>
+                    {/* <Bubble
+                        style={{
+                            position: 'absolute',
+                            width: '100%', height: '100%'
+                        }}
+                        opacity={.5}
+                    /> */}
+                    <div style={{
+                        width: '100%',
+                        height: '100%',
+                        backgroundImage: 'url("/static/uray2.jpg")',
+                        backgroundSize: 'cover',
+                        backgroundPosition: '30% top',
+                        backgroundRepeat: 'no-repeat',
+                    }}/>
+                </>
             )}
         >
             <Title>
@@ -43,6 +54,7 @@ const IndexPage = () => (
                 <br />
                 набережная г.Урай
             </Title>
+
 
             <p className={styles.description}>
                 Жители - главные участники процесса преобразования своего города.
@@ -71,6 +83,9 @@ const IndexPage = () => (
                 </Button>
             </div>
         </PageSection>
+
+        <About />
+        <Steps />
     </main>
 )
 
