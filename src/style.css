@@ -17,12 +17,6 @@ body {
     padding: 0;
     margin: 0;
 
-    /* parallax */
-    height: 100vh;
-    perspective: 1px;
-    overflow-x: hidden;
-    overflow-y: auto;
-
     font-family: var(--font-family);
 }
 
