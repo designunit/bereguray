@@ -85,9 +85,6 @@ const IndexPage = () => (
                 </Button>
             </div>
         </PageSection>
-
-        <About />
-        <Steps />
     </main>
 )
 
