@@ -31,13 +31,6 @@ const IndexPage = () => (
         <PageSection
             back={(
                 <>
-                    {/* <Bubble
-                        style={{
-                            position: 'absolute',
-                            width: '100%', height: '100%'
-                        }}
-                        opacity={.5}
-                    /> */}
                     <div style={{
                         width: '100%',
                         height: '100%',
@@ -46,6 +39,15 @@ const IndexPage = () => (
                         backgroundPosition: '30% top',
                         backgroundRepeat: 'no-repeat',
                     }}/>
+                    <img 
+                        src='/static/uray2.svg'
+                        style={{
+                            position: 'absolute',
+                            bottom: 0,
+                            right: 0,
+                            height: '100%',
+                        }}
+                    />
                 </>
             )}
         >
