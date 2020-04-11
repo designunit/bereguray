@@ -2,7 +2,6 @@
     cursor: pointer;
     border: none;
 
-    border-radius: var(--button-border-radius);
     color: var(--color-text-opposite);
 }
 
@@ -55,9 +54,23 @@
 }
 
 .sizeBig {
-    padding: 20px 60px;
+    padding: 8px 48px;
 
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
+}
+
+/* SHAPE */
+
+.shapeDefault {
+    border-radius: var(--button-border-radius);
+}
+
+.shapePill {
+    border-radius: 100px;
+}
+
+.shapeCircle {
+    border-radius: 50%;
 }

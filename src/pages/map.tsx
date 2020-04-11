@@ -69,6 +69,8 @@ const Index: NextPage = props => {
                     <Button
                         onClick={onClick}
                         theme={'primary'}
+                        shape={'pill'}
+                        size={'big'}
                     >Добавляем и пляшем</Button>
                 </div>
             )}
