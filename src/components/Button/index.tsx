@@ -11,6 +11,7 @@ export type ButtonProps = {
     theme?: 'default' | 'primary' | 'link'
     size?: ControlsSize
     disabled?: boolean
+    onClick?: () => void
 }
 
 const themeClass = {
@@ -34,6 +35,7 @@ export const Button: React.SFC<ButtonProps> = ({ theme = 'default', disabled = f
             className={cx(s.button, themeClass[theme], sizeClass[size])}
             style={props.style}
             disabled={disabled}
+            onClick={props.onClick}
         >
             {props.children}
         </button>
