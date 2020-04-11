@@ -1,4 +1,5 @@
 import 'src/style.css'
+import 'src/style/react-modal.css'
 
 import Head from 'next/head'
 import { AppType } from 'next/dist/next-server/lib/utils'
