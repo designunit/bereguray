@@ -2,27 +2,27 @@ import { NextPage } from "next"
 import { Button } from "src/components/Button"
 import { useEffect, useRef, useCallback, useState } from "react"
 import { LatlngMap, OnReady, LatlngController } from "src/components/LatlngMap"
+import { Modal } from "src/components/Modal"
+import { OpinionForm } from "src/components/OpinionForm"
 
 const Index: NextPage = props => {
     const ref = useRef<LatlngController>()
-    // const [map, setMap] = useState<LatlngMap>()
     const [ready, setReady] = useState(false)
+    const [showInputForm, setShowInputForm] = useState(false)
 
     const onClick = async () => {
         const map = ref.current!
-        console.log('click', map)
+        // console.log('click', map)
 
         const point = await map.pickPoint('get', 'point')
         console.log('point', point)
 
-        // const app = ref.current
-        // console.log(ref.current)
-
-        // app?.contentWindow?.postMessage({
-        //     type: 'some-message',
-        //     data: 'hello',
-        // }, '*')
+        setShowInputForm(true)
     }
+
+    const closeModal = useCallback(() => {
+        setShowInputForm(false)
+    }, [])
 
     const onReady = useCallback<OnReady>(map => {
         if (!map) {
@@ -47,6 +47,14 @@ const Index: NextPage = props => {
                 accessToken={'YYY'}
                 onReady={onReady}
             />
+            <Modal
+                isOpen={showInputForm}
+                onRequestClose={closeModal}
+                contentLabel={'Напиши гадость!'}
+                ariaHideApp={false}
+            >
+                <OpinionForm></OpinionForm>
+            </Modal>
 
             {!ready ? null : (
                 <div style={{
