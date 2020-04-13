@@ -44,34 +44,45 @@ const Form = forwardRef<HTMLFormElement, FormProps>((props, ref) => (
     />
 ))
 
-type FormData = {
+export type OpitionFormData = {
     type: string
-    username: string
     email: string
-    bullshit: string
+    comment: string
 }
 
-export const OpinionForm: React.FC = props => {
-    const { handleSubmit, register, errors } = useForm<FormData>()
-    const onSubmit = useCallback<OnSubmit<FormData>>(values => {
-        console.log(values)
-    }, [])
+export type OpinionFormProps = {
+    onSubmit: OnSubmit<OpitionFormData>
+}
+
+export const OpinionForm: React.FC<OpinionFormProps> = props => {
+    const { handleSubmit, register, errors } = useForm<OpitionFormData>()
 
     return (
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form onSubmit={handleSubmit(props.onSubmit)}>
             <Row>
                 <Input
-                    name='username'
-                    placeholder='Ваше имя'
+                    name='type'
+                    placeholder='Чо'
                     ref={register({
-                        validate: value => value !== "admin" || "Nice try!"
+                        required: 'Required',
                     })}
                 />
-                {errors.username && (
+                {errors.type && (
                     <p className={cx(s.caption, s.error)}>
-                        {errors.username.message}
+                        {errors.type.message}
                     </p>
                 )}
+            </Row>
+
+            <Row>
+                <TextArea
+                    name={'comment'}
+                    rows={4}
+                    placeholder='Расскажите свою историю...'
+                    ref={register({
+                        required: 'Required',
+                    })}
+                />
             </Row>
 
             <Row>
@@ -79,7 +90,6 @@ export const OpinionForm: React.FC = props => {
                     name='email'
                     placeholder='Ваш email'
                     ref={register({
-                        required: 'Required',
                         pattern: {
                             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
                             message: "invalid email address"
@@ -91,15 +101,6 @@ export const OpinionForm: React.FC = props => {
                         {errors.email.message}
                     </p>
                 )}
-            </Row>
-
-            <Row>
-                <TextArea
-                    name={'bullshit'}
-                    rows={4}
-                    placeholder='Расскажите свою историю...'
-                    ref={register()}
-                />
             </Row>
 
             <Row>
