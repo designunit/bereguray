@@ -1,6 +1,7 @@
 import s from './styles.module.css'
 
 import cx from 'classnames'
+import Link from 'next/link'
 import { ControlsSize, ControlsContext } from 'src/context/controls'
 import { useContext } from 'react'
 
@@ -11,6 +12,7 @@ export type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTM
     theme?: 'default' | 'primary' | 'link'
     size?: ControlsSize
     shape?: ButtonShape
+    href?: string
 }
 
 const themeClass = {
@@ -32,9 +34,26 @@ const shapeClass = {
 }
 
 export const Button: React.SFC<ButtonProps> =
-    ({ theme = 'default', size = 'default', shape = 'default', children, ...props }) => {
+    ({ href, size, theme = 'default', shape = 'default', children, ...props }) => {
         const config = useContext(ControlsContext)
-        const sizeValue = size ?? config.size ?? 'default'
+        const sizeValue = size ?? config.size ?? 'default' 
+
+        if (href) {
+            return (
+                <Link href={href}>
+                    <a
+                        {...props as any}
+                        className={cx(
+                            s.button,
+                            themeClass[theme],
+                            sizeClass[sizeValue],
+                            shapeClass[shape],
+                            props.className
+                        )}
+                    >{children}</a>
+                </Link>
+            )
+        }
 
         return (
             <button

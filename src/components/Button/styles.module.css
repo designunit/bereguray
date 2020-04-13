@@ -3,6 +3,11 @@
     border: none;
 
     color: var(--color-text-opposite);
+
+    /* FOR LINK */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .button[disabled] {
