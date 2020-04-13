@@ -29,19 +29,6 @@
     padding-top: 64px;
 }
 
-.stories {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5%;
-
-    background-color: #E7ECFF;
-}
-
-.storiesButton {
-    margin-right: 24px
-}
-
 .form {
     display: flex;
     flex-direction: column;
@@ -56,11 +43,5 @@
 
     .heroButtons {
         padding: 64px 10% 0 10%;
-    }
-
-    .storiesButton {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 24px;
     }
 }
