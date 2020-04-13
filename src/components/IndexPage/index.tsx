@@ -5,6 +5,7 @@ import { PageSection } from '../PageSection'
 import { Header } from '../Header'
 import { Steps } from '../Steps'
 import { About } from '../About'
+import { Stories } from '../Stories'
 
 const IndexPage = () => (
     <main className={styles.layout}>
@@ -44,25 +45,23 @@ const IndexPage = () => (
                 набережная г.Урай
             </Title>
 
-            <p className={styles.description}>
-                Жители - главные участники процесса преобразования своего города.
-            </p>
-            <p className={styles.description}>
-                Предлагайте идеи и делитесь своими историями Урая и берега реки Конда.
-            </p>
+            <span className={styles.heroSubtitle}>
+                <p className={styles.description}>
+                    Жители - главные участники процесса преобразования своего города.
+                </p>
+                <p className={styles.description}>
+                    Предлагайте идеи и делитесь своими историями Урая и берега реки Конда.
+                </p>
+            </span>
 
-            <div
-                style={{
-                    paddingTop: '64px'
-                }}
-            >
+            <div className={styles.heroButtons}>
                 <Button
                     disabled
                     style={{
                         marginRight: '20px',
-                        marginBottom: '24px',
+                        marginBottom: '36px',
                     }}
-                    theme={'primary'}
+                    theme={'primary'} 
                 >
                     Оставить историю
                 </Button>
@@ -71,6 +70,12 @@ const IndexPage = () => (
                 </Button>
             </div>
         </PageSection>
+
+        {/* <div className={styles.form}>
+            <Title>
+                Присоединяйся к движению
+            </Title>
+        </div> */}
     </main>
 )
 
