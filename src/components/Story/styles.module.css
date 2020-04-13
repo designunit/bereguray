@@ -5,6 +5,10 @@
     padding: 0 10% 64px 10%;
 }
 
+.pictureRight {
+    flex-direction: row-reverse;
+}
+
 .left {
     margin-right: 5%;
 }
@@ -13,8 +17,8 @@
     max-width: 33%;
 }
 
-.text {
-    
+.spacer{
+    width: 20%;
 }
 
 .header {
@@ -36,8 +40,14 @@
         padding: 0 0 64px 0;
     }
 
+    .spacer {
+        display: none;
+    }
+
     .picture {
-        order: -1
+        order: -1;
+        max-width: none;
+        padding: 0 10%;
     }
 
     .header {
