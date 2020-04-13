@@ -5,6 +5,8 @@ import { PageSection } from '../PageSection'
 import { Header } from '../Header'
 import { Story } from '../Story'
 import { JoinForm } from '../JoinForm'
+import { Steps } from '../Steps'
+import { About } from '../About'
 
 const IndexPage = () => (
     <main className={styles.layout}>
@@ -148,102 +150,6 @@ const IndexPage = () => (
             </Title>
             <JoinForm />
         </div>
-
-        {/* <PageSection>
-                    <div className={styles.about}>
-                        <img src='/unit.jpg' />
-                        <div className={styles.aboutText}>
-                            <h3 className={styles.title}>
-                                Что это? и зачем это?
-                            </h3>
-                            <span className={styles.description}>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-                                dis parturient montes, nascetur ridiculus
-
-                                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                                Nulla consequat massa quis enim.
-                            </span>
-                        </div>
-                    </div>
-                </PageSection> */}
-
-        {/* <PageSection>
-                    <div className={styles.steps}>
-                        <div className={styles.step}>
-                            <img src='/icon.svg' />
-                            <span className={styles.stepTitle}>
-                                Шаг 1 - ХОП
-                            </span>
-                            <span className={styles.stepDescription}>
-                                Lorem ipsum dolor sit amet,
-                                consectetuer adipiscing elit.
-                                Aenean commodo ligula eget dolor.
-                            </span>
-                        </div>
-
-                        <img src='/icon.svg' />
-
-                        <div className={styles.step}>
-                            <img src='/icon.svg' />
-                            <span className={styles.stepTitle}>
-                                Шаг 2 - ХЕЙ
-                            </span>
-                            <span className={styles.stepDescription}>
-                                Lorem ipsum dolor sit amet,
-                                consectetuer adipiscing elit.
-                                Aenean commodo ligula eget dolor.
-                            </span>
-                        </div>
-
-                        <img src='/icon.svg' />
-
-                        <div className={styles.step}>
-                            <img src='/icon.svg' />
-                            <span className={styles.stepTitle}>
-                                Шаг 3 - ЛАЛА
-                            </span>
-                            <span className={styles.stepDescription}>
-                                Lorem ipsum dolor sit amet,
-                                consectetuer adipiscing elit.
-                                Aenean commodo ligula eget dolor.
-                            </span>
-                        </div>
-
-                        <img src='/icon.svg' />
-
-                        <div className={styles.step}>
-                            <img src='/icon.svg' />
-                            <span className={styles.stepTitle}>
-                                Шаг 4 - ЛЕЙ
-                            </span>
-                            <span className={styles.stepDescription}>
-                                Lorem ipsum dolor sit amet,
-                                consectetuer adipiscing elit.
-                                Aenean commodo ligula eget dolor.
-                            </span>
-                        </div>
-                    </div>
-                </PageSection> */}
-
-        {/* <PageSection>
-                    <Button
-                        theme={'primary'}
-                        size={'big'}
-                        style={{
-                            marginRight: '24px',
-                        }}
-                    >
-                        Оставить историю
-                    </Button>
-                    <Button
-                        theme={'default'}
-                        size={'big'}
-                    >
-                        Присоединиться к проекту
-                    </Button>
-
-                </PageSection> */}
     </main>
 )
 

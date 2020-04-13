@@ -8,6 +8,8 @@
     font-weight: 500;
     font-size: 36px;
     line-height: 48px;
+
+    color: #091133;
 }
 
 .layout h3 {
@@ -16,6 +18,11 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
+    color: #091133;
+}
+
+.content {
+    padding: 0 128px;
 }
 
 .stories {
