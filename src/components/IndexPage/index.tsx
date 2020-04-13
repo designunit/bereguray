@@ -9,7 +9,7 @@ const IndexPage = () => (
         <Header
             menu={(
                 <>
-                    <Button disabled theme={'link'}>Карта идей</Button>
+                    <Button href={'/map'} theme={'link'}>Карта идей</Button>
                     <Button disabled theme={'link'}>Вопрос/Ответ</Button>
                     <Button disabled theme={'link'}>Команда</Button>
                 </>
