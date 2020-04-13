@@ -3,6 +3,7 @@ import { useEffect, useRef, useCallback } from "react"
 enum LatlngMessage {
     ready = 'LATLNG_READY',
     pickGeometry = 'LATLNG_PICK_GEOMETRY',
+    addFeatures = 'LATLNG_ADD_FEATURES',
 }
 
 export type OnReady = (map?: LatlngController) => void
@@ -27,14 +28,6 @@ export class LatlngController {
                 const fn = this.requestPool.get(reply)
                 fn(event.data)
             }
-
-            console.log('Got message. Skip', event)
-
-            // switch (type) {
-            //     case LatlngMessage.ready: {
-
-            //     }
-            // }
         }, false)
     }
 
@@ -52,7 +45,7 @@ export class LatlngController {
     }
 
     private createMessage(type: LatlngMessage, payload: object) {
-        return 
+        return
     }
 
     async post(type: LatlngMessage, payload: object) {
@@ -89,11 +82,30 @@ export class LatlngController {
             title,
             description,
         })
+
         // if (!res.ok) {
         //     return null
         // }
 
-        return res
+        return res.payload
+    }
+
+    public async addFeatures(obj: object, layer: string) {
+        const res = await this.post(LatlngMessage.addFeatures, {
+            layerId: layer,
+            data: obj,
+        })
+
+        return res.payload
+    }
+
+    public async addFeature(obj: object, layer: string) {
+        const geojson = {
+            type: 'FeatureCollection',
+            features: [obj],
+        }
+
+        return this.addFeatures(geojson, layer)
     }
 
     // async on(event, fn) {

@@ -3,22 +3,51 @@ import { Button } from "src/components/Button"
 import { useEffect, useRef, useCallback, useState } from "react"
 import { LatlngMap, OnReady, LatlngController } from "src/components/LatlngMap"
 import { Modal } from "src/components/Modal"
-import { OpinionForm } from "src/components/OpinionForm"
+import { OpinionForm, OpitionFormData } from "src/components/OpinionForm"
+import { OnSubmit } from "react-hook-form"
+
+type Coord = {
+    lat: number,
+    lng: number,
+} 
 
 const Index: NextPage = props => {
     const ref = useRef<LatlngController>()
     const [ready, setReady] = useState(false)
+    const [coord, setCoord] = useState<Coord>()
     const [showInputForm, setShowInputForm] = useState(false)
 
     const onClick = async () => {
         const map = ref.current!
-        // console.log('click', map)
 
-        const point = await map.pickPoint('get', 'point')
+        const point = await map.pickPoint('Кликни по карте', 'что-то произойдет')
         console.log('point', point)
 
+        setCoord(point)
         setShowInputForm(true)
     }
+
+    const onSubmit = useCallback<OnSubmit<OpitionFormData>>(async values => {
+        console.log(values, coord)
+        const c = coord!
+
+        const map = ref.current!
+
+        const ok = await map.addFeature({
+            type: 'Feature',
+            geometry: {
+                type: 'Point',
+                coordinates: [c.lng, c.lat]
+            },
+            properties: {
+                comment: values.comment,
+                email: values.email,
+                type: values.type
+            }
+        }, '5e79ff332e22eb56cabf3819')
+
+        closeModal()
+    }, [coord])
 
     const closeModal = useCallback(() => {
         setShowInputForm(false)
@@ -53,7 +82,9 @@ const Index: NextPage = props => {
                 contentLabel={'Напиши гадость!'}
                 ariaHideApp={false}
             >
-                <OpinionForm></OpinionForm>
+                <OpinionForm
+                    onSubmit={onSubmit}
+                />
             </Modal>
 
             {!ready ? null : (
