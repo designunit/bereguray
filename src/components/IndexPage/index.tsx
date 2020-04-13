@@ -55,10 +55,7 @@ const IndexPage = () => (
                 </p>
             </span>
 
-            <div style={{
-                padding: '0 10%',
-                paddingTop: '64px',
-            }}>
+            <div className={styles.heroButtons}>
                 <Button
                     disabled
                     style={{

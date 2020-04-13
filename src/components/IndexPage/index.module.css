@@ -25,6 +25,10 @@
     padding: 0 128px;
 }
 
+.heroButtons {
+    padding-top: 64px;
+}
+
 .stories {
     display: flex;
     flex-direction: column;
@@ -48,6 +52,10 @@
 @media screen and (max-width : 480px) {
     .heroSubtitle{
         display: none;
+    }
+
+    .heroButtons {
+        padding: 64px 10% 0 10%;
     }
 
     .storiesButton {
