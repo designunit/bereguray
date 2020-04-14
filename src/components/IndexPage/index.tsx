@@ -3,9 +3,7 @@ import { Button } from '../Button'
 import { Title } from '../Title'
 import { PageSection } from '../PageSection'
 import { Header } from '../Header'
-import { Steps } from '../Steps'
-import { About } from '../About'
-import { Stories } from '../Stories'
+import { Parallax } from 'react-scroll-parallax';
 
 const IndexPage = () => (
     <main className={styles.layout}>
@@ -29,14 +27,24 @@ const IndexPage = () => (
 
         <PageSection
             back={(
-                <div style={{
-                    width: '100%',
-                    height: '100%',
-                    backgroundImage: 'url("/static/uray2.jpg")',
-                    backgroundSize: 'cover',
-                    backgroundPosition: '30% top',
-                    backgroundRepeat: 'no-repeat',
-                }} />
+                <Parallax 
+                    y={[-50, 50]}
+                    styleOuter={{
+                        height: '100%',
+                    }}
+                    styleInner={{
+                        height: '100%',
+                    }}
+                >
+                    <div style={{
+                        width: '100%',
+                        height: '100%',
+                        backgroundImage: 'url("/static/uray2.jpg")',
+                        backgroundSize: 'auto 100%',
+                        backgroundPosition: '100% top',
+                        backgroundRepeat: 'no-repeat',
+                    }}/>
+                </Parallax>
             )}
         >
             <Title>
