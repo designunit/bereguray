@@ -7,6 +7,7 @@ import { Steps } from '../Steps'
 import { About } from '../About'
 import { Bubble } from '../Bubble'
 import { Step } from '../Step'
+import { Parallax } from 'react-scroll-parallax';
 
 const IndexPage = () => (
     <main className={styles.layout}>
@@ -30,25 +31,36 @@ const IndexPage = () => (
 
         <PageSection
             back={(
-                <>
+                <Parallax 
+                    y={[-50, 50]}
+                    styleOuter={{
+                        height: '100%',
+                    }}
+                    styleInner={{
+                        height: '100%',
+                    }}
+                >
                     <div style={{
                         width: '100%',
                         height: '100%',
                         backgroundImage: 'url("/static/uray2.jpg")',
                         backgroundSize: 'cover',
-                        backgroundPosition: '30% top',
+                        backgroundPosition: '85% top',
                         backgroundRepeat: 'no-repeat',
-                    }}/>
-                    <img 
-                        src='/static/uray2.svg'
-                        style={{
-                            position: 'absolute',
-                            bottom: 0,
-                            right: 0,
-                            height: '100%',
-                        }}
-                    />
-                </>
+                    }}>
+                        <Bubble
+                            style={{
+                                position: 'relative',
+                                left: '50%',
+                                height: '100%',
+                                transform: `scale(1.75) rotate(${Math.random()*360}deg)`,
+                            }}
+                            color='#E7ECFF'
+                            opacity={.5}
+                            // duration={1}
+                        />
+                    </div>
+                </Parallax>
             )}
         >
             <Title>

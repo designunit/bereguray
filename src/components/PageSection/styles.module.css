@@ -16,9 +16,6 @@
     height: 100%;
     z-index: -1;
 
-    /* prallax */
-    transform: translateZ(-1px) scale(2);
-
     /* background-image: url('/hero.jpg'); */
     /* background-size: cover; */
 }
