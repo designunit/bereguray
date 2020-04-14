@@ -3,12 +3,7 @@ import { Button } from '../Button'
 import { Title } from '../Title'
 import { PageSection } from '../PageSection'
 import { Header } from '../Header'
-import { Steps } from '../Steps'
-import { About } from '../About'
-import { Bubble } from '../Bubble'
-import { Step } from '../Step'
 import { Parallax } from 'react-scroll-parallax';
-import { Stories } from '../Stories'
 
 const IndexPage = () => (
     <main className={styles.layout}>
@@ -48,19 +43,7 @@ const IndexPage = () => (
                         backgroundSize: 'auto 100%',
                         backgroundPosition: '100% top',
                         backgroundRepeat: 'no-repeat',
-                    }}>
-                        <Bubble
-                            style={{
-                                position: 'relative',
-                                left: '50%',
-                                height: '100%',
-                                transform: `scale(1.75) rotate(${Math.random()*360}deg)`,
-                            }}
-                            color='#E7ECFF'
-                            opacity={.5}
-                            duration={45}
-                        />
-                    </div>
+                    }}/>
                 </Parallax>
             )}
         >
@@ -96,8 +79,6 @@ const IndexPage = () => (
             </div>
         </PageSection>
 
-        <About />
-        <Steps />
         {/* <div className={styles.form}>
             <Title>
                 Присоединяйся к движению
