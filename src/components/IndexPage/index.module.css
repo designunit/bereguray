@@ -1,8 +1,5 @@
-.layout {
-    --padding: 0 128px;
-
-    overflow-x: hidden;
-    overflow-y: auto;
+.description {
+    color: #505f98;
 }
 
 .layout h2 {
@@ -21,14 +18,30 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
-
     color: #091133;
-}
-
-.description {
-    color: #505f98;
 }
 
 .content {
     padding: 0 128px;
+}
+
+.heroButtons {
+    padding-top: 64px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+}
+
+@media screen and (max-width : 480px) {
+    .heroSubtitle{
+        display: none;
+    }
+
+    .heroButtons {
+        padding: 64px 10% 0 10%;
+    }
 }

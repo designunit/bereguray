@@ -8,6 +8,7 @@ import { About } from '../About'
 import { Bubble } from '../Bubble'
 import { Step } from '../Step'
 import { Parallax } from 'react-scroll-parallax';
+import { Stories } from '../Stories'
 
 const IndexPage = () => (
     <main className={styles.layout}>
@@ -69,26 +70,23 @@ const IndexPage = () => (
                 набережная г.Урай
             </Title>
 
+            <span className={styles.heroSubtitle}>
+                <p className={styles.description}>
+                    Жители - главные участники процесса преобразования своего города.
+                </p>
+                <p className={styles.description}>
+                    Предлагайте идеи и делитесь своими историями Урая и берега реки Конда.
+                </p>
+            </span>
 
-            <p className={styles.description}>
-                Жители - главные участники процесса преобразования своего города.
-            </p>
-            <p className={styles.description}>
-                Предлагайте идеи и делитесь своими историями Урая и берега реки Конда.
-            </p>
-
-            <div
-                style={{
-                    paddingTop: '64px'
-                }}
-            >
+            <div className={styles.heroButtons}>
                 <Button
                     disabled
                     style={{
                         marginRight: '20px',
-                        marginBottom: '24px',
+                        marginBottom: '36px',
                     }}
-                    theme={'primary'}
+                    theme={'primary'} 
                 >
                     Оставить историю
                 </Button>
@@ -100,6 +98,11 @@ const IndexPage = () => (
 
         <About />
         <Steps />
+        {/* <div className={styles.form}>
+            <Title>
+                Присоединяйся к движению
+            </Title>
+        </div> */}
     </main>
 )
 

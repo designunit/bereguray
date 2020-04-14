@@ -61,3 +61,13 @@
     font-size: 16px;
     line-height: 26px;
 }
+
+@media screen and (max-width : 480px) {
+    .button {
+        width: 100%;
+    }
+
+    .sizeDefault {
+        padding: 8px 24px;
+    }
+}
