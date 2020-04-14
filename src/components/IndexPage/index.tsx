@@ -45,8 +45,8 @@ const IndexPage = () => (
                         width: '100%',
                         height: '100%',
                         backgroundImage: 'url("/static/uray2.jpg")',
-                        backgroundSize: 'cover',
-                        backgroundPosition: '85% top',
+                        backgroundSize: 'auto 100%',
+                        backgroundPosition: '100% top',
                         backgroundRepeat: 'no-repeat',
                     }}>
                         <Bubble
