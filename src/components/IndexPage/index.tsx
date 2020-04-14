@@ -58,7 +58,7 @@ const IndexPage = () => (
                             }}
                             color='#E7ECFF'
                             opacity={.5}
-                            // duration={1}
+                            duration={45}
                         />
                     </div>
                 </Parallax>
