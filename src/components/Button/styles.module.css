@@ -80,3 +80,13 @@
 .shapeCircle {
     border-radius: 50%;
 }
+
+@media screen and (max-width : 480px) {
+    .button {
+        width: 100%;
+    }
+
+    .sizeDefault {
+        padding: 8px 24px;
+    }
+}
