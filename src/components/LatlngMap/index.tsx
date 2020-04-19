@@ -2,6 +2,7 @@ import { useEffect, useRef, useCallback } from "react"
 
 enum LatlngMessage {
     ready = 'LATLNG_READY',
+    action = 'LATLNG_ACTION',
     pickGeometry = 'LATLNG_PICK_GEOMETRY',
     addFeatures = 'LATLNG_ADD_FEATURES',
 }
@@ -74,6 +75,14 @@ export class LatlngController {
                 resolve({ ok: true })
             }
         })
+    }
+
+    public async confirm() {
+        const res = await this.post(LatlngMessage.action, {
+            type: 'COMMAND_CONFIRM',
+        })
+
+        return res.payload
     }
 
     public async pickPoint(title: string, description: string) {
