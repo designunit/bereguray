@@ -3,11 +3,13 @@ import { useEffect, useRef, useCallback } from "react"
 enum LatlngMessage {
     ready = 'LATLNG_READY',
     action = 'LATLNG_ACTION',
+    getState = 'LATLNG_GET_STATE',
     pickGeometry = 'LATLNG_PICK_GEOMETRY',
     addFeatures = 'LATLNG_ADD_FEATURES',
 }
 
 export type OnReady = (map?: LatlngController) => void
+export type OnBeforeReady = (map: LatlngController) => Promise<void>
 
 function checkLatlngMessage(message?: any) {
 
@@ -49,7 +51,7 @@ export class LatlngController {
         return
     }
 
-    async post(type: LatlngMessage, payload: object) {
+    async post<T = any>(type: LatlngMessage, payload: object) {
         const messageId = Math.random()
         const message = {
             messageId,
@@ -77,12 +79,26 @@ export class LatlngController {
         })
     }
 
+    public async getState<T>(selector: string) {
+        const res = await this.post<T>(LatlngMessage.getState, {
+            selector,
+        })
+
+        return res.payload
+    }
+
     public async confirm() {
         const res = await this.post(LatlngMessage.action, {
             type: 'COMMAND_CONFIRM',
         })
 
         return res.payload
+    }
+
+    public async isMobile() {
+        const isMobile = await this.getState<boolean>('layout.mobile')
+
+        return isMobile
     }
 
     public async pickPoint(title: string, description: string) {
@@ -127,6 +143,7 @@ const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))
 export type MapProps = {
     mapId: string
     accessToken: string
+    onBeforeReady?: OnBeforeReady
     onReady: OnReady
 }
 
@@ -150,6 +167,9 @@ export const LatlngMap: React.FC<MapProps> = props => {
             return
         }
 
+        if (typeof props.onBeforeReady === 'function') {
+            await props.onBeforeReady(ctrl)
+        }
         props.onReady(ctrl)
     }, [])
 

@@ -1,7 +1,7 @@
 import { NextPage } from "next"
 import { Button, ButtonProps } from "src/components/Button"
 import { useEffect, useRef, useCallback, useState } from "react"
-import { LatlngMap, OnReady, LatlngController } from "src/components/LatlngMap"
+import { LatlngMap, OnReady, LatlngController, OnBeforeReady } from "src/components/LatlngMap"
 import { Modal } from "src/components/Modal"
 import { OpinionForm, OpitionFormData } from "src/components/OpinionForm"
 import { OnSubmit } from "react-hook-form"
@@ -18,8 +18,9 @@ enum ButtonMode {
     picking = 'picking',
 }
 
+const LABEL = 'Добавляем и пляшем'
 const labels = new Map([
-    [ButtonMode.idle, 'Добавляем и пляшем'],
+    [ButtonMode.idle, LABEL],
     [ButtonMode.picking, 'ok'],
 ])
 
@@ -30,12 +31,28 @@ type ActionButtonProps = Omit<ButtonProps, 'onClick'> & {
 }
 
 const ActionButton: React.FC<ActionButtonProps> = props => {
+    const onClick = async () => {
+        const point = await props.map.pickPoint('Кликни по карте', 'что-то произойдет')
+        props.onClick(point)
+    }
+
+    return (
+        <Button
+            onClick={onClick}
+            theme={'primary'}
+            shape={'pill'}
+            size={'big'}
+        >
+            {LABEL}
+        </Button>
+    )
+}
+
+const ConfirmActionButton: React.FC<ActionButtonProps> = props => {
     const [mode, setMode] = useState(ButtonMode.idle)
     const label = labels.get(mode)
 
     useEffect(() => {
-        console.log('ab effect', mode)
-
         const f = async () => {
             const point = await props.map.pickPoint('Кликни по карте', 'что-то произойдет')
             setMode(ButtonMode.idle)
@@ -48,19 +65,14 @@ const ActionButton: React.FC<ActionButtonProps> = props => {
     }, [mode, props.map])
 
     const onClick = async () => {
-        // console.log('ab click', mode)
-
         switch (mode) {
             case ButtonMode.idle: {
-                // console.log('ab click idle', mode)
                 setMode(ButtonMode.picking)
                 break
             }
 
             case ButtonMode.picking: {
                 const s = await props.map.confirm()
-                // console.log('confirm status', s)
-                // setMode(ButtonMode.idle)
                 break
             }
 
@@ -85,6 +97,7 @@ const ActionButton: React.FC<ActionButtonProps> = props => {
 const Index: NextPage = props => {
     const ref = useRef<LatlngController>()
     const [ready, setReady] = useState(false)
+    const [mobile, setMobile] = useState(false)
     const [coord, setCoord] = useState<Coord>()
     const [showInputForm, setShowInputForm] = useState(false)
 
@@ -120,6 +133,12 @@ const Index: NextPage = props => {
         setShowInputForm(false)
     }, [])
 
+    const onBeforeReady = useCallback<OnBeforeReady>(async map => {
+        const mobile = await map.isMobile()
+
+        setMobile(mobile)
+    }, [])
+
     const onReady = useCallback<OnReady>(map => {
         if (!map) {
             console.error('Cannot initialize Latlng controller')
@@ -141,6 +160,7 @@ const Index: NextPage = props => {
             <LatlngMap
                 mapId={'XXX'}
                 accessToken={'YYY'}
+                onBeforeReady={onBeforeReady}
                 onReady={onReady}
             />
             <Modal
@@ -191,13 +211,23 @@ const Index: NextPage = props => {
                     justifyContent: 'center',
                     paddingBottom: 35,
                 }}>
-                    <ActionButton
-                        onClick={onClick}
-                        theme={'primary'}
-                        shape={'pill'}
-                        size={'big'}
-                        map={ref.current!}
-                    />
+                    {mobile ? (
+                        <ConfirmActionButton
+                            onClick={onClick}
+                            theme={'primary'}
+                            shape={'pill'}
+                            size={'big'}
+                            map={ref.current!}
+                        />
+                    ) : (
+                            <ActionButton
+                                onClick={onClick}
+                                theme={'primary'}
+                                shape={'pill'}
+                                size={'big'}
+                                map={ref.current!}
+                            />
+                        )}
                 </div>
             )}
         </div>
