@@ -7,6 +7,7 @@ import { Parallax } from 'react-scroll-parallax';
 import { About } from '../About'
 import { Steps } from '../Steps'
 import { Bubble } from '../Bubble'
+import { Stories } from '../Stories'
 
 const IndexPage = () => (
     <main className={styles.layout}>
@@ -95,6 +96,7 @@ const IndexPage = () => (
 
         <About />
         <Steps />
+        <Stories />
 
         {/* <div className={styles.form}>
             <Title>
