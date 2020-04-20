@@ -48,7 +48,7 @@ export const Bubble: React.FC<BubbleProps> = ({
             <animate dur={`${duration}s`} repeatCount="indefinite" attributeName='d'   
                 calcMode='spline' // ease-in-out
                 keyTimes="0 ; 0.25 ; 0.5 ; 0.75 ; 1"
-                keySplines="0.5 0 0.5 1 ; 0.5 0 0.5 1 ; 0.5 0 0.5 1 ; 0.5 0 0.5 1"
+                keySplines="0.5 0 0.5 1  0.5 0 0.5 1  0.5 0 0.5 1  0.5 0 0.5 1"
                 values = {values}
             /> 
         </path>
