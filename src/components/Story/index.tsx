@@ -1,4 +1,5 @@
 import s from './styles.module.css'
+import { Bubble } from '../Bubble'
 
 export type StoryProps = {
     picturePath: string
@@ -11,7 +12,29 @@ export type StoryProps = {
 export const Story: React.SFC<StoryProps> = props => (
     <div className={`${s.container} ${props.pictureSide === 'right' ? s.pictureRight : null}`}>
         <div className={s.picture}>
-            <img src={props.picturePath} style={{ width: '100%' }} />
+            <Bubble 
+                style={{
+                    position: 'absolute',
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    transform: `scale(1.1)`,
+                }}
+                color='#B1F4EC'
+            />
+            <Bubble 
+                style={{
+                    position: 'absolute',
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                }}
+                color='#FFD166'
+            />
+            <Bubble 
+                style={{
+                    width: '100%',
+                }}
+                picturePath={props.picturePath}
+            />
         </div>
 
         <div className={s.spacer} />

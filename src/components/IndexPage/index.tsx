@@ -4,6 +4,7 @@ import { Title } from '../Title'
 import { PageSection } from '../PageSection'
 import { Header } from '../Header'
 import { Parallax } from 'react-scroll-parallax';
+import { Stories } from '../Stories'
 
 const IndexPage = () => (
     <main className={styles.layout}>
@@ -78,6 +79,8 @@ const IndexPage = () => (
                 </Button>
             </div>
         </PageSection>
+
+        <Stories />
 
         {/* <div className={styles.form}>
             <Title>

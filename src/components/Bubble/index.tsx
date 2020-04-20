@@ -53,6 +53,8 @@ export const Bubble: React.FC<BubbleProps> = ({
             /> 
         </path>
     )
+    
+    const clipPathId = `clipPath${picturePath}`
 
     return (
         <>
@@ -65,7 +67,7 @@ export const Bubble: React.FC<BubbleProps> = ({
                 {!picturePath ? path : (
                     <defs>
                         <clipPath 
-                            id='clipPath'
+                            id={clipPathId}
                             clipPathUnits='objectBoundingBox'
                         >
                             {path}
@@ -73,14 +75,10 @@ export const Bubble: React.FC<BubbleProps> = ({
                     </defs>
                 )}
             </svg>
-
+            
             {!picturePath ? null : (
-                <img src={picturePath} className={s.img} style={props.style} />
+                <img src={picturePath} style={{...props.style, clipPath: `url(#${clipPathId})`}} />
             )}
         </>
     )
-}
-
-Bubble.defaultProps = {
-    duration: 15 + Math.random()*60, 
 }
