@@ -4,6 +4,9 @@ import { Title } from '../Title'
 import { PageSection } from '../PageSection'
 import { Header } from '../Header'
 import { Parallax } from 'react-scroll-parallax';
+import { About } from '../About'
+import { Steps } from '../Steps'
+import { Bubble } from '../Bubble'
 
 const IndexPage = () => (
     <main className={styles.layout}>
@@ -43,7 +46,18 @@ const IndexPage = () => (
                         backgroundSize: 'auto 100%',
                         backgroundPosition: '100% top',
                         backgroundRepeat: 'no-repeat',
-                    }}/>
+                    }}>
+                        <Bubble
+                            style={{
+                                position: 'relative',
+                                left: '50%',
+                                height: '100%',
+                                transform: `scale(1.75) rotate(${Math.random()*360}deg)`,
+                            }}
+                            opacity={.5}
+                            color='#E7ECFF'
+                        />
+                    </div>
                 </Parallax>
             )}
         >
@@ -78,6 +92,9 @@ const IndexPage = () => (
                 </Button>
             </div>
         </PageSection>
+
+        <About />
+        <Steps />
 
         {/* <div className={styles.form}>
             <Title>
