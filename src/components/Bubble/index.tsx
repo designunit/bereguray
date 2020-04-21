@@ -55,7 +55,7 @@ export const Bubble: React.FC<BubbleProps> = ({
             </svg>
             
             {!picturePath ? null : (
-                <img src={picturePath} style={{...props.style, clipPath: `url(#${clipPathId})`}} />
+                <img src={picturePath} style={{...props.style, WebkitClipPath: `url(#${clipPathId})`}} />
             )}
         </>
     )
