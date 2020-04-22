@@ -79,9 +79,7 @@ const IndexPage = () => (
                 </Button>
             </div>
         </PageSection>
-
-
-        <Stories />
+        
         {/* <div className={styles.form}>
             <Title>
                 Присоединяйся к движению
