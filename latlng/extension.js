@@ -37,3 +37,7 @@ on('feature.select', async event => {
 
 	await showMapPopup(feature.geometry.coordinates, ['kv', { data }])
 })
+
+command("1", async ctx => {
+	return
+})
