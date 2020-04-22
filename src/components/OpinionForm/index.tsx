@@ -60,13 +60,20 @@ export const OpinionForm: React.FC<OpinionFormProps> = props => {
     return (
         <Form onSubmit={handleSubmit(props.onSubmit)}>
             <Row>
-                <Input
-                    name='type'
-                    placeholder='Чо'
-                    ref={register({
-                        required: 'Required',
-                    })}
-                />
+                <div className={s.radio}>
+                    <label>
+                        Не дзен
+                        <input name="type" type="radio" value="problem" ref={register({ required: 'Required' })} />
+                    </label>
+                    <label>
+                        Феншуй
+                        <input name="type" type="radio" value="nice" ref={register({ required: 'Required' })} />
+                    </label>
+                    <label>
+                        ХЗ вообще
+                        <input name="type" type="radio" value="idea" ref={register({ required: 'Required' })} />
+                    </label>
+                </div>
                 {errors.type && (
                     <p className={cx(s.caption, s.error)}>
                         {errors.type.message}
