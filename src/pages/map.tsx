@@ -182,24 +182,44 @@ const Index: NextPage = props => {
                 display: 'flex',
                 // display: 'none',
                 justifyContent: 'space-between',
-                padding: 10,
+                // padding: 10,
             }}>
-                <div style={{ display: 'flex', flex: 1 }}>
-                    <Button
-                        shape={'pill'}
-                        size={'small'}
-                        href={'/'}
-                    >{'/'}</Button>
-                    <div style={{ flex: 1 }} />
-                </div>
-                <Logo></Logo>
-                {/* <Header
-                    menu={null}
-                    actions={null}
-                ></Header> */}
-
-                <div style={{ flex: 1 }} />
+                <Header
+                    transparent
+                    menu={(
+                        <Button
+                            shape={'pill'}
+                            size={'small'}
+                            href={'/'}
+                        >{'/'}</Button>
+                    )}
+                    actions={(
+                        <Button
+                            shape={'pill'}
+                            size={'small'}
+                            href={'/'}
+                        >{'?'}</Button>
+                    )}
+                />
             </div>
+
+            {/* <div style={{
+                position: 'absolute',
+                right: 0,
+                top: '50%',
+                // bottom: 0,
+                // margin: 'auto',
+                // height: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                paddingRight: 16,
+            }}>
+                <Button
+                    // theme={'primary'}
+                    shape={'circle'}
+                    size={'small'}
+                >?</Button>
+            </div> */}
 
             {!ready ? null : (
                 <div style={{
