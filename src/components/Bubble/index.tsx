@@ -1,5 +1,7 @@
 import s from './styles.module.css'
-import * as d3 from 'd3-shape'
+import * as d3Shape from 'd3-shape'
+import { useRef, useEffect, useState } from 'react'
+import { select } from 'd3-selection'
 
 export type BubbleProps = {
     style?: React.CSSProperties
@@ -10,26 +12,34 @@ export type BubbleProps = {
 }
 
 export const Bubble: React.FC<BubbleProps> = ({ 
-    duration = 15 + Math.random()*60, 
+    duration = 1000,
     picturePath, 
     color = 'white', 
     opacity = 1,
     ...props 
 }) => {    
-    const length = 15
+    const ref = useRef(null)
+
+    const pointCount = 12
     const angle = Math.PI * 2
-    const line = d3.lineRadial().curve(d3.curveCardinalClosed)
+    const line = d3Shape.lineRadial().curve(d3Shape.curveCardinalClosed)
         .radius((d, i) => .25 + Math.random()*.5*.5)
-        .angle((d, i) => angle / length * i)
+        .angle((d, i) => angle / pointCount * i)
+
+    useEffect(() => {
+        select(ref.current) 
+            .attr('d', line({length: pointCount} as any) as string)
+    }, [])
+
     const path = (
         <path 
             fillRule="evenodd" 
             clipRule="evenodd" 
             fill={color} 
             opacity={opacity} 
-            d={line({length} as [number,number][]) as string} 
-            transform='translate(.5, .5)'>
-        </path>
+            transform='translate(.5, .5)'
+            ref={ref}
+        />
     )
     
     const clipPathId = `clipPath${picturePath}`
@@ -55,7 +65,7 @@ export const Bubble: React.FC<BubbleProps> = ({
             </svg>
             
             {!picturePath ? null : (
-                <img src={picturePath} style={{...props.style, WebkitClipPath: `url(#${clipPathId})`}} />
+                <img src={picturePath} style={{...props.style, WebkitClipPath: `url(#${clipPathId})`, clipPath: `url(#${clipPathId})`}} />
             )}
         </>
     )

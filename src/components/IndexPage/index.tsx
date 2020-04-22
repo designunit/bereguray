@@ -80,8 +80,8 @@ const IndexPage = () => (
             </div>
         </PageSection>
 
-        <Stories />
 
+        <Stories />
         {/* <div className={styles.form}>
             <Title>
                 Присоединяйся к движению
