@@ -25,6 +25,10 @@
     flex-direction: row-reverse;
 }
 
+.transparent {
+    background-color: transparent;
+}
+
 @media screen and (max-width : 480px) {
     .left {
         order: 1;
