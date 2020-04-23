@@ -1,4 +1,4 @@
-import { NextPage } from "next"
+import { NextPage, GetStaticProps } from "next"
 import { Button, ButtonProps } from "src/components/Button"
 import { useEffect, useRef, useCallback, useState } from "react"
 import { LatlngMap, OnReady, LatlngController, OnBeforeReady } from "src/components/LatlngMap"
@@ -94,7 +94,12 @@ const ConfirmActionButton: React.FC<ActionButtonProps> = props => {
     )
 }
 
-const Index: NextPage = props => {
+type Props = {
+    mapId: string
+    accessToken: string
+}
+
+const Index: NextPage<Props> = props => {
     const ref = useRef<LatlngController>()
     const [ready, setReady] = useState(false)
     const [mobile, setMobile] = useState(false)
@@ -158,8 +163,8 @@ const Index: NextPage = props => {
             height: '100%',
         }}>
             <LatlngMap
-                mapId={'XXX'}
-                accessToken={'YYY'}
+                mapId={props.mapId}
+                accessToken={props.accessToken}
                 onBeforeReady={onBeforeReady}
                 onReady={onReady}
             />
@@ -252,6 +257,15 @@ const Index: NextPage = props => {
             )}
         </div>
     )
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+    return {
+        props: {
+            mapId: 'QAHDGQ61C3HDKWZB',
+            accessToken: 'cdb36d6e3c79a320abd47c27c3eba62f:a16a3156d21fe35702f8bc672f2cfdc90d68e6f16347c96dfed5283bb54e79796331a51494916f56d87797b491375bb1',
+        }
+    }
 }
 
 export default Index
