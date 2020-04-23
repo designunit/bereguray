@@ -149,7 +149,7 @@ export type MapProps = {
 
 export const LatlngMap: React.FC<MapProps> = props => {
     const ref = useRef<HTMLIFrameElement>()
-    const src = `http://localhost:3000/map/${props.mapId}?access_token=${props.accessToken}`
+    const src = `https://latl.ng/map/${props.mapId}?access_token=${props.accessToken}`
 
     const onLoad = useCallback(async (e: any) => {
         if (!ref.current?.contentWindow) {
