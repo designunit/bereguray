@@ -10,7 +10,7 @@ export type BubbleProps = {
     picturePath?: string
 }
 
-const getData = () => {
+const getKeyFrame = () => {
     const pointCount = 12
     const angle = Math.PI * 2
     const line = d3Shape.lineRadial().curve(d3Shape.curveCardinalClosed)
@@ -28,6 +28,9 @@ export const Bubble: React.FC<BubbleProps> = ({
     opacity = 1,
     ...props 
 }) => {
+
+    const [firstKey, setFirstKey] = useState(getKeyFrame())
+    const [data, setData] = useState(`${firstKey}; ${getKeyFrame()}; ${getKeyFrame()}; ${getKeyFrame()}; ${firstKey}; `)
     const path = (
         <path 
             fillRule="evenodd" 
@@ -35,13 +38,14 @@ export const Bubble: React.FC<BubbleProps> = ({
             fill={color} 
             opacity={opacity} 
             transform='translate(.5, .5)'
-            d={getData()}
+            d={firstKey}
         >
             <animate 
                 attributeName='d'
+                begin='0s'
                 dur='3s'
                 repeatCount='indefinite'
-                values={`${getData()}; ${getData()}; ${getData()}; ${getData()}; `}
+                values={data}
             />
         </path>
     )
