@@ -1,7 +1,6 @@
 import s from './styles.module.css'
 import * as d3Shape from 'd3-shape'
 import { useRef, useEffect, useState } from 'react'
-import { select } from 'd3-selection'
 
 export type BubbleProps = {
     style?: React.CSSProperties
@@ -11,26 +10,24 @@ export type BubbleProps = {
     picturePath?: string
 }
 
-export const Bubble: React.FC<BubbleProps> = ({ 
-    duration = 1000,
-    picturePath, 
-    color = 'white', 
-    opacity = 1,
-    ...props 
-}) => {    
-    const ref = useRef(null)
-
+const getData = () => {
     const pointCount = 12
     const angle = Math.PI * 2
     const line = d3Shape.lineRadial().curve(d3Shape.curveCardinalClosed)
         .radius((d, i) => .25 + Math.random()*.5*.5)
         .angle((d, i) => angle / pointCount * i)
+    const str = line({length: pointCount} as any) as string
 
-    useEffect(() => {
-        select(ref.current) 
-            .attr('d', line({length: pointCount} as any) as string)
-    }, [])
+    return str
+}
 
+export const Bubble: React.FC<BubbleProps> = ({ 
+    duration = 3000,
+    picturePath, 
+    color = 'white', 
+    opacity = 1,
+    ...props 
+}) => {
     const path = (
         <path 
             fillRule="evenodd" 
@@ -38,8 +35,14 @@ export const Bubble: React.FC<BubbleProps> = ({
             fill={color} 
             opacity={opacity} 
             transform='translate(.5, .5)'
-            ref={ref}
-        />
+        >
+            <animate 
+                attributeName='d'
+                dur='3s'
+                repeatCount='indefinite'
+                values={`${getData()}; ${getData()}; ${getData()}; ${getData()}; `}
+            />
+        </path>
     )
     
     const clipPathId = `clipPath${picturePath}`
