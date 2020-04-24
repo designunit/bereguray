@@ -133,7 +133,7 @@ async function AddFeature(type) {
 	}
 
     const ok = await addFeatures(f, {
-    	layerId: '5e79ff332e22eb56cabf3819'
+    	layerId: '5e80dd1969fe7ac1706cc996'
     })
 
     console.log('RUN COMMAND', coord, f, ok)
