@@ -46,8 +46,8 @@ export const Bubble: React.FC<BubbleProps> = ({
                 dur='3s'
                 repeatCount='indefinite'
                 values={data}
-                from={data}
-                to={data}
+                fill='freeze'
+                restart='always'
             />
         </path>
     )
