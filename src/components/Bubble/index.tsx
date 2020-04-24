@@ -42,11 +42,12 @@ export const Bubble: React.FC<BubbleProps> = ({
         >
             <animate 
                 attributeName='d'
-                attributeType='auto'
                 begin='0s'
                 dur='3s'
                 repeatCount='indefinite'
                 values={data}
+                from={data}
+                to={data}
             />
         </path>
     )
