@@ -35,6 +35,7 @@ export const Bubble: React.FC<BubbleProps> = ({
             fill={color} 
             opacity={opacity} 
             transform='translate(.5, .5)'
+            d={getData()}
         >
             <animate 
                 attributeName='d'
