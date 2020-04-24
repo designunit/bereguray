@@ -1,6 +1,8 @@
 import s from './styles.module.css'
 import * as d3Shape from 'd3-shape'
 import { useRef, useEffect, useState } from 'react'
+import { useHarmonicIntervalFn, useRaf, useRafLoop } from 'react-use'
+import { interpolateString } from 'd3-interpolate'
 
 export type BubbleProps = {
     style?: React.CSSProperties
@@ -29,8 +31,20 @@ export const Bubble: React.FC<BubbleProps> = ({
     ...props 
 }) => {
 
-    const [firstKey, setFirstKey] = useState(getKeyFrame())
-    const [data, setData] = useState(`${firstKey}; ${getKeyFrame()}; ${getKeyFrame()}; ${getKeyFrame()}; ${firstKey}; `)
+    const [data, setData] = useState(getKeyFrame())
+    const [prevData, setPrevData] = useState(getKeyFrame())
+    const [d, setD] = useState(data)
+    const mapPoints = interpolateString(prevData, data)
+
+    const [stop, start, isActive] = useRafLoop(time => {
+        setD(mapPoints(time % duration / duration))
+    })
+
+    useHarmonicIntervalFn(() => {
+        setPrevData(d)
+        setData(getKeyFrame())
+    }, duration)
+
     const path = (
         <path 
             fillRule="evenodd" 
@@ -38,18 +52,8 @@ export const Bubble: React.FC<BubbleProps> = ({
             fill={color} 
             opacity={opacity} 
             transform='translate(.5, .5)'
-            d={firstKey}
-        >
-            <animate 
-                attributeName='d'
-                begin='0s'
-                dur='3s'
-                repeatCount='indefinite'
-                values={data}
-                fill='freeze'
-                restart='always'
-            />
-        </path>
+            d={d}
+        />
     )
     
     const clipPathId = `clipPath${picturePath}`
