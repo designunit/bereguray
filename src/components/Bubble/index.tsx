@@ -1,12 +1,12 @@
 import s from './styles.module.css'
 import * as d3Shape from 'd3-shape'
-import { useRef, useEffect, useState } from 'react'
-import { useHarmonicIntervalFn, useRaf, useRafLoop } from 'react-use'
+import { useState } from 'react'
+import { useRafLoop } from 'react-use'
 import { interpolateString } from 'd3-interpolate'
 
 export type BubbleProps = {
     style?: React.CSSProperties
-    duration?: number
+    durationMs?: number
     color?: string
     opacity?: number
     picturePath?: string
@@ -16,15 +16,15 @@ const getKeyFrame = () => {
     const pointCount = 12
     const angle = Math.PI * 2
     const line = d3Shape.lineRadial().curve(d3Shape.curveCardinalClosed)
-        .radius((d, i) => .25 + Math.random()*.5*.5)
-        .angle((d, i) => angle / pointCount * i)
+        .radius((d, i) => .5 * .5 + Math.random()*.5 * .5)
+        .angle((d, i) => angle/pointCount*i + Math.random()*angle/pointCount*.25)
     const str = line({length: pointCount} as any) as string
 
     return str
 }
 
 export const Bubble: React.FC<BubbleProps> = ({ 
-    duration = 3000,
+    durationMs = 2 * 1000,
     picturePath, 
     color = 'white', 
     opacity = 1,
@@ -36,14 +36,19 @@ export const Bubble: React.FC<BubbleProps> = ({
     const [d, setD] = useState(data)
     const mapPoints = interpolateString(prevData, data)
 
-    const [stop, start, isActive] = useRafLoop(time => {
-        setD(mapPoints(time % duration / duration))
-    })
+    const [prevSin, setPrevSin] = useState(.5)
 
-    useHarmonicIntervalFn(() => {
-        setPrevData(d)
-        setData(getKeyFrame())
-    }, duration)
+    useRafLoop(time => {
+        const sin = Math.sin(time / durationMs)
+
+        if (Math.sign(sin) !== Math.sign(prevSin)) {
+            setPrevData(d)
+            setData(getKeyFrame())
+        }
+
+        setD(mapPoints(sin*sin))
+        setPrevSin(sin)
+    })
 
     const path = (
         <path 
