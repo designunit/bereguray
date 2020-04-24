@@ -12,41 +12,43 @@ export type BubbleProps = {
     picturePath?: string
 }
 
-const getKeyFrame = () => {
+const generateKeyFrame = () => {
     const pointCount = 12
     const angle = Math.PI * 2
     const line = d3Shape.lineRadial().curve(d3Shape.curveCardinalClosed)
         .radius((d, i) => .5 * .5 + Math.random()*.5 * .5)
-        .angle((d, i) => angle/pointCount*i + Math.random()*angle/pointCount*.25)
+        .angle((d, i) => angle/pointCount*i + Math.random()*angle/pointCount*.5)
     const str = line({length: pointCount} as any) as string
 
     return str
 }
 
 export const Bubble: React.FC<BubbleProps> = ({ 
-    durationMs = 2 * 1000,
+    durationMs = 10 * 1000,
     picturePath, 
     color = 'white', 
     opacity = 1,
     ...props 
 }) => {
 
-    const [data, setData] = useState(getKeyFrame())
-    const [prevData, setPrevData] = useState(getKeyFrame())
-    const [d, setD] = useState(data)
-    const mapPoints = interpolateString(prevData, data)
+    const [keyFrame, setKeyFrame] = useState(generateKeyFrame())
+    const [prevKeyFrame, setPrevKeyFrame] = useState(generateKeyFrame())
+    const [d, setD] = useState(keyFrame)
 
     const [prevSin, setPrevSin] = useState(.5)
 
     useRafLoop(time => {
+        const mapPoints = interpolateString(prevKeyFrame, keyFrame)
+
         const sin = Math.sin(time / durationMs)
 
         if (Math.sign(sin) !== Math.sign(prevSin)) {
-            setPrevData(d)
-            setData(getKeyFrame())
+            setPrevKeyFrame(d)
+            setKeyFrame(generateKeyFrame())
         }
-
+        
         setD(mapPoints(sin*sin))
+
         setPrevSin(sin)
     })
 
