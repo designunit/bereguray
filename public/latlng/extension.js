@@ -1,9 +1,11 @@
+importScripts('https://unpkg.com/typograf@6.11.0/dist/typograf.js')
+importScripts('https://cdnjs.cloudflare.com/ajax/libs/markdown-it/10.0.0/markdown-it.min.js')
 importScripts('/latlng.js')
 
 const typeLabel = new Map([
 	['idea', 'Идея'],
-	['problem', 'Пиздец'],
-	['nice', 'Милота'],
+	['problem', 'Проблема'],
+	['nice', 'Ценность'],
 ])
 
 setup(async () => ({
@@ -15,7 +17,7 @@ setup(async () => ({
 on('idle', async event => {
     await toolbar([
         ['AddIdea', {
-        	label: 'Добавить идею',
+        	label: 'Предложить идею',
         	icon: 'bulb',
         	color: '#FFD166',
         }],
@@ -25,13 +27,11 @@ on('idle', async event => {
         	color: '#F25C63',
         }],
         ['AddNice', {
-        	label: 'Whatever',
+        	label: 'Описать ценность',
         	icon: 'like',
         	color: '#4DCCBD',
         }],
     ])
-
-    // await header([])
 })
 
 on('feature.select', async event => {
@@ -53,7 +53,23 @@ on('feature.select', async event => {
     	{ key: 'Чо сказал', value: feature.properties['comment']},
     ]
 
-	await showMapPopup(feature.geometry.coordinates, ['kv', { data }])
+    const title = typeLabel.get(type)
+    const comment = feature.properties['comment']
+
+    const md = new markdownit()
+	const raw = md.render([
+		`# ${title}`,
+		comment
+	].join('\n\n'));
+
+    const tp = new Typograf({locale: ['ru', 'en-US']})
+    const html = tp.execute(
+    	raw
+    )
+
+	await showMapPopup(feature.geometry.coordinates, ['html', { html, style: {
+		padding: 16,
+	}}])
 })
 
 command("AddIdea", async ctx => {
@@ -68,11 +84,15 @@ command("AddNice", async ctx => {
 	return AddFeature('nice')
 })
 
+command("MoveBack", async ctx => {
+	return navigateTo('https://берегурай.рф')
+})
+
 async function AddFeature(type) {
 	const mobile = await requestState('layout.mobile')
 	const info = mobile
 		? 'Сделай то да се'
-		: 'Кликни по карте'
+		: 'Укажите точку на карте'
 	const info2 = mobile
 		? 'Потом ок'
 		: 'что-то произойдет'
@@ -80,9 +100,6 @@ async function AddFeature(type) {
 	// const coord = await requestPoint('Кликни по карте', 'что-то произойдет')
 
 	const values = await requestInput([
-        // ['comment', 'kek'],
-        // ['email', ''],
-
         // ['type', ['select', {}, [
         // 	['option', { value: 'idea', label: 'IDEA' }],
         // 	['option', { value: 'idea', label: 'IDEA' }],
@@ -91,7 +108,7 @@ async function AddFeature(type) {
         ['comment', ['text', {
         	label: 'COMMENT',
 	        placeholder: 'Расскажите свою историю...',
-	        required: 'Ну напиши хоть что-то',
+	        required: 'Ну напишите хоть что-то',
         	rows: 4,
         }]],
         ['email', ['input', {
@@ -107,12 +124,6 @@ async function AddFeature(type) {
     	submit: 'DO IT',
     	cancel: 'DONT DO IT',
     })
-
-	// const values = {
-	// 	type,
-	// 	email: '',
-	// 	comment: 'kek',
-	// }
 
 	const f = {
 		type: 'FeatureCollection',
