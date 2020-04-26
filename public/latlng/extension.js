@@ -21,15 +21,15 @@ on('idle', async event => {
         	icon: 'bulb',
         	color: '#FFD166',
         }],
-        ['AddProblem', {
-        	label: 'Описать проблему',
-        	icon: 'dislike',
-        	color: '#F25C63',
-        }],
         ['AddNice', {
         	label: 'Описать ценность',
         	icon: 'like',
         	color: '#4DCCBD',
+        }],
+        ['AddProblem', {
+        	label: 'Описать проблему',
+        	icon: 'dislike',
+        	color: '#F25C63',
         }],
     ])
 })
@@ -48,11 +48,6 @@ on('feature.select', async event => {
     assert(geometryType !== 'Point', new Error('Selected feature is not a point'))
     
 	const type = feature.properties['type']
-    const data = [
-    	{ key: 'Это', value: typeLabel.get(type) },
-    	{ key: 'Чо сказал', value: feature.properties['comment']},
-    ]
-
     const title = typeLabel.get(type)
     const comment = feature.properties['comment']
 
@@ -73,22 +68,37 @@ on('feature.select', async event => {
 })
 
 command("AddIdea", async ctx => {
-	return AddFeature('idea')
+	return AddFeature({
+		type: 'idea',
+		title: 'Идея',
+		placeholder: 'Опишите свою идею...',
+		label: 'Комментарий',
+	})
 })
 
 command("AddProblem", async ctx => {
-	return AddFeature('problem')
+	return AddFeature({
+		type: 'problem',
+		title: 'Проблема',
+		placeholder: 'Опишите проблему...',
+		label: 'Комментарий',
+	})
 })
 
 command("AddNice", async ctx => {
-	return AddFeature('nice')
+	return AddFeature({
+		type: 'nice',
+		title: 'Ценность',
+		placeholder: 'Расскажите свою историю...',
+		label: 'Комментарий',
+	})
 })
 
 command("MoveBack", async ctx => {
 	return navigateTo('https://берегурай.рф')
 })
 
-async function AddFeature(type) {
+async function AddFeature({type, title, placeholder, label}) {
 	const mobile = await requestState('layout.mobile')
 	const info = mobile
 		? 'Сделай то да се'
@@ -106,23 +116,23 @@ async function AddFeature(type) {
         // 	['option', { value: 'idea', label: 'IDEA' }],
         // ]]],
         ['comment', ['text', {
-        	label: 'COMMENT',
-	        placeholder: 'Расскажите свою историю...',
+        	label,
+	        placeholder,
 	        required: 'Ну напишите хоть что-то',
-        	rows: 4,
+        	rows: 12,
         }]],
-        ['email', ['input', {
-        	label: 'EMAIL',
-        	placeholder: 'Расскажите свою email...',
-        	// pattern: {
-         //        value: /^([A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4})?$/i,
-         //        message: "invalid email address"
-         //    }
-        }]],
+        // ['email', ['input', {
+        // 	label: 'EMAIL',
+        // 	placeholder: 'Расскажите свою email...',
+        // 	// pattern: {
+        //  //        value: /^([A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4})?$/i,
+        //  //        message: "invalid email address"
+        //  //    }
+        // }]],
     ], {
-    	title: 'That you think?',
-    	submit: 'DO IT',
-    	cancel: 'DONT DO IT',
+    	title,
+    	submit: 'Добавить',
+    	cancel: 'Отмена',
     })
 
 	const f = {
@@ -146,6 +156,4 @@ async function AddFeature(type) {
     const ok = await addFeatures(f, {
     	layerId: '5e80dd1969fe7ac1706cc996'
     })
-
-    console.log('RUN COMMAND', coord, f, ok)
 }
