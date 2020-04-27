@@ -29,7 +29,8 @@
 }
 
 .mobileMenu {
-    background-color: white;
+    /* background-color: white; */
+    position: relative;
 }
 
 .mobileMenu button:not(.closeMenu) {
@@ -44,6 +45,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+
+    position: relative;
+    z-index: 1;
 }
 
 .closeMenu {

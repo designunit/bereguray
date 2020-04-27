@@ -5,6 +5,7 @@ import { Logo } from '../Logo'
 import { ControlsContext } from 'src/context/controls'
 import { useState, useCallback } from 'react'
 import { Button } from '../Button'
+import { Bubble } from '../Bubble'
 
 export type HeaderProps = {
     menu: React.ReactNode
@@ -49,6 +50,19 @@ export const Header: React.SFC<HeaderProps> = props => {
                 menuClassName={s.mobileMenu}
                 itemListClassName={s.mobileMenuList}
             >
+                <Bubble
+                    color='white'
+                    style={{
+                        position: 'absolute',
+                        zIndex: -1,
+                        width: '100%',
+                        height: '100%',
+                        top: '-25%',
+                        right: '-30%',
+                        transform: `scale(${isOpen ? '2' : '0'}, ${isOpen ? '1' : '0'})`,
+                        transition: 'transform 1s'
+                    }}
+                />
                 <button
                     className={s.closeMenu}
                     onClick={onClick}
