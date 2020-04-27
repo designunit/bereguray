@@ -1,4 +1,4 @@
-import styles from './index.module.css'
+import styles from './styles.module.css'
 import { ProjectSlide } from '../ProjectSlide'
 
 const ProjectPage = () => {
@@ -15,7 +15,7 @@ const ProjectPage = () => {
     }
 
     return (
-        <main>
+        <main className={styles.layout}>
             {slides}
         </main>
     )
