@@ -1,5 +1,4 @@
 import styles from './styles.module.css'
-import { ProjectSlide } from '../ProjectSlide'
 
 const ProjectPage = () => {
 
@@ -8,8 +7,9 @@ const ProjectPage = () => {
 
     for (let i = 0; i < slidesCount; i++) {
         slides[i] = (
-            <ProjectSlide
-                picturePath={`/static/project/YRAI_${i+1}.png`}
+            <img
+                className={styles.picture} 
+                src={`/static/project/YRAI_${i+1}.png`}
             />
         )
     }
