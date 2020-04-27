@@ -4,6 +4,7 @@ import { slide as MobileMenu } from 'react-burger-menu'
 import { Logo } from '../Logo'
 import { ControlsContext } from 'src/context/controls'
 import { useState, useCallback } from 'react'
+import { Button } from '../Button'
 
 export type HeaderProps = {
     menu: React.ReactNode
@@ -29,11 +30,14 @@ export const Header: React.SFC<HeaderProps> = props => {
                 <div className={s.right} >
                     {props.actions}
                 </div>
-                <img 
-                    className={s.menuButton} 
-                    src='/static/menu.svg' 
+                <button
+                    className={s.menuButton}
                     onClick={onClick}
-                />
+                >
+                    <img 
+                        src='/static/menu.svg' 
+                    />
+                </button>
             </header>
 
             <MobileMenu
@@ -45,11 +49,14 @@ export const Header: React.SFC<HeaderProps> = props => {
                 menuClassName={s.mobileMenu}
                 itemListClassName={s.mobileMenuList}
             >
-                <img 
-                    className={s.closeMenu} 
-                    src='/static/menu.svg' 
+                <button
+                    className={s.closeMenu}
                     onClick={onClick}
-                />
+                >
+                    <img  
+                        src='/static/menu.svg' 
+                    />
+                </button>
                 {props.menu}
             </MobileMenu>
         </ControlsContext.Provider>
