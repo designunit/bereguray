@@ -46,7 +46,7 @@ export const Header: React.SFC<HeaderProps> = props => {
                 itemListClassName={s.mobileMenuList}
             >
                 <img 
-                    className={s.menuButton} 
+                    className={s.closeMenu} 
                     src='/static/menu.svg' 
                     onClick={onClick}
                 />

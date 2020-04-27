@@ -44,6 +44,12 @@
     align-items: flex-end;
 }
 
+.closeMenu {
+    height: 10%;
+    width: auto;
+    padding: 5%;
+}
+
 @media screen and (max-width : 480px) {
     .left, .right {
         display: none;
