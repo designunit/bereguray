@@ -33,8 +33,11 @@
 }
 
 .mobileMenu button:not(.closeMenu) {
-    font-size: 3em;
+    font-size: 2em;
     line-height: 2em;
+    font-weight: 900;
+
+    text-align: end;
 }
 
 .mobileMenuList {

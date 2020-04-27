@@ -54,7 +54,7 @@ export const Header: React.SFC<HeaderProps> = props => {
                     onClick={onClick}
                 >
                     <img  
-                        src='/static/menu.svg' 
+                        src='/static/closeMenu.svg' 
                     />
                 </button>
                 {props.menu}
