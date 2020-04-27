@@ -55,6 +55,7 @@
 
     .menuButton {
         height: 7%;
-        padding: 12px;
+        width: auto;
+        padding: 3%;
     }
 }
