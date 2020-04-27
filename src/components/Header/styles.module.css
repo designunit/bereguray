@@ -24,13 +24,37 @@
     flex-direction: row-reverse;
 }
 
+.menuButton {
+    height: 0;
+}
+
+.mobileMenu {
+    background-color: white;
+}
+
+.mobileMenu button {
+    font-size: 3em;
+    line-height: 2em;
+
+}
+
+.mobileMenuList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 @media screen and (max-width : 480px) {
-    .left {
-        order: 1;
-        justify-content: space-around;
-        margin-top: 12px;
+    .left, .right {
+        display: none;
     }
+
     .header {
-        flex-wrap: wrap;
+        padding: 12px 5%;
+    }
+
+    .menuButton {
+        height: 7%;
+        padding: 12px;
     }
 }
