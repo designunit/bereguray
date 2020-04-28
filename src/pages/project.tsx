@@ -17,12 +17,12 @@ const Project: NextPage = () => {
     return (
         <>
             <Head>
-                <title>#БЕРЕГУРАЙ</title>
+                <title>ПРОЕКТ</title>
             </Head>
 
             <Slides
                 images={images}
-            /> 
+            />
         </>
     )
 }

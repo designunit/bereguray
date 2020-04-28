@@ -4,6 +4,7 @@ import 'src/style/react-modal.css'
 import Head from 'next/head'
 import { AppType } from 'next/dist/next-server/lib/utils'
 import { YMetrika } from 'src/components/YMetrika'
+import { PageLayout } from 'src/components/PageLayout'
 
 const App: AppType = props => {
     const { Component, pageProps } = props
@@ -25,7 +26,9 @@ const App: AppType = props => {
                 )}
             </Head>
 
-            <Component {...pageProps} />
+            <PageLayout>
+                <Component {...pageProps} />
+            </PageLayout>
         </>
     )
 }
