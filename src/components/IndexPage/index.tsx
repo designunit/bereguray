@@ -2,32 +2,14 @@ import styles from './index.module.css'
 import { Button } from '../Button'
 import { Title } from '../Title'
 import { PageSection } from '../PageSection'
-import { Header } from '../Header'
 import { Parallax } from 'react-scroll-parallax'
+import { PageLayout } from '../PageLayout'
 
 const IndexPage = () => (
-    <main>
-        <Header
-            menu={(
-                <>
-                    <Button href={'https://app.latl.ng/map/bereguray'} theme={'link'}>Карта идей</Button>
-                    <Button disabled theme={'link'}>Вопрос/Ответ</Button>
-                    <Button disabled theme={'link'}>Команда</Button>
-                </>
-            )}
-            actions={(
-                <Button
-                    theme={'primary'}
-                    disabled={true}
-                >
-                    оставить историю
-                </Button>
-            )}
-        />
-
+    <PageLayout>
         <PageSection
             back={(
-                <Parallax 
+                <Parallax
                     y={[-50, 50]}
                     styleOuter={{
                         height: '100%',
@@ -43,7 +25,7 @@ const IndexPage = () => (
                         backgroundSize: 'auto 100%',
                         backgroundPosition: '100% top',
                         backgroundRepeat: 'no-repeat',
-                    }}/>
+                    }} />
                 </Parallax>
             )}
         >
@@ -69,7 +51,7 @@ const IndexPage = () => (
                         marginRight: '20px',
                         marginBottom: '36px',
                     }}
-                    theme={'primary'} 
+                    theme={'primary'}
                 >
                     Оставить историю
                 </Button>
@@ -78,13 +60,13 @@ const IndexPage = () => (
                 </Button>
             </div>
         </PageSection>
-        
+
         {/* <div className={styles.form}>
             <Title>
                 Присоединяйся к движению
             </Title>
         </div> */}
-    </main>
+    </PageLayout>
 )
 
 export default IndexPage
