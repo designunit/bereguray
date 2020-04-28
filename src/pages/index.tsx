@@ -3,6 +3,7 @@ import { NextPage } from 'next'
 import { Hero } from 'src/components/Hero'
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
 import { PageSection } from 'src/components/PageSection'
+import { Stories } from 'src/components/Stories'
 
 const Index: NextPage = () => (
     <ParallaxProvider>
@@ -34,6 +35,8 @@ const Index: NextPage = () => (
         >
             <Hero />
         </PageSection>
+
+        <Stories></Stories>
     </ParallaxProvider>
 )
 
