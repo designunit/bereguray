@@ -10,8 +10,6 @@ export const Hero: React.SFC = () => {
     return (
         <>
             <Title>
-                #берегурай
-                <br />
                 набережная г.Урай
             </Title>
 
