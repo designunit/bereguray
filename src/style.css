@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap');
 
 :root {
+    --border-radius: 10px;
     --button-border-radius: 10px;
+
     --button-background-primary: #111b47;
 
     --color-background: white;

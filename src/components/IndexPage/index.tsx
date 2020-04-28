@@ -14,7 +14,7 @@ const IndexPage = () => (
         <Header
             menu={(
                 <>
-                    <Button disabled theme={'link'}>Карта идей</Button>
+                    <Button href={'https://app.latl.ng/map/bereguray'} theme={'link'}>Карта идей</Button>
                     <Button disabled theme={'link'}>Вопрос/Ответ</Button>
                     <Button disabled theme={'link'}>Команда</Button>
                 </>
