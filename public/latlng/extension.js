@@ -2,17 +2,41 @@ importScripts('https://unpkg.com/typograf@6.11.0/dist/typograf.js')
 importScripts('https://cdnjs.cloudflare.com/ajax/libs/markdown-it/10.0.0/markdown-it.min.js')
 importScripts('/latlng.js')
 
+const LAYER_ID = '5e80dd1969fe7ac1706cc996'
+
 const typeLabel = new Map([
 	['idea', 'Идея'],
 	['problem', 'Проблема'],
 	['nice', 'Ценность'],
 ])
 
-setup(async () => ({
-    name: 'Bereguray',
-    version: '1.0.0',
-    description: 'https://берегурай.рф'
-}))
+setup(async () => {
+	// const layerId = await requestLayer({
+	// 	geometryTypes: ['Point']
+	// })
+	return {
+	    name: 'Bereguray',
+	    version: '1.0.0',
+	    description: 'https://берегурай.рф',
+	    // options: {
+	    // 	layerId,
+	    // }
+	}
+})
+
+on('install', async event => {
+    // await overlay([
+    // 	['link', {
+    // 		href: 'https://берегурай.рф',
+    // 	}],
+        
+    //     ['button', {
+    //     	command: 'MoveBack',
+    //     	label: '<-',
+    //     	color: 'white',
+    //     }],
+    // ])
+})
 
 on('idle', async event => {
     await toolbar([
@@ -109,7 +133,7 @@ async function AddFeature({type, title, placeholder, label}) {
 	const coord = await requestPoint(info2, info)
 	// const coord = await requestPoint('Кликни по карте', 'что-то произойдет')
 
-	const values = await requestInput([
+	const form = await requestInput([
         // ['type', ['select', {}, [
         // 	['option', { value: 'idea', label: 'IDEA' }],
         // 	['option', { value: 'idea', label: 'IDEA' }],
@@ -135,6 +159,13 @@ async function AddFeature({type, title, placeholder, label}) {
     	cancel: 'Отмена',
     })
 
+	const date = new Date()
+    const properties = {
+		comment: form.comment,
+		dateAdded: date.toString(),
+        type,
+    }
+
 	const f = {
 		type: 'FeatureCollection',
 		features: [
@@ -144,16 +175,12 @@ async function AddFeature({type, title, placeholder, label}) {
 		            type: 'Point',
 		            coordinates: [coord.lng, coord.lat]
 		        },
-		        properties: {
-		            comment: values.comment,
-		            email: values.email,
-		            type,
-		        }
+		        properties,
 		    }
 	    ]
 	}
 
-    const ok = await addFeatures(f, {
-    	layerId: '5e80dd1969fe7ac1706cc996'
+    await addFeatures(f, {
+    	layerId: LAYER_ID,
     })
 }
