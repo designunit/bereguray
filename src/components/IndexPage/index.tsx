@@ -6,7 +6,7 @@ import { Header } from '../Header'
 import { Parallax } from 'react-scroll-parallax'
 
 const IndexPage = () => (
-    <main className={styles.layout}>
+    <main>
         <Header
             menu={(
                 <>
