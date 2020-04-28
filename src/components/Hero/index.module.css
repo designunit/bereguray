@@ -26,6 +26,8 @@
     }
 
     .heroButtons {
+        width: 100%;
+
         padding: 64px 10% 0 10%;
     }
 }
