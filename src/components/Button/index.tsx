@@ -1,16 +1,18 @@
 import s from './styles.module.css'
 
 import cx from 'classnames'
+import Link from 'next/link'
 import { ControlsSize, ControlsContext } from 'src/context/controls'
 import { useContext } from 'react'
 
 export type ButtonTheme = 'default' | 'primary' | 'link'
+export type ButtonShape = 'default' | 'pill' | 'circle'
 
-export type ButtonProps = {
-    style?: React.CSSProperties
+export type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
     theme?: 'default' | 'primary' | 'link'
     size?: ControlsSize
-    disabled?: boolean
+    shape?: ButtonShape
+    href?: string
 }
 
 const themeClass = {
@@ -25,17 +27,46 @@ const sizeClass = {
     big: s.sizeBig,
 }
 
-export const Button: React.SFC<ButtonProps> = ({ theme = 'default', disabled = false, ...props }) => {
-    const config = useContext(ControlsContext)
-    const size = props.size ?? config.size ?? 'default'
-
-    return (
-        <button
-            className={cx(s.button, themeClass[theme], sizeClass[size])}
-            style={props.style}
-            disabled={disabled}
-        >
-            {props.children}
-        </button>
-    )
+const shapeClass = {
+    default: s.shapeDefault,
+    pill: s.shapePill,
+    circle: s.shapeCircle,
 }
+
+export const Button: React.SFC<ButtonProps> =
+    ({ href, size, theme = 'default', shape = 'default', children, ...props }) => {
+        const config = useContext(ControlsContext)
+        const sizeValue = size ?? config.size ?? 'default' 
+
+        if (href) {
+            return (
+                <Link href={href}>
+                    <a
+                        {...props as any}
+                        className={cx(
+                            s.button,
+                            themeClass[theme],
+                            sizeClass[sizeValue],
+                            shapeClass[shape],
+                            props.className
+                        )}
+                    >{children}</a>
+                </Link>
+            )
+        }
+
+        return (
+            <button
+                {...props}
+                className={cx(
+                    s.button,
+                    themeClass[theme],
+                    sizeClass[sizeValue],
+                    shapeClass[shape],
+                    props.className
+                )}
+            >
+                {children}
+            </button>
+        )
+    }
