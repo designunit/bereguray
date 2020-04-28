@@ -1,7 +1,11 @@
 import { Header } from 'src/components/Header'
 import { Button } from 'src/components/Button'
+import { useContext } from 'react'
+import { ConfigContext } from 'src/context/config'
 
 export const PageLayout: React.SFC = props => {
+    const { mapUrl } = useContext(ConfigContext)
+
     return (
         <main>
             <Header
@@ -9,7 +13,7 @@ export const PageLayout: React.SFC = props => {
                     <>
                         <Button href={'/'} theme={'link'}>#</Button>
                         <Button href={'/project'} theme={'link'}>Проект</Button>
-                        <Button href={'https://app.latl.ng/map/bereguray'} theme={'link'}>Карта идей</Button>
+                        <Button href={mapUrl} theme={'link'}>Карта идей</Button>
                         <Button disabled theme={'link'}>Вопрос/Ответ</Button>
                         <Button disabled theme={'link'}>Команда</Button>
                     </>
@@ -17,7 +21,7 @@ export const PageLayout: React.SFC = props => {
                 actions={(
                     <Button
                         theme={'primary'}
-                        disabled={true}
+                        href={mapUrl}
                     >
                         оставить историю
                     </Button>
