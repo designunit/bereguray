@@ -11,7 +11,6 @@ export const PageLayout: React.SFC = props => {
             <Header
                 menu={(
                     <>
-                        <Button href={'/'} theme={'link'}>#</Button>
                         <Button href={'/project'} theme={'link'}>Проект</Button>
                         <Button href={mapUrl} theme={'link'}>Карта идей</Button>
                         <Button disabled theme={'link'}>Вопрос/Ответ</Button>
