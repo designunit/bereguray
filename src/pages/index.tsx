@@ -4,6 +4,7 @@ import { Hero } from 'src/components/Hero'
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
 import { PageSection } from 'src/components/PageSection'
 import { Stories } from 'src/components/Stories'
+import { Bubble } from 'src/components/Bubble'
 
 const Index: NextPage = () => (
     <ParallaxProvider>
@@ -29,7 +30,19 @@ const Index: NextPage = () => (
                         backgroundSize: 'auto 100%',
                         backgroundPosition: '100% top',
                         backgroundRepeat: 'no-repeat',
-                    }} />
+                    }}>
+                        <Bubble
+                            style={{
+                                position: 'relative',
+                                left: '50%',
+                                height: '100%',
+                                transform: `scale(1.75) rotate(${Math.random() * 360}deg)`,
+                            }}
+                            opacity={.5}
+                            // color='#E7ECFF'
+                            color='#25aae1'
+                        />
+                    </div>
                 </Parallax>
             )}
         >
