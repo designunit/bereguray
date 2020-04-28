@@ -1,4 +1,6 @@
 import styles from './styles.module.css'
+import { Header } from 'src/components/Header'
+import { Button } from 'src/components/Button'
 
 const ProjectPage = () => {
 
@@ -15,12 +17,28 @@ const ProjectPage = () => {
     }
 
     return (
-        <main className={styles.layout}>
-            <h1>
-                Проект городской набережной Урая
-            </h1>
+        <main>
+            <Header
+                menu={(
+                    <>
+                        <Button href={'https://app.latl.ng/map/bereguray'} theme={'link'}>Карта идей</Button>
+                        <Button disabled theme={'link'}>Вопрос/Ответ</Button>
+                        <Button disabled theme={'link'}>Команда</Button>
+                    </>
+                )}
+                actions={(
+                    <Button
+                        theme={'primary'}
+                        disabled={true}
+                    >
+                        оставить историю
+                    </Button>
+                )}
+            />
 
-            {slides}
+            <div className={styles.slidesContainer}>
+                {slides}
+            </div>
         </main>
     )
 }

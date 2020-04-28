@@ -1,23 +1,11 @@
-.layout {
+.slidesContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5%;
-}
+    padding: 5% 0;
 
-.layout h1 {
-    width: 100%;
-    margin: 5%;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 48px;
-    line-height: 56px;
-    text-align: center;
-
-    color: #37447e;
+    padding-top: 70px;
 }
 
 .picture {
