@@ -28,11 +28,6 @@
     display: none;
 }
 
-.mobileMenu {
-    /* background-color: white; */
-    position: relative;
-}
-
 .mobileMenu button:not(.closeMenu) {
     font-size: 2em;
     line-height: 2em;
@@ -45,9 +40,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
-    position: relative;
-    z-index: 1;
 }
 
 .closeMenu {

@@ -47,7 +47,7 @@ export const Header: React.SFC<HeaderProps> = props => {
                 isOpen={isOpen}
                 customBurgerIcon={false}
                 customCrossIcon={false}
-                menuClassName={s.mobileMenu}
+                className={s.mobileMenu}
                 itemListClassName={s.mobileMenuList}
             >
                 <Bubble
