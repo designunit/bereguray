@@ -16,6 +16,10 @@ const ProjectPage = () => {
 
     return (
         <main className={styles.layout}>
+            <h1>
+                Проект городской набережной Урая
+            </h1>
+
             {slides}
         </main>
     )

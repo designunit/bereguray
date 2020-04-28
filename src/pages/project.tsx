@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { NextPage } from 'next'
-import ProjectPage from 'src/components/ProjectPage'
+import ProjectPage from 'src/project/ProjectPage'
 
 const Project: NextPage = () => (
     <>
