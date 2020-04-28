@@ -25,17 +25,54 @@
     flex-direction: row-reverse;
 }
 
+.menuButton {
+    display: none;
+}
+
+.mobileMenu a, .mobileMenu button:not(.closeMenu) {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 900;
+
+    justify-content: flex-end;
+}
+
+.mobileMenuList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.closeMenu {
+    border: none;
+    background: none;
+    
+    height: 7%;
+    width: auto;
+    padding: 5%;
+}
+
 .transparent {
     background-color: transparent;
 }
 
 @media screen and (max-width : 480px) {
-    .left {
-        order: 1;
-        justify-content: space-around;
-        margin-top: 12px;
+    .left, .right {
+        display: none;
     }
+
     .header {
-        flex-wrap: wrap;
+        padding: 12px 5%;
+    }
+
+    .menuButton {
+        display: inline-block;
+
+        border: none;
+        background: none;
+
+        height: 7%;
+        width: auto;
+        padding: 3%;
     }
 }
