@@ -161,11 +161,11 @@ async function showHelp(){
 async function AddFeature({type, title, placeholder, label}) {
 	const mobile = await requestState('layout.mobile')
 	const info = mobile
-		? 'Сделай то да се'
-		: 'Укажите точку на карте'
+		? 'Добавте точку на карте'
+		: 'Добавте точку на карте'
 	const info2 = mobile
-		? 'Потом ок'
-		: 'что-то произойдет'
+		? 'Наведите перекрестие и нажмите ОК'
+		: 'Кликните по карте'
 	const coord = await requestPoint(info2, info)
 	// const coord = await requestPoint('Кликни по карте', 'что-то произойдет')
 
@@ -178,7 +178,7 @@ async function AddFeature({type, title, placeholder, label}) {
         ['comment', ['text', {
         	label,
 	        placeholder,
-	        required: 'Ну напишите хоть что-то',
+	        required: 'Вы забыли оставить коментарий',
         	rows: 12,
         }]],
         // ['email', ['input', {
