@@ -1,0 +1,33 @@
+.description {
+    color: #505f98;
+}
+
+.content {
+    padding: 0 128px;
+}
+
+.heroButtons {
+    width: 50%;
+    min-width: 200px;
+
+    padding-top: 64px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+}
+
+@media screen and (max-width: 480px) {
+    .heroSubtitle {
+        display: none;
+    }
+
+    .heroButtons {
+        width: 100%;
+
+        padding: 64px 10% 0 10%;
+    }
+}

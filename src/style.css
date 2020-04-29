@@ -11,7 +11,7 @@
     --color-text-opposite: white;
     --color-button: #111b47;
 
-    --font-family: 'Roboto', sans-serif;
+    --font-family: 'Roboto', Helvetica, serif;
 }
 
 html,
@@ -24,4 +24,21 @@ body {
 
 * {
     box-sizing: border-box;
+}
+
+h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 48px;
+
+    color: #091133;
+}
+
+h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #091133;
 }

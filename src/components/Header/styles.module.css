@@ -35,6 +35,8 @@
     font-weight: 900;
 
     justify-content: flex-end;
+
+    padding-bottom: 2rem;
 }
 
 .mobileMenuList {

@@ -24,7 +24,7 @@ const generateKeyFrame = () => {
 }
 
 export const Bubble: React.FC<BubbleProps> = ({ 
-    durationMs = 10 * 1000,
+    durationMs = 3 * 1000,
     picturePath, 
     color = 'white', 
     opacity = 1,
