@@ -5,6 +5,9 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 import { PageSection } from 'src/components/PageSection'
 // import { Stories } from 'src/components/Stories'
 import { Bubble } from 'src/components/Bubble'
+import { Stories } from 'src/components/Stories'
+import { Steps } from 'src/components/Steps'
+import { About } from 'src/components/About'
 // import { Steps } from 'src/components/Steps'
 
 const Index: NextPage = () => (
@@ -39,8 +42,9 @@ const Index: NextPage = () => (
             <Hero />
         </PageSection>
 
-        {/* <Stories /> */}
-        {/* <Steps /> */}
+        <About />
+        <Steps />
+        <Stories />
     </ParallaxProvider>
 )
 
