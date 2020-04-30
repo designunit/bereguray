@@ -41,10 +41,10 @@
 
     .content h3 {
         /* h2 size  */
-        font-size: 36px;
-        line-height: 48px;
+        font-size: 2rem;
+        line-height: 2.5rem;
 
-        margin: .25em 0;
+        margin: .25rem 0;
     }
 
     .icon {

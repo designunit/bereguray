@@ -25,17 +25,22 @@ setup(async () => {
 })
 
 on('install', async event => {
-    // await overlay([
-    // 	['link', {
-    // 		href: 'https://берегурай.рф',
-    // 	}],
-        
-    //     ['button', {
-    //     	command: 'MoveBack',
-    //     	label: '<-',
-    //     	color: 'white',
-    //     }],
-    // ])
+	overlay([
+        ['@', 'top-left', [
+            ['button', { icon: 'arrow-left', href: 'https://берегурай.рф' }],
+            // ['html', {
+            //     html: '<a style="background:white;padding:2px 5px;" href="https://берегурай.рф">← на сайт берегурай.рф</a>',
+            // }],
+        ]],
+        ['@', 'top-center', [
+            ['html', { html: '<h1 style="margin:0;">#БЕРЕГУРАЙ</h1>' }],
+        ]],
+        ['@', 'right-center', [
+            ['button', { icon: 'question', command: 'ShowHelp' }],
+        ]],
+    ])
+
+    showHelp()
 })
 
 on('idle', async event => {
@@ -55,7 +60,9 @@ on('idle', async event => {
         	icon: 'dislike',
         	color: '#F25C63',
         }],
-    ])
+    ], {
+    	foldedLabel: 'Добавить',
+    })
 })
 
 on('feature.select', async event => {
@@ -122,14 +129,43 @@ command("MoveBack", async ctx => {
 	return navigateTo('https://берегурай.рф')
 })
 
+command("ShowHelp", () => {
+	console.log('will show help')
+	showHelp()
+})
+
+async function showHelp(){
+	const text = `
+# #БЕРЕГУРАЙ
+
+Поделиться своим мнением просто: выберите отметку идею, проблему или ценность,
+затем укажите точку на карте и напишите свой комментарий во всплывающем окне.
+
+Идеи и предложения: Что может появиться на берегу Урая? Чего вам здесь не хватает?
+
+Проблемы: Что вас беспокоит на реке и прибрежных территорий.
+
+Ценности: Важные и любимые вами элементы, которые нужно сохранить или восстановить (исторические территории, интересные события, растительный и животный мир реки).
+	`
+	const md = new markdownit()
+	const html = md.render(text)
+
+	await showPopup([
+		['html', { html }]
+	], {
+		title: 'Help',
+		submit: 'Got it',
+	})
+}
+
 async function AddFeature({type, title, placeholder, label}) {
 	const mobile = await requestState('layout.mobile')
 	const info = mobile
-		? 'Сделай то да се'
-		: 'Укажите точку на карте'
+		? 'Добавте точку на карте'
+		: 'Добавте точку на карте'
 	const info2 = mobile
-		? 'Потом ок'
-		: 'что-то произойдет'
+		? 'Наведите перекрестие и нажмите ОК'
+		: 'Кликните по карте'
 	const coord = await requestPoint(info2, info)
 	// const coord = await requestPoint('Кликни по карте', 'что-то произойдет')
 
@@ -142,7 +178,7 @@ async function AddFeature({type, title, placeholder, label}) {
         ['comment', ['text', {
         	label,
 	        placeholder,
-	        required: 'Ну напишите хоть что-то',
+	        required: 'Вы забыли оставить коментарий',
         	rows: 12,
         }]],
         // ['email', ['input', {
