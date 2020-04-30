@@ -1,8 +1,13 @@
 import Head from 'next/head'
 import { NextPage } from 'next'
 import { Slides } from 'src/components/Slides'
+import { Meta, IMeta } from 'src/components/Meta'
 
-const Project: NextPage = () => {
+interface PageProps {
+    meta: IMeta
+}
+
+const Project: NextPage<PageProps> = props => {
     const images = [
         '/static/project/YRAI_1.png',
         '/static/project/YRAI_2.png',
@@ -18,6 +23,7 @@ const Project: NextPage = () => {
         <>
             <Head>
                 <title>ПРОЕКТ</title>
+                <Meta meta={props.meta} />
             </Head>
 
             <Slides
@@ -25,6 +31,32 @@ const Project: NextPage = () => {
             />
         </>
     )
+}
+
+export const getStaticProps = async () => {
+    const meta: IMeta = {
+        title: '#БЕРЕГУРАЙ',
+        description: 'Проект набережной г. Урай',
+        image: 'https://берегурай.рф/static/project/YRAI_1.png',
+        imageWidth: 1191,
+        imageHeight: 843,
+
+        url: 'https://берегурай.рф/project',
+        siteName: 'Проект набережной г. Урай',
+        locale: 'ru_RU',
+        type: 'website',
+        domain: 'берегурай.рф',
+
+        twitterCard: 'summary_large_image',
+        twitterSite: '@',
+        twitterCreator: '@tmshv',
+    }
+
+    return {
+        props: {
+            meta,
+        }
+    }
 }
 
 export default Project

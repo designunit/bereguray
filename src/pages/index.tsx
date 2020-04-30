@@ -5,12 +5,18 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 import { PageSection } from 'src/components/PageSection'
 // import { Stories } from 'src/components/Stories'
 import { Bubble } from 'src/components/Bubble'
+import { Meta, IMeta } from 'src/components/Meta'
 // import { Steps } from 'src/components/Steps'
 
-const Index: NextPage = () => (
+interface PageProps {
+    meta: IMeta
+}
+
+const Index: NextPage<PageProps> = props => (
     <ParallaxProvider>
         <Head>
             <title>#БЕРЕГУРАЙ</title>
+            <Meta meta={props.meta} />
         </Head>
 
         <PageSection
@@ -43,5 +49,31 @@ const Index: NextPage = () => (
         {/* <Steps /> */}
     </ParallaxProvider>
 )
+
+export const getStaticProps = async () => {
+    const meta: IMeta = {
+        title: '#БЕРЕГУРАЙ',
+        description: 'Предлагайте идеи и делитесь своими историями Урая и берега реки Конда',
+        image: 'https://берегурай.рф/static/uray2.jpg',
+        imageWidth: 2500,
+        imageHeight: 1635,
+
+        url: 'https://берегурай.рф/',
+        siteName: 'Набережная г.Урай',
+        locale: 'ru_RU',
+        type: 'website',
+        domain: 'берегурай.рф',
+
+        twitterCard: 'summary_large_image',
+        twitterSite: '@',
+        twitterCreator: '@tmshv',
+    }
+
+    return {
+        props: {
+            meta,
+        }
+    }
+}
 
 export default Index
