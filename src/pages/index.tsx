@@ -3,10 +3,11 @@ import { NextPage } from 'next'
 import { Hero } from 'src/components/Hero'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import { PageSection } from 'src/components/PageSection'
-// import { Stories } from 'src/components/Stories'
+import { Stories } from 'src/components/Stories'
 import { Bubble } from 'src/components/Bubble'
 import { Meta, IMeta } from 'src/components/Meta'
-// import { Steps } from 'src/components/Steps'
+import { Steps } from 'src/components/Steps'
+import { About } from 'src/components/About'
 
 interface PageProps {
     meta: IMeta
@@ -45,8 +46,9 @@ const Index: NextPage<PageProps> = props => (
             <Hero />
         </PageSection>
 
-        {/* <Stories /> */}
-        {/* <Steps /> */}
+        <About />
+        <Steps />
+        <Stories />
     </ParallaxProvider>
 )
 
