@@ -22,7 +22,7 @@ const Project: NextPage<PageProps> = props => {
     return (
         <>
             <Head>
-                <title>ПРОЕКТ</title>
+                <title>КОНЦЕПЦИЯ</title>
                 <Meta meta={props.meta} />
             </Head>
 
@@ -36,13 +36,13 @@ const Project: NextPage<PageProps> = props => {
 export const getStaticProps = async () => {
     const meta: IMeta = {
         title: '#БЕРЕГУРАЙ',
-        description: 'Проект набережной г. Урай',
+        description: 'Концепт набережной г. Урай',
         image: 'https://берегурай.рф/static/project/YRAI_1.png',
         imageWidth: 1191,
         imageHeight: 843,
 
-        url: 'https://берегурай.рф/project',
-        siteName: 'Проект набережной г. Урай',
+        url: 'https://берегурай.рф/concept',
+        siteName: 'Концепт набережной г. Урай',
         locale: 'ru_RU',
         type: 'website',
         domain: 'берегурай.рф',
