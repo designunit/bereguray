@@ -61,15 +61,15 @@ export const Stories: React.SFC = props => (
                     theme='primary'
                     disabled
                 >
-                    Оставить историю
+                    Поделиться мнением
                 </Button>
             </span>
-            <Button
+            {/* <Button
                 size='big'
                 disabled
             >
                 Присоедениться к проекту
-            </Button>
+            </Button> */}
         </div>
     </div>
 )

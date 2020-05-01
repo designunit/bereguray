@@ -31,7 +31,7 @@ export const Hero: React.SFC = () => {
                     }}
                     theme={'primary'}
                 >
-                    Оставить историю
+                    Поделиться мнением
                 </Button>
             </div>
         </>
