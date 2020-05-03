@@ -1,6 +1,6 @@
 import s from './styles.module.css'
 import { Title } from '../Title'
-import { Story } from '../Story'
+import { Faq } from '../Faq'
 import { Button } from '../Button'
 import { useContext } from 'react'
 import { ConfigContext } from 'src/context/config'
@@ -15,12 +15,12 @@ export const Faq: React.SFC = props => {
                     Вопрос/ответ
                 </Title>
             </span>
-            <Story
+            <Faq
                 pictureSide='left'
                 title={(
-                    <h2>
+                    <h3>
                         В Урае есть множество других проблем городской среды, почему делают набережную?
-                    </h2>
+                    </h3>
                 )}
                 text={(<>
                     <p className={s.description}>
@@ -28,12 +28,12 @@ export const Faq: React.SFC = props => {
                     </p>
                 </>)}
             />
-            <Story
+            <Faq
                 pictureSide='right'
                 title={(
-                    <h2>
+                    <h3>
                         Когда будет построена набережная?
-                    </h2>
+                    </h3>
                 )}
                 text={(<>
                     <p className={s.description}>
@@ -41,12 +41,12 @@ export const Faq: React.SFC = props => {
                     </p>
                 </>)}
             />
-            <Story
+            <Faq
                 pictureSide='left'
                 title={(
-                    <h2>
+                    <h3>
                         Кто разрабатывает проект набережной?
-                    </h2>
+                    </h3>
                 )}
                 text={(<>
                     <p className={s.description}>
@@ -54,12 +54,12 @@ export const Faq: React.SFC = props => {
                     </p>
                 </>)}
             />
-            <Story
+            <Faq
                 pictureSide='right'
                 title={(
-                    <h2>
+                    <h3>
                         Как рассказать о моих идеях для будущей набережной?
-                    </h2>
+                    </h3>
                 )}
                 text={(<>
                     <p className={s.description}>
@@ -74,12 +74,12 @@ export const Faq: React.SFC = props => {
                     </p>
                 </>)}
             />
-            <Story
+            <Faq
                 pictureSide='left'
                 title={(
-                    <h2>
+                    <h3>
                         Опрос прошел, как еще могу помочь?
-                    </h2>
+                    </h3>
                 )}
                 text={(<>
                     <p className={s.description}>
