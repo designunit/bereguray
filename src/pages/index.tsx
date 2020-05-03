@@ -10,6 +10,7 @@ import { Steps } from 'src/components/Steps'
 import { About } from 'src/components/About'
 import { Story } from 'src/components/Story'
 import { Article } from 'src/components/Article'
+import { Step } from 'src/components/Step'
 
 interface PageProps {
     meta: IMeta
@@ -190,6 +191,77 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
         </Stories>
+        <Steps>
+            <Step
+                title={'2019'}
+            >
+                <ul>
+                    <li>Выбор территории.</li>
+                    <li>Проведение исследования территории и первых встреч с жителями.</li>
+                </ul>
+            </Step>
+            <Step
+                title={'Март 2020'}
+            >
+                <ul>
+                    <li>Разработка предварительной концепции проекта.</li>
+                </ul>
+            </Step>
+            <Step
+                title={'Апрель-май 2020'}
+            >
+                <ul>
+                    <li>
+                        Уточнение предварительной концепции проекта.
+                    </li>
+                    <li>
+                        Проведение интервью с горожанами и дополнительного опроса.
+                    </li>
+                    <li>
+                        Запуск общественной кампании, общественного совета проекта.
+                    </li>
+                    <li>
+                        Проведение онлайн встреч с жителями по обсуждению концепции.
+                    </li>
+                </ul>
+            </Step>
+            <Step
+                title={'Май 2020'}
+            >
+                <ul>
+                    <li>
+                        Архитекторы дорабатывают проект с учетом полученной от жителей обратной связи.
+                    </li>
+                    <li>
+                        Презентация итогового проекта жителям.
+                    </li>
+                    <li>
+                        31 мая подача проекта на конкурс.
+                    </li>
+                </ul>
+            </Step>
+            <Step
+                title={'Июнь-август 2020'}
+            >
+                <ul>
+                    <li>
+                        Оценка заявок федеральным жюри конкурса.
+                    </li>
+                    <li>
+                        Очная защита проекта.
+                    </li>
+                </ul>
+            </Step>
+            <Step
+                title={'2021-2022'}
+            >
+                <ul>
+                    <li>
+                        Реализация проекта.
+                    </li>
+                </ul>
+            </Step>
+        </Steps>
     </ParallaxProvider>
 )
 
