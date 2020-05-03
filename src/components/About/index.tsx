@@ -3,7 +3,7 @@ import { Button } from '../Button'
 
 export const About: React.SFC = props => (
     <div className={s.container}>
-        <img src='/static/unit.jpg' 
+        <img src='/static/kondariver.png' 
             className={s.picture}
         />
         <div >
@@ -24,7 +24,7 @@ export const About: React.SFC = props => (
                     }}
                     theme={'primary'}
                 >
-                    Поделиться мнением
+                    Посмотреть концепцию
             </Button>
             <p className={s.text}>
                 Сейчас команда проекта уточняет концепцию, проводит интервью с жителями. А также запустила дополнительный опрос для того, чтобы получить обратную связь на предложенные идеи.   
