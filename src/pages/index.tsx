@@ -7,6 +7,8 @@ import { PageSection } from 'src/components/PageSection'
 import { Bubble } from 'src/components/Bubble'
 import { Meta, IMeta } from 'src/components/Meta'
 // import { Steps } from 'src/components/Steps'
+import { Steps } from 'src/components/Steps'
+import { Step } from 'src/components/Step'
 
 interface PageProps {
     meta: IMeta
@@ -46,7 +48,39 @@ const Index: NextPage<PageProps> = props => (
         </PageSection>
 
         {/* <Stories /> */}
-        {/* <Steps /> */}
+        <Steps>
+            <Step
+                title={'НОЯБРЬ'}
+            >
+                <ul>
+                    <li>Выбор территории</li>
+                    <li>Сбор пожеланий по функциональному наполнению</li>
+                    <li>Разработка Концепции Сад "Технический поселок" вместе с жителями</li>
+                </ul>
+            </Step>
+            <Step
+                title={'Шаг 2 - ВТОРОЙ'}
+            >
+                <ul>
+                    <li>Презентация Концепции жителям Краснокамска</li>
+                    <li>Сбор мнений и предложений от жителей Краснокамска</li>
+                </ul>
+            </Step>
+            <Step
+                title={'Шаг 3 - НЕ ВТОРОЙ'}
+            >
+                <ul>
+                    <li>Доработка проекта</li>
+                </ul>
+            </Step>
+            <Step
+                title={'Шаг 4 - ПОСЛЕДНИЙ'}
+            >
+                <ul>
+                    <li>Подача заявки на Всеросскийский конкурс</li>
+                </ul>
+            </Step>
+        </Steps>
     </ParallaxProvider>
 )
 
