@@ -47,7 +47,7 @@ const Index: NextPage<PageProps> = props => (
         </PageSection>
 
         <About />
-        <Steps />
+        {/* <Steps /> */}
         <Stories />
     </ParallaxProvider>
 )
