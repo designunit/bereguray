@@ -75,7 +75,15 @@ const Index: NextPage<PageProps> = props => (
             <Hero />
         </PageSection>
 
-        <About />
+        <Stories>
+            <Title level={2}>
+                Концепция развития
+                <br />
+                территории набережной реки Конда
+            </Title>
+
+            <About />
+        </Stories>
 
         {/* РОАДМАП */}
         <span id='roadmap' />
@@ -217,7 +225,7 @@ const Index: NextPage<PageProps> = props => (
         </Stories>
 
         {/* ЖИТЕЛИ О НАБЕРЕЖНОЙ */}
-        
+
         <span id='stories' />
         <Stories backgroundColor={'#FFF'}>
             <Title level={2}>Жители о набережной</Title>
