@@ -216,7 +216,7 @@ const Index: NextPage<PageProps> = props => (
         </Stories>
 
         {/* ЖИТЕЛИ О НАБЕРЕЖНОЙ */}
-        <Stories backgroundColor={'#E7ECFF'}>
+        <Stories backgroundColor={'#FFF'}>
             <Title level={2}>Жители о набережной</Title>
 
             <Story
@@ -303,7 +303,7 @@ const Index: NextPage<PageProps> = props => (
             </Story>
         </Stories>
 
-        <Stories backgroundColor={'#E7ECFF'}>
+        <Stories backgroundColor={'#FFF'}>
             <div style={{
                 width: '100%',
                 display: 'flex',

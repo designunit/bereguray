@@ -19,7 +19,7 @@ export const Footer: React.SFC = props => {
                     />
                     <div className={s.text}>
                         <Title level={3}>
-                            Инициатор
+                            При поддержке
                         </Title>
                         Администрация города Урай
                     </div>
@@ -31,7 +31,7 @@ export const Footer: React.SFC = props => {
                     />
                     <div className={s.text}>
                         <Title level={3}>
-                            Инициатор
+                            При поддержке
                         </Title>
                         Центр компетенций<br/>
                         по вопросам городской среды<br/>
