@@ -24,13 +24,6 @@ export const PageLayout: React.SFC = props => {
                         >
                             О проекте
                         </Button>
-                        <Button
-                            href={'#roadmap'} 
-                            theme={'link'}
-                            onClick={onClick}
-                        >
-                            Развитие проекта
-                        </Button>
                         <Button 
                             href={'/#faq'} 
                             theme={'link'}
