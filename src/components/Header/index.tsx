@@ -58,8 +58,8 @@ export const Header: React.SFC<HeaderProps> = ({ transparent = false, isOpen, on
                         position: 'absolute',
                         zIndex: -1,
                         width: '100%',
-                        height: '100%',
-                        top: '-25%',
+                        height: '120%',
+                        top: '-30%',
                         right: '-30%',
                         transform: `scale(${isOpen ? '2' : '0'}, ${isOpen ? '1' : '0'})`,
                         transition: 'transform 1s'

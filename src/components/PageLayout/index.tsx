@@ -18,25 +18,32 @@ export const PageLayout: React.SFC = props => {
                 menu={(
                     <>
                         <Button 
-                            href={'/concept'}
+                            href={'#about'}
                             theme={'link'}
                             onClick={onClick}    
                         >
-                            Концепция
+                            О проекте
                         </Button>
                         <Button
-                            href={mapUrl} 
+                            href={'#roadmap'} 
                             theme={'link'}
                             onClick={onClick}
                         >
-                            Карта идей
+                            Развитие проекта
                         </Button>
                         <Button 
-                            href='/#faq' 
+                            href={'/#faq'} 
                             theme={'link'}
                             onClick={onClick}
                         >
                             Вопрос/Ответ
+                        </Button>
+                        <Button 
+                            href={'/#stories'} 
+                            theme={'link'}
+                            onClick={onClick}
+                        >
+                            Жители о набережной
                         </Button>
                         <Button 
                             href='/#team' 
@@ -52,7 +59,7 @@ export const PageLayout: React.SFC = props => {
                         theme={'primary'}
                         href={mapUrl}
                     >
-                        Поделиться мнением
+                        Карта идей
                     </Button>
                 )}
             />

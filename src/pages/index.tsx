@@ -78,6 +78,7 @@ const Index: NextPage<PageProps> = props => (
         <About />
 
         {/* РОАДМАП */}
+        <span id='roadmap' />
         <Stories>
             <Title level={2}>Как будет развиваться проект</Title>
             <Steps>
@@ -216,6 +217,8 @@ const Index: NextPage<PageProps> = props => (
         </Stories>
 
         {/* ЖИТЕЛИ О НАБЕРЕЖНОЙ */}
+        
+        <span id='stories' />
         <Stories backgroundColor={'#FFF'}>
             <Title level={2}>Жители о набережной</Title>
 
@@ -308,7 +311,8 @@ const Index: NextPage<PageProps> = props => (
             flexWrap: 'wrap',
             justifyContent: 'center',
 
-            padding: '10%',
+            padding: '5%',
+            paddingTop: '0',
 
             backgroundColor: '#FFF',
         }}>

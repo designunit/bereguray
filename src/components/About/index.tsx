@@ -2,7 +2,7 @@ import s from './styles.module.css'
 import { Button } from '../Button'
 
 export const About: React.SFC = props => (
-    <div className={s.container}>
+    <div className={s.container} id='about'>
         <img src='/static/kondariver.png' 
             className={s.picture}
         />
