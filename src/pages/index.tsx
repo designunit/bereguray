@@ -305,7 +305,6 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
         </Stories>
-
         <div style={{
             display: 'flex',
             flexWrap: 'wrap',
