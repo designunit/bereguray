@@ -32,9 +32,8 @@ const HeroButton: React.FC = props => {
             size='big'
             theme='primary'
             href={mapUrl}
-            style={{marginBottom: '36px'}}
         >
-            Поделиться мнением
+            Карта идей
         </Button>
     )
 }
@@ -304,22 +303,27 @@ const Index: NextPage<PageProps> = props => (
             </Story>
         </Stories>
 
-        <Stories backgroundColor={'#FFF'}>
-            <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                flexWrap: 'wrap',
-            }}>
-                <HeroButton />
+        <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
 
-                <Button
-                    size='big'
-                    href='https://docs.google.com/forms/d/e/1FAIpQLSfoGigVnGxanZPdSK09A8xZ8APUgPeyePbG_nI9USyEg7hiUA/viewform'
-                >
-                    Пройти опрос
-                </Button>
-            </div>
-        </Stories>
+            padding: '10%',
+
+            backgroundColor: '#FFF',
+        }}>
+            <HeroButton />
+            <div style={{
+                width: '36px',
+                height: '36px',
+            }} />
+            <Button
+                size='big'
+                href='https://docs.google.com/forms/d/e/1FAIpQLSfoGigVnGxanZPdSK09A8xZ8APUgPeyePbG_nI9USyEg7hiUA/viewform'
+            >
+                Пройти опрос
+            </Button>
+        </div>
 
         <Footer />
     </ParallaxProvider>

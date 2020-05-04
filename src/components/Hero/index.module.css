@@ -8,10 +8,15 @@
 }
 
 .heroButtons {
-    width: 40%;
+    width: 50%;
     min-width: 150px;
-
     padding-top: 64px;
+
+    display: flex;
+}
+
+.buttonsSpacer{
+    width: 36px;
 }
 
 .form {
@@ -28,7 +33,11 @@
 
     .heroButtons {
         width: 100%;
-
         padding: 64px 10% 0 10%;
+        flex-wrap: wrap;
+    }
+
+    .buttonsSpacer {
+        height: 36px;
     }
 }
