@@ -61,7 +61,7 @@ export const Footer: React.SFC = props => {
                         textAlign: 'center',
                     }}
                 >
-                    2020 года
+                    2020
                 </div>
             </div>
         </section>
