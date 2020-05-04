@@ -27,12 +27,16 @@ export const Hero: React.SFC = () => {
                 <Button
                     href={mapUrl}
                     style={{
-                        marginRight: '20px',
                         marginBottom: '36px',
                     }}
                     theme={'primary'}
                 >
                     Поделиться мнением
+                </Button>
+                <Button
+                    href='https://docs.google.com/forms/d/e/1FAIpQLSfoGigVnGxanZPdSK09A8xZ8APUgPeyePbG_nI9USyEg7hiUA/viewform'
+                >
+                    Пройти опрос
                 </Button>
             </div>
         </>

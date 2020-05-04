@@ -42,6 +42,9 @@ export const Footer: React.SFC = props => {
                 <div className={s.item}>
                     <img src='/static/unit.jpg'
                         className={s.picture}
+                        style={{
+                            maxWidth: '200px'
+                        }}
                     />
                     <div className={s.text}>
                         <Title level={3}>
