@@ -14,7 +14,7 @@ export const Footer: React.SFC = props => {
 
             <div className={s.items}>
                 <div className={s.item}>
-                    <img src='/static/uray2.jpg'
+                    <img src='/static/logo_yraygerb.svg'
                         className={s.picture}
                     />
                     <div className={s.text}>
@@ -26,7 +26,7 @@ export const Footer: React.SFC = props => {
                 </div>
 
                 <div className={s.item}>
-                    <img src='/static/uray2.jpg'
+                    <img src='/static/logo_senter.svg'
                         className={s.picture}
                     />
                     <div className={s.text}>
@@ -38,7 +38,7 @@ export const Footer: React.SFC = props => {
                 </div>
 
                 <div className={s.item}>
-                    <img src='/static/uray2.jpg'
+                    <img src='/static/unit.jpg'
                         className={s.picture}
                     />
                     <div className={s.text}>
@@ -51,7 +51,6 @@ export const Footer: React.SFC = props => {
 
                 <div className={s.text}
                     style={{
-                        alignSelf: 'flex-end',
                         flex: '1 0 auto',
                         textAlign: 'center',
                     }}

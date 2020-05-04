@@ -76,8 +76,8 @@ const Index: NextPage<PageProps> = props => (
         </PageSection>
 
         <About />
-        {/* <Steps /> */}
 
+        {/* ЖИТЕЛИ О НАБЕРЕЖНОЙ */}
         <Stories backgroundColor={'#E7ECFF'}>
             <Title level={2}>Жители о набережной</Title>
 
@@ -165,6 +165,7 @@ const Index: NextPage<PageProps> = props => (
             </Story>
         </Stories>
 
+        {/* РОАДМАП */}
         <Stories>
             <Title level={2}>Как будет развиваться проект</Title>
             <Steps>
@@ -240,6 +241,7 @@ const Index: NextPage<PageProps> = props => (
             </Steps>
         </Stories>
 
+        {/* ФАК ЮЮЮ */}
         <Stories backgroundColor={'#E7ECFF'} faq>
             <Title level={2}>Вопрос/Ответ</Title>
 
