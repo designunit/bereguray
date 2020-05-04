@@ -34,8 +34,6 @@
     background-size: 32px;
 }
 
-/* HEAD */
-
 .head {
     height: 60px;
     display: flex;
@@ -46,9 +44,12 @@
     font-size: 32px;
     line-height: 40px;
     font-weight: bold;
-
+    
     white-space: nowrap;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1280px) {  /* ! 1280 ! */
+    .head h3 {
+        white-space: normal;
+    }
 }
