@@ -11,11 +11,11 @@ export type HeaderProps = {
     menu: React.ReactNode
     actions: React.ReactNode
     transparent?: boolean
+    isOpen: boolean
+    onClickMenu: () => void
 }
 
-export const Header: React.SFC<HeaderProps> = ({ transparent = false, ...props }) => {
-    const [isOpen, setIsOpen] = useState(false)
-    const onClick = useCallback(() => setIsOpen(!isOpen), [isOpen])
+export const Header: React.SFC<HeaderProps> = ({ transparent = false, isOpen, onClickMenu, ...props }) => {
 
     return (
         <ControlsContext.Provider value={{
@@ -35,7 +35,7 @@ export const Header: React.SFC<HeaderProps> = ({ transparent = false, ...props }
                 </div>
                 <button
                     className={s.menuButton}
-                    onClick={onClick}
+                    onClick={onClickMenu}
                 >
                     <img
                         src='/static/menu.svg'
@@ -58,8 +58,8 @@ export const Header: React.SFC<HeaderProps> = ({ transparent = false, ...props }
                         position: 'absolute',
                         zIndex: -1,
                         width: '100%',
-                        height: '100%',
-                        top: '-25%',
+                        height: '120%',
+                        top: '-30%',
                         right: '-30%',
                         transform: `scale(${isOpen ? '2' : '0'}, ${isOpen ? '1' : '0'})`,
                         transition: 'transform 1s'
@@ -67,7 +67,7 @@ export const Header: React.SFC<HeaderProps> = ({ transparent = false, ...props }
                 />
                 <button
                     className={s.closeMenu}
-                    onClick={onClick}
+                    onClick={onClickMenu}
                 >
                     <img
                         src='/static/closeMenu.svg'

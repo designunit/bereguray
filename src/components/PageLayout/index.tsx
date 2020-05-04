@@ -1,20 +1,57 @@
 import { Header } from 'src/components/Header'
 import { Button } from 'src/components/Button'
-import { useContext } from 'react'
+import { useContext, useState, useCallback } from 'react'
 import { ConfigContext } from 'src/context/config'
 
 export const PageLayout: React.SFC = props => {
     const { mapUrl } = useContext(ConfigContext)
+    
+    const [isOpen, setIsOpen] = useState(false)
+    const onClickMenu = useCallback(() => setIsOpen(!isOpen), [isOpen])
+    const onClick = useCallback(() => setIsOpen(false), [])
 
     return (
         <main>
             <Header
+                isOpen={isOpen}
+                onClickMenu={onClickMenu}
                 menu={(
                     <>
-                        <Button href={'/project'} theme={'link'}>Проект</Button>
-                        <Button href={mapUrl} theme={'link'}>Карта идей</Button>
-                        <Button disabled theme={'link'}>Вопрос/Ответ</Button>
-                        <Button disabled theme={'link'}>Команда</Button>
+                        <Button 
+                            href={'#about'}
+                            theme={'link'}
+                            onClick={onClick}    
+                        >
+                            О проекте
+                        </Button>
+                        <Button
+                            href={'#roadmap'} 
+                            theme={'link'}
+                            onClick={onClick}
+                        >
+                            Развитие проекта
+                        </Button>
+                        <Button 
+                            href={'/#faq'} 
+                            theme={'link'}
+                            onClick={onClick}
+                        >
+                            Вопрос/Ответ
+                        </Button>
+                        <Button 
+                            href={'/#stories'} 
+                            theme={'link'}
+                            onClick={onClick}
+                        >
+                            Жители о набережной
+                        </Button>
+                        <Button 
+                            href='/#team' 
+                            theme={'link'}
+                            onClick={onClick}
+                        >
+                            Команда
+                        </Button>
                     </>
                 )}
                 actions={(
@@ -22,7 +59,7 @@ export const PageLayout: React.SFC = props => {
                         theme={'primary'}
                         href={mapUrl}
                     >
-                        оставить историю
+                        Карта идей
                     </Button>
                 )}
             />

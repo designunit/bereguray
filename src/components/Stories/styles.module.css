@@ -4,22 +4,16 @@
     align-items: center;
     padding: 5%;
 
-    background-color: #E7ECFF;
 }
-
-.storiesButton {
-    margin-right: 24px
-}
-
-.description {
-    color: #505f98;
-}
-
 
 @media screen and (max-width : 480px) {
     .storiesButton {
         width: 100%;
         margin-right: 0;
         margin-bottom: 24px;
+    }
+
+    .stories {
+        padding-top: 20%;
     }
 }
