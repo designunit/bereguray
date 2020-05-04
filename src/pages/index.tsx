@@ -303,7 +303,17 @@ const Index: NextPage<PageProps> = props => (
             </Story>
         </Stories>
 
-        <Stories backgroundColor={'#FFF'}>
+        {/* https://docs.google.com/forms/d/e/1FAIpQLSfCJ7zrrV0RbSYbagTDPGcZBWXmcRWg8mXeS_p21Rmk9XrhIA/viewform?usp=sf_link */}
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfoGigVnGxanZPdSK09A8xZ8APUgPeyePbG_nI9USyEg7hiUA/viewform?embedded=true" 
+            frameBorder="0"
+            style={{
+                width: '100%',
+                height: '100vh',
+            }}            
+        >
+            Загрузка…
+        </iframe>
+        <Stories backgroundColor={'#E7ECFF'}>
             <div style={{
                 width: '100%',
                 display: 'flex',
