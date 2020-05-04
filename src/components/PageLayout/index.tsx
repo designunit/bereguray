@@ -18,18 +18,18 @@ export const PageLayout: React.SFC = props => {
                 menu={(
                     <>
                         <Button 
-                            href={'#about'}
+                            href={'/#about'}
                             theme={'link'}
                             onClick={onClick}    
                         >
                             О проекте
                         </Button>
                         <Button 
-                            href={'/#faq'} 
+                            href='/concept' 
                             theme={'link'}
                             onClick={onClick}
                         >
-                            Вопрос/Ответ
+                            Концепция
                         </Button>
                         <Button 
                             href={'/#stories'} 
@@ -39,11 +39,11 @@ export const PageLayout: React.SFC = props => {
                             Жители о набережной
                         </Button>
                         <Button 
-                            href='/#team' 
+                            href={'/#faq'} 
                             theme={'link'}
                             onClick={onClick}
                         >
-                            Команда
+                            Вопрос/Ответ
                         </Button>
                     </>
                 )}

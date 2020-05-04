@@ -74,7 +74,7 @@ const Index: NextPage<PageProps> = props => (
         >
             <Hero />
         </PageSection>
-
+        <span id='about' />
         <Stories>
             <Title level={2}>
                 Концепция развития

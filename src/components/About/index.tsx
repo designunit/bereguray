@@ -4,7 +4,7 @@ import { Title } from '../Title'
 
 
 export const About: React.SFC = props => (
-    <div className={s.container} id='about'>
+    <div className={s.container} >
         <div className={s.picture}>
             <img src='/static/kondariver.png' />
         </div>
