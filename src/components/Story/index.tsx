@@ -19,7 +19,8 @@ export const Story: React.SFC<StoryProps> = props => (
                             position: 'absolute',
                             maxWidth: '100%',
                             maxHeight: '100%',
-                            transform: `scale(1.1)`,
+                            height: '100%',
+                            width: 'fit-content',
                         }}
                         color='#B1F4EC'
                     />
@@ -28,6 +29,8 @@ export const Story: React.SFC<StoryProps> = props => (
                             position: 'absolute',
                             maxWidth: '100%',
                             maxHeight: '100%',
+                            height: '100%',
+                            width: 'fit-content',
                         }}
                         color='#FFD166'
                     />
