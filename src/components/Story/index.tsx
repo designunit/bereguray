@@ -41,7 +41,7 @@ export const Story: React.SFC<StoryProps> = props => (
             )}
         </div>
 
-        <div className={s.spacer} />
+        {!props.picturePath ? null : <div className={s.spacer} />}
 
         <div>
             <div className={s.header}>
