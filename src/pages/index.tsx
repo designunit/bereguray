@@ -78,7 +78,7 @@ const Index: NextPage<PageProps> = props => (
         <About />
         {/* <Steps /> */}
 
-        <Stories backgroundColor={'#E7ECFF'} faq>
+        <Stories backgroundColor={'#E7ECFF'}>
             <Title level={2}>Жители о набережной</Title>
 
             <Story
@@ -240,7 +240,7 @@ const Index: NextPage<PageProps> = props => (
             </Steps>
         </Stories>
 
-        <Stories backgroundColor={'#E7ECFF'}>
+        <Stories backgroundColor={'#E7ECFF'} faq>
             <Title level={2}>Вопрос/Ответ</Title>
 
             <Story
@@ -311,6 +311,8 @@ const Index: NextPage<PageProps> = props => (
                 <HeroButton />
             </div>
         </Stories>
+
+        <Footer />
     </ParallaxProvider>
 )
 
