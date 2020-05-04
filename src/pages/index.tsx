@@ -12,6 +12,9 @@ import { Story } from 'src/components/Story'
 import { Article } from 'src/components/Article'
 import { Step } from 'src/components/Step'
 import { Title } from 'src/components/Title'
+import { Button } from 'src/components/Button'
+import { useContext } from 'react'
+import { ConfigContext } from 'src/context/config'
 
 const Caption: React.SFC = props => (
     <span style={{
@@ -19,6 +22,20 @@ const Caption: React.SFC = props => (
         color: '#091133',
     }}>{props.children}</span>
 )
+
+const HeroButton: React.FC = props => {
+    const { mapUrl } = useContext(ConfigContext)
+
+    return (
+        <Button
+            size='big'
+            theme='primary'
+            href={mapUrl}
+        >
+            Поделиться мнением
+        </Button>
+    )
+}
 
 interface PageProps {
     meta: IMeta
@@ -59,7 +76,8 @@ const Index: NextPage<PageProps> = props => (
 
         <About />
         {/* <Steps /> */}
-        <Stories>
+
+        <Stories backgroundColor={'#E7ECFF'}>
             <Title level={2}>Жители о набережной</Title>
 
             <Story
@@ -147,6 +165,81 @@ const Index: NextPage<PageProps> = props => (
         </Stories>
 
         <Stories>
+            <Title level={2}>Как будет развиваться проект</Title>
+            <Steps>
+                <Step
+                    title={'2019'}
+                >
+                    <ul>
+                        <li>Выбор территории.</li>
+                        <li>Проведение исследования территории и первых встреч с жителями.</li>
+                    </ul>
+                </Step>
+                <Step
+                    title={'Март 2020'}
+                >
+                    <ul>
+                        <li>Разработка предварительной концепции проекта.</li>
+                    </ul>
+                </Step>
+                <Step
+                    title={'Апрель 2020'}
+                >
+                    <ul>
+                        <li>
+                            Уточнение предварительной концепции проекта.
+                        </li>
+                        <li>
+                            Проведение интервью с горожанами и дополнительного опроса.
+                        </li>
+                        <li>
+                            Запуск общественной кампании, общественного совета проекта.
+                        </li>
+                        <li>
+                            Проведение онлайн встреч с жителями по обсуждению концепции.
+                        </li>
+                    </ul>
+                </Step>
+                <Step
+                    title={'Май 2020'}
+                >
+                    <ul>
+                        <li>
+                            Архитекторы дорабатывают проект с учетом полученной от жителей обратной связи.
+                        </li>
+                        <li>
+                            Презентация итогового проекта жителям.
+                        </li>
+                        <li>
+                            31 мая подача проекта на конкурс.
+                        </li>
+                    </ul>
+                </Step>
+                <Step
+                    title={'Июнь 2020'}
+                >
+                    <ul>
+                        <li>
+                            Оценка заявок федеральным жюри конкурса.
+                        </li>
+                        <li>
+                            Очная защита проекта.
+                        </li>
+                    </ul>
+                </Step>
+                <Step
+                    title={'2021-2022'}
+                >
+                    <ul>
+                        <li>
+                            Реализация проекта.
+                        </li>
+                    </ul>
+                </Step>
+            </Steps>
+        </Stories>
+
+        <Stories backgroundColor={'#E7ECFF'}>
             <Title level={2}>Вопрос/Ответ</Title>
 
             <Story
@@ -206,77 +299,17 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
         </Stories>
-        <Steps>
-            <Step
-                title={'2019'}
-            >
-                <ul>
-                    <li>Выбор территории.</li>
-                    <li>Проведение исследования территории и первых встреч с жителями.</li>
-                </ul>
-            </Step>
-            <Step
-                title={'Март 2020'}
-            >
-                <ul>
-                    <li>Разработка предварительной концепции проекта.</li>
-                </ul>
-            </Step>
-            <Step
-                title={'Апрель-май 2020'}
-            >
-                <ul>
-                    <li>
-                        Уточнение предварительной концепции проекта.
-                    </li>
-                    <li>
-                        Проведение интервью с горожанами и дополнительного опроса.
-                    </li>
-                    <li>
-                        Запуск общественной кампании, общественного совета проекта.
-                    </li>
-                    <li>
-                        Проведение онлайн встреч с жителями по обсуждению концепции.
-                    </li>
-                </ul>
-            </Step>
-            <Step
-                title={'Май 2020'}
-            >
-                <ul>
-                    <li>
-                        Архитекторы дорабатывают проект с учетом полученной от жителей обратной связи.
-                    </li>
-                    <li>
-                        Презентация итогового проекта жителям.
-                    </li>
-                    <li>
-                        31 мая подача проекта на конкурс.
-                    </li>
-                </ul>
-            </Step>
-            <Step
-                title={'Июнь-август 2020'}
-            >
-                <ul>
-                    <li>
-                        Оценка заявок федеральным жюри конкурса.
-                    </li>
-                    <li>
-                        Очная защита проекта.
-                    </li>
-                </ul>
-            </Step>
-            <Step
-                title={'2021-2022'}
-            >
-                <ul>
-                    <li>
-                        Реализация проекта.
-                    </li>
-                </ul>
-            </Step>
-        </Steps>
+
+        <Stories backgroundColor={'#E7ECFF'}>
+            <div style={{
+                width: '100%',
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+            }}>
+                <HeroButton />
+            </div>
+        </Stories>
     </ParallaxProvider>
 )
 

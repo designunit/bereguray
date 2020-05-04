@@ -1,11 +1,8 @@
 .container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
 
-    padding: 5%;
-    
-    background-color: white;
+    padding-top: 32px;
 }
 
 @media screen and (max-width : 480px) {

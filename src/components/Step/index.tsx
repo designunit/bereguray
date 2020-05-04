@@ -6,9 +6,11 @@ export type StepProps = {
 
 export const Step: React.SFC<StepProps> = props => (
     <div className={s.step}>
-        <h3>
-            {props.title}
-        </h3>
+        <div className={s.head}>
+            <h3>
+                {props.title}
+            </h3>
+        </div>
         <p>
             {props.children}
         </p>

@@ -30,8 +30,22 @@
     left: 0px;
     top: 0px;
 
-    background-image: url('/static/plus-icon.png');
+    background-image: url('/static/cross.svg');
     background-size: 32px;
+}
+
+/* HEAD */
+
+.head {
+    height: 60px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.head h3 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 480px) {
