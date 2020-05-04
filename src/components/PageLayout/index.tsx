@@ -22,7 +22,7 @@ export const PageLayout: React.SFC = props => {
                         theme={'primary'}
                         href={mapUrl}
                     >
-                        оставить историю
+                        поделится мнением
                     </Button>
                 )}
             />
