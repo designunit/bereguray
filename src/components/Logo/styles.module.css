@@ -5,7 +5,7 @@
 
     text-align: center;
 
-    color: #37447e;
+    color: var(--color-logo);
 
     text-decoration: none;
 }

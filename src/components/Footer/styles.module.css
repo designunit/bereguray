@@ -27,7 +27,7 @@
 }
 
 .text {
-    color: #505f98;
+    color: var(--color-text);
     line-height: 1.5em;
 }
 

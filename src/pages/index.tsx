@@ -156,7 +156,7 @@ const Index: NextPage<PageProps> = props => (
 
         {/* ФАК */}
         <Stories backgroundColor={'#E7ECFF'} faq>
-            <Title level={2}>Вопрос/Ответ</Title>
+            <Title level={2}>Вопрос / ответ</Title>
 
             <Story
                 pictureSide='right'

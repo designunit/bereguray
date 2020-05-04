@@ -16,7 +16,7 @@
 }
 
 .text {
-    color: #505f98;
+    color: var(--color-text);
 }
 
 @media screen and (max-width : 480px) {
