@@ -14,9 +14,9 @@ export const Footer: React.SFC = props => {
 
             <div className={s.items}>
                 <div className={s.item}>
-                    <img src='/static/logo_yraygerb.svg'
+                    <a href="http://uray.ru"><img src='/static/logo_yraygerb.svg'
                         className={s.picture}
-                    />
+                    /></a>
                     <div className={s.text}>
                         <Title level={4}>
                             При поддержке
@@ -26,9 +26,9 @@ export const Footer: React.SFC = props => {
                 </div>
 
                 <div className={s.item}>
-                    <img src='/static/logo_senter.svg'
+                    <a href="https://gorsreda86.ugraces.ru"><img src='/static/logo_senter.svg'
                         className={s.picture}
-                    />
+                    /></a>
                     <div className={s.text}>
                         <Title level={4}>
                             При поддержке
@@ -40,12 +40,12 @@ export const Footer: React.SFC = props => {
                 </div>
 
                 <div className={s.item}>
-                    <img src='/static/unit.jpg'
+                    <a href="https://unit4.io"><img src='/static/unit.jpg'
                         className={s.picture}
                         style={{
                             maxWidth: '200px'
                         }}
-                    />
+                    /> </a>
                     <div className={s.text}>
                         <Title level={4}>
                             Разработчик
