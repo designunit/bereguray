@@ -19,9 +19,9 @@ export const Footer: React.SFC = props => {
                     />
                     <div className={s.text}>
                         <Title level={3}>
-                            При поддержке
+                            Инициатор
                         </Title>
-                        Администрация Питкярантского муниципального района
+                        Администрация города Урай
                     </div>
                 </div>
 
@@ -33,7 +33,9 @@ export const Footer: React.SFC = props => {
                         <Title level={3}>
                             Инициатор
                         </Title>
-                        Целлюлозно-бумажный комбинат ООО «РК-Гранд»
+                        Центр компетенций<br/>
+                        по вопросам городской среды<br/>
+                        Ханты-Мансийского Автономного Округа - ЮГРЫ
                     </div>
                 </div>
 
@@ -52,10 +54,11 @@ export const Footer: React.SFC = props => {
                 <div className={s.text}
                     style={{
                         flex: '1 0 auto',
+                        alignSelf: 'flex-end',
                         textAlign: 'center',
                     }}
                 >
-                    Месяц 2020 года
+                    Май 2020 года
                 </div>
             </div>
         </section>
