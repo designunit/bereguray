@@ -3,7 +3,7 @@ import { Bubble } from '../Bubble'
 
 export type StoryProps = {
     picturePath?: string
-    title: React.ReactNode
+    title?: React.ReactNode
     subtitle?: React.ReactNode
     text?: React.ReactNode
     pictureSide: 'left' | 'right'
