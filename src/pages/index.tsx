@@ -67,7 +67,7 @@ const Index: NextPage<PageProps> = props => (
                             transform: `scale(2)`,
                         }}
                         opacity={.5}
-                        color='#25aae1'
+                        color='#ccd7ff'
                     />
                 </div>
             )}
@@ -163,7 +163,7 @@ const Index: NextPage<PageProps> = props => (
         </Stories>
 
         {/* ФАК */}
-        <Stories backgroundColor={'#E7ECFF'} faq>
+        <Stories backgroundColor={'rgba(204, 215, 255, 0.5)'} faq>
             <Title level={2}>Вопрос / ответ</Title>
 
             <Story
