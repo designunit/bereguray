@@ -41,7 +41,6 @@ export const Story: React.SFC<StoryProps> = props => (
                             height: '100%',
                             width: '100%',
                             transform: 'scale(1.5)',
-                            zIndex: -4,
                         }}
                         color='#B1F4EC'
                     />
@@ -53,7 +52,6 @@ export const Story: React.SFC<StoryProps> = props => (
                             height: '100%',
                             transform: 'scale(1.25)',
                             width: '100%',
-                            zIndex: -3,
                         }}
                         color='#FFD166'
                     />

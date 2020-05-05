@@ -3,7 +3,8 @@ import s from './styles.module.css'
 import cx from 'classnames'
 import Link from 'next/link'
 import { ControlsSize, ControlsContext } from 'src/context/controls'
-import { useContext } from 'react'
+import { useContext, useRef, useCallback, MutableRefObject } from 'react'
+import { useHoverDirty } from 'react-use'
 
 export type ButtonTheme = 'default' | 'primary' | 'link'
 export type ButtonShape = 'default' | 'pill' | 'circle'
@@ -13,6 +14,7 @@ export type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTM
     size?: ControlsSize
     shape?: ButtonShape
     href?: string
+    underlineRef?: MutableRefObject<null>
 }
 
 const themeClass = {
@@ -37,13 +39,36 @@ export const Button: React.SFC<ButtonProps> =
     ({ href, size, theme = 'default', shape, children, ...props }) => {
         const config = useContext(ControlsContext)
         const sizeValue = size ?? config.size ?? 'default' 
-        const shapeValue = shape ?? config.shape ?? 'default' 
+        const shapeValue = shape ?? config.shape ?? 'default'
+
+        const ref = useRef(null)
+        const isHovering = useHoverDirty(ref)
+
+        const onHover = useCallback(() => {
+            if (!props.underlineRef || !ref) {
+                return
+            } else {
+                let buttonElement = ref.current as unknown as HTMLElement 
+                let undelineElement = props.underlineRef.current as unknown as HTMLElement 
+
+                const rect = buttonElement.getBoundingClientRect()
+
+                undelineElement.style.left = `${rect.left}px`
+                undelineElement.style.width = `${rect.width}px`
+                undelineElement.style.top = `${rect.bottom}px`
+            }
+        },[props.underlineRef, ref])
+
+        if(isHovering) {
+            onHover()
+        }
 
         if (href) {
             return (
                 <Link href={href}>
                     <a
                         {...props as any}
+                        ref={ref}
                         className={cx(
                             s.button,
                             themeClass[theme],
