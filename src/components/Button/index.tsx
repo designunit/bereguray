@@ -34,9 +34,10 @@ const shapeClass = {
 }
 
 export const Button: React.SFC<ButtonProps> =
-    ({ href, size, theme = 'default', shape = 'default', children, ...props }) => {
+    ({ href, size, theme = 'default', shape, children, ...props }) => {
         const config = useContext(ControlsContext)
         const sizeValue = size ?? config.size ?? 'default' 
+        const shapeValue = shape ?? config.shape ?? 'default' 
 
         if (href) {
             return (
@@ -47,7 +48,7 @@ export const Button: React.SFC<ButtonProps> =
                             s.button,
                             themeClass[theme],
                             sizeClass[sizeValue],
-                            shapeClass[shape],
+                            shapeClass[shapeValue],
                             props.className
                         )}
                     >{children}</a>
@@ -62,7 +63,7 @@ export const Button: React.SFC<ButtonProps> =
                     s.button,
                     themeClass[theme],
                     sizeClass[sizeValue],
-                    shapeClass[shape],
+                    shapeClass[shapeValue],
                     props.className
                 )}
             >

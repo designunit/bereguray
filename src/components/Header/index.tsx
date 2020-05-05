@@ -19,7 +19,8 @@ export const Header: React.SFC<HeaderProps> = ({ transparent = false, isOpen, on
 
     return (
         <ControlsContext.Provider value={{
-            size: 'small'
+            size: 'small',
+            shape: 'pill',
         }}>
             <header className={cx(s.header, {
                 [s.transparent]: transparent,
