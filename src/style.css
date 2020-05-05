@@ -27,15 +27,6 @@ body {
     box-sizing: border-box;
 }
 
-a {
-    color: var(--color-text);
-}
-
-a:hover {
-    color: #ffffff;
-    background-color: var(--color-button);
-}
-
 h2 {
     font-style: normal;
     font-weight: 500;

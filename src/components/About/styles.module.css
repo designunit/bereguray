@@ -27,12 +27,10 @@
 
 @media screen and (max-width: 480px) {
     .container {
-        flex-direction: column-reverse;
-        padding-top: 20%;
-        padding-bottom: 48px;
+        flex-direction: column;
     }
     .picture {
-        max-width: 100%;
+        width: 100%;
         margin-right: 0;
     }
 }

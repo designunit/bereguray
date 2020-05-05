@@ -3,3 +3,11 @@
     line-height: 1.5em;
 }
 
+.article a {
+    color: var(--color-text);
+}
+
+.article a:hover {
+    color: #ffffff;
+    background-color: var(--color-button);
+}
