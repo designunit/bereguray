@@ -15,13 +15,10 @@ export const Footer: React.SFC = props => {
             <div className={s.items}>
                 <div className={s.item}>
                     <a href="http://uray.ru">
-                        <picture>
-                            <source type='image/svg+xml' />
                             <img 
                                 src='/static/logo_yraygerb.svg'
                                 className={s.picture}
                             />
-                        </picture>
                     </a>
                     <div className={s.text}>
                         <Title level={4}>
