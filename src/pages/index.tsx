@@ -27,7 +27,7 @@ const Caption: React.SFC = props => (
     }}>{props.children}</span>
 )
 
-const HeroButton: React.FC = props => {
+const MapButton: React.FC = props => {
     const { mapUrl } = useContext(ConfigContext)
 
     return (
@@ -36,7 +36,7 @@ const HeroButton: React.FC = props => {
             theme='primary'
             href={mapUrl}
         >
-            Карта идей
+            {props.children}
         </Button>
     )
 }
@@ -190,6 +190,37 @@ const Index: NextPage<PageProps> = props => (
                     </ul>
                 </Step>
             </Steps>
+        </Stories>
+
+        <Stories>
+            <Title level={2}>
+                Онлайн карта идей и предложений
+            </Title>
+
+            <About
+                imageSrc={'/static/latlng-screenshot.png'}
+            >
+                <Article>
+                    <p>
+                        Поделиться своим мнением просто: нажмите на кнопку, выберите отметку (идею, проблему или ценность), затем укажите точку на карте и напишите свой комментарий во всплывающем окне.
+                    </p>
+
+                    <p>
+                        Идеи и предложения: Что может появиться на улице Ленина? Чем бы вы хотели здесь заниматься?
+                    </p>
+
+                    <p>
+                        Проблемы: Какие проблемы есть у территории?
+                    </p>
+
+                    <p>
+                        Ценности: Важные и любимые вами места или элементы, которые нужно сохранить или восстановить (исторические, архитектурные, ментальные).
+                    </p>
+                    <MapButton>
+                        Отметь идею на карте
+                    </MapButton>
+                </Article>
+            </About>
         </Stories>
 
         {/* ЖИТЕЛИ О НАБЕРЕЖНОЙ */}
