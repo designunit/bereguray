@@ -3,6 +3,10 @@
     max-width: 40%;
 }
 
+.heroSubtitle strong {
+    font-weight: 600;
+}
+
 .content {
     padding: 0 128px;
 }
