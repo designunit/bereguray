@@ -25,7 +25,7 @@ export const PageLayout: React.SFC = props => {
                             О проекте
                         </Button>
                         <Button 
-                            href='/concept' 
+                            href={'/concept'}
                             theme={'link'}
                             onClick={onClick}
                         >
