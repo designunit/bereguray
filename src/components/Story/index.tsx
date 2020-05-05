@@ -36,10 +36,11 @@ export const Story: React.SFC<StoryProps> = props => (
                     <Bubble
                         style={{
                             position: 'absolute',
-                            maxWidth: '200%',
-                            maxHeight: '200%',
-                            height: '200%',
-                            width: 'fit-content',
+                            maxWidth: '100vw',
+                            maxHeight: '100%',
+                            height: '100%',
+                            width: '100%',
+                            transform: 'scale(1.5)',
                             zIndex: -4,
                         }}
                         color='#B1F4EC'
@@ -47,10 +48,11 @@ export const Story: React.SFC<StoryProps> = props => (
                     <Bubble
                         style={{
                             position: 'absolute',
-                            maxWidth: '120%',
-                            maxHeight: '120%',
-                            height: '120%',
-                            width: 'fit-content',
+                            maxWidth: '100vw',
+                            maxHeight: '100%',
+                            height: '100%',
+                            transform: 'scale(1.25)',
+                            width: '100%',
                             zIndex: -3,
                         }}
                         color='#FFD166'
