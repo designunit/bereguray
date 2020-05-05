@@ -1,7 +1,6 @@
 import s from './styles.module.css'
 
 import cx from 'classnames'
-import { useState, useCallback } from 'react'
 import { slide as MobileMenu } from 'react-burger-menu'
 import { Logo } from '../Logo'
 import { ControlsContext } from 'src/context/controls'
@@ -29,7 +28,7 @@ export const Header: React.SFC<HeaderProps> = ({ transparent = false, isOpen, on
                     {props.menu}
                 </nav>
 
-                <Logo style={{ flex: 1, padding: '0 5%' }} />
+                <Logo />
 
                 <div className={s.right} >
                     {props.actions}
