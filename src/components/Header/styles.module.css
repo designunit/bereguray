@@ -30,7 +30,7 @@
 }
 
 .mobileMenu a, .mobileMenu button:not(.closeMenu) {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 2rem;
     font-weight: 900;
     text-align: end;
