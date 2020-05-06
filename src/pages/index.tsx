@@ -183,6 +183,7 @@ const Index: NextPage<PageProps> = props => (
         </Stories>
 
         {/* КАРТА МНЕНИЙ */}
+        <span id='map' />
         <PageSection
         
             sectionStyle={{

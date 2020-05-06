@@ -30,6 +30,15 @@ export const Menu: React.SFC<MenuProps> = ({ onClick }) => {
             Концепция
         </Button>,
         <Button 
+        href={'/#map'}
+        theme={'link'}
+        underlineRef={underline}
+        onClick={onClick}
+        className='mobileMenuButton'
+    >
+        Карта идей
+    </Button>,
+        <Button 
             href={'/#stories'} 
             theme={'link'}
             underlineRef={underline}

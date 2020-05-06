@@ -1,11 +1,18 @@
-.container {
+.footer {
     padding: 5% 15%;
 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: space-around; */
     align-items: center;
 
     background-color: rgba(204, 215, 255, 0.5);
+}
+
+.footer hr {
+    width: 100%;
+    border: 1px solid #111b47;
+    margin: 32px 0;
 }
 
 .items {
@@ -25,16 +32,12 @@
 
 .text {
     color: var(--color-text);
-    line-height: 10px;
-    font-size: 10px;
+    /* line-height: 14px;
+    font-size: 14px; */
     text-align: center;
     color: #5D6970;
 
     flex: 1 0 auto;
-}
-
-.year {
-    flex: 0 0 100px;
 }
 
 .picture {
