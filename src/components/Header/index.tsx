@@ -24,15 +24,12 @@ export const Header: React.SFC<HeaderProps> = ({ transparent = false, isOpen, on
             <header className={cx(s.header, {
                 [s.transparent]: transparent,
             })}>
-                <nav className={s.left}>
+                <Logo />
+
+                <nav className={s.menu}>
                     {props.menu}
                 </nav>
 
-                <Logo />
-
-                <div className={s.right} >
-                    {props.actions}
-                </div>
                 <button
                     className={s.menuButton}
                     onClick={onClickMenu}

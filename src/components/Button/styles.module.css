@@ -22,10 +22,10 @@
     --color-button: #1a52ca;
 }
 
-.button:focus {
+/* .button:focus {
     outline: none;
     box-shadow: 0 0 0 4px #cbd6ee;
-}
+} */
 
 /* THEME */
 

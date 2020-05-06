@@ -6,23 +6,17 @@
     align-items: center;
     z-index: 100;
 
-    padding: 4px 5%;
+    padding: 4px 15%;
 
     z-index: 1000;
 
     background-color: var(--color-background);
 }
 
-.left {
+.menu {
     flex: 1;
     display: flex;
-    flex-direction: row;
-}
-
-.right {
-    flex: 1;
-    display: flex;
-    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 
 .menuButton {
@@ -60,22 +54,19 @@
 }
 
 @media screen and (max-width : 1280px) {
-    .left {
-        order: 1;
-    }
-    .right {
-        flex: none;
-        order: 2;
+    .header {
+        padding: 4px 5%;
     }
 }
 
 @media screen and (max-width : 480px) {
-    .left, .right {
+    .menu {
         display: none;
     }
 
     .header {
-        padding: 12px 5%;
+        padding: 12px 5% 12px 10%;
+        justify-content: space-between;
     }
 
     .menuButton {

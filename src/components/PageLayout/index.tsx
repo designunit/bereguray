@@ -22,17 +22,18 @@ export const PageLayout: React.SFC = props => {
                     />
                 )}
                 actions={(
-                    <Button
-                        theme={'primary'}
-                        href={mapUrl}
-                        style={{
-                            backgroundColor: '#FFD166',
-                            color: '#111b47',
-                            fontWeight: 600,
-                        }}
-                    >
-                        Карта идей
-                    </Button>
+                    null
+                    // <Button
+                    //     theme={'primary'}
+                    //     href={mapUrl}
+                    //     style={{
+                    //         backgroundColor: '#FFD166',
+                    //         color: '#111b47',
+                    //         fontWeight: 600,
+                    //     }}
+                    // >
+                    //     Карта идей
+                    // </Button>
                 )}
             />
 

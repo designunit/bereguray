@@ -16,6 +16,7 @@ export const Menu: React.SFC<MenuProps> = ({ onClick }) => {
             theme={'link'}
             underlineRef={underline}
             onClick={onClick}
+            className='mobileMenuButton'
         >
             О проекте
         </Button>,
@@ -24,6 +25,7 @@ export const Menu: React.SFC<MenuProps> = ({ onClick }) => {
             theme={'link'}
             underlineRef={underline}
             onClick={onClick}
+            className='mobileMenuButton'
         >
             Концепция
         </Button>,
@@ -32,6 +34,7 @@ export const Menu: React.SFC<MenuProps> = ({ onClick }) => {
             theme={'link'}
             underlineRef={underline}
             onClick={onClick}
+            className='mobileMenuButton'
         >
             Жители о набережной
         </Button>,
@@ -40,6 +43,7 @@ export const Menu: React.SFC<MenuProps> = ({ onClick }) => {
             theme={'link'}
             underlineRef={underline}
             onClick={onClick}
+            className='mobileMenuButton'
         >
             Вопрос/Ответ
         </Button>
