@@ -1,11 +1,11 @@
 import { Button } from "../Button"
-import { useRef, useCallback } from "react"
+import { useRef } from "react"
 
 export const Menu: React.SFC = props => {
 
     const underline = useRef(null)
 
-    const links = [
+    const buttons = [
         <Button 
             href={'/#about'}
             theme={'link'}
@@ -38,7 +38,7 @@ export const Menu: React.SFC = props => {
 
     return (
         <>
-           {links}
+           {buttons}
            <div 
                 ref={underline}
                 style={{
@@ -46,7 +46,7 @@ export const Menu: React.SFC = props => {
                     width: '0',
                     height: '2px',
                     backgroundColor: '#111b47',
-                    transition: 'all 1s'
+                    transition: 'all .5s',
                 }}
            />
         </>

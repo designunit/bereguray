@@ -3,7 +3,7 @@ import s from './styles.module.css'
 import cx from 'classnames'
 import Link from 'next/link'
 import { ControlsSize, ControlsContext } from 'src/context/controls'
-import { useContext, useRef, useCallback, MutableRefObject } from 'react'
+import { useContext, useRef, MutableRefObject, useEffect } from 'react'
 import { useHoverDirty } from 'react-use'
 
 export type ButtonTheme = 'default' | 'primary' | 'link'
@@ -44,7 +44,7 @@ export const Button: React.SFC<ButtonProps> =
         const ref = useRef(null)
         const isHovering = useHoverDirty(ref)
 
-        const onHover = useCallback(() => {
+        useEffect(() => {
             if (!props.underlineRef || !ref) {
                 return
             } else {
@@ -53,15 +53,15 @@ export const Button: React.SFC<ButtonProps> =
 
                 const rect = buttonElement.getBoundingClientRect()
 
-                undelineElement.style.left = `${rect.left}px`
-                undelineElement.style.width = `${rect.width}px`
-                undelineElement.style.top = `${rect.bottom}px`
+                if (isHovering) {
+                    undelineElement.style.left = `${rect.left}px`
+                    undelineElement.style.width = `${rect.width}px`
+                    undelineElement.style.top = `${rect.bottom}px`
+                } else {
+                    undelineElement.style.width = '0'
+                }
             }
-        },[props.underlineRef, ref])
-
-        if(isHovering) {
-            onHover()
-        }
+        }, [props.underlineRef, ref, isHovering])
 
         if (href) {
             return (
