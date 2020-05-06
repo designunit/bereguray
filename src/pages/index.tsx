@@ -14,8 +14,7 @@ import { Step } from 'src/components/Step'
 import { Title } from 'src/components/Title'
 import { Footer } from 'src/components/Footer'
 import { Button } from 'src/components/Button'
-import { useContext } from 'react'
-import { ConfigContext } from 'src/context/config'
+import { MapButton } from 'src/components/MapButton'
 
 const Caption: React.SFC = props => (
     <span style={{
@@ -26,21 +25,6 @@ const Caption: React.SFC = props => (
         marginBottom: 8,
     }}>{props.children}</span>
 )
-
-const MapButton: React.FC = props => {
-    const { mapUrl } = useContext(ConfigContext)
-
-    return (
-        <Button
-            size='big'
-            theme='primary'
-            href={mapUrl}
-            style={{width: '200px'}}
-        >
-            {props.children}
-        </Button>
-    )
-}
 
 interface PageProps {
     meta: IMeta
@@ -204,7 +188,13 @@ const Index: NextPage<PageProps> = props => (
                     backgroundSize: 'auto 100%',
                     backgroundPosition: '100% top',
                     backgroundRepeat: 'no-repeat',
-                }}/>
+                }}>
+                    <div style={{
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(204, 215, 255, 0.5)',
+                    }}/>
+                </div>
             )}
         >
             <div style={{
@@ -219,7 +209,9 @@ const Index: NextPage<PageProps> = props => (
                         Карта идей и предложений
                     </Title>
                     <Caption>
-                        Поделиться своим мнением просто: нажмите на кнопку, выберите отметку (идею, проблему или ценность), затем укажите точку на карте и напишите свой комментарий во всплывающем окне.
+                        <p style={{textAlign: 'center', padding: '0 10%'}}>
+                            Поделиться своим мнением просто: нажмите на кнопку, выберите отметку (идею, проблему или ценность), затем укажите точку на карте и напишите свой комментарий во всплывающем окне.
+                        </p>
                     </Caption>
                 </div>
                 <MapButton>
