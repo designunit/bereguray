@@ -193,6 +193,9 @@ const Index: NextPage<PageProps> = props => (
                 height: '100%',
                 paddingTop: '10%',
                 paddingBottom: '10%',
+                
+                display: 'flex',
+                justifyContent: 'center',
             }}
             back={(
                 <div style={{
@@ -217,6 +220,9 @@ const Index: NextPage<PageProps> = props => (
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 alignItems: 'center',
+
+                width: '1000px',
+                maxWidth: '100%',
             }}>
                 <div>
                     <Title level={2}>
