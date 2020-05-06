@@ -1,17 +1,19 @@
 import s from './styles.module.css'
 import { useMedia } from 'react-use';
 import { Parallax } from 'react-scroll-parallax';
+import { CSSProperties } from 'react';
 
 export type PageSectionProps = {
     back?: React.ReactNode
-    fullContent?: boolean
+    sectionStyle?: CSSProperties
+    contentStyle?: CSSProperties 
 }
 
 export const PageSection: React.SFC<PageSectionProps> = props => {
     const isMobile = useMedia('(max-width: 480px)')
         
     return (
-        <section className={s.section}>
+        <section className={s.section} style={props.sectionStyle}>
             <div className={s.back}>
                 <Parallax
                     y={[-50, 50]}
@@ -26,7 +28,7 @@ export const PageSection: React.SFC<PageSectionProps> = props => {
                     {props.back}
                 </Parallax>
             </div>
-            <div className={`${s.content} ${props.fullContent && s.fullContent}`}>
+            <div className={s.content} style={props.contentStyle}>
                 {props.children}
             </div>
         </section>

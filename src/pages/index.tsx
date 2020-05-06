@@ -179,11 +179,21 @@ const Index: NextPage<PageProps> = props => (
 
         {/* КАРТА МНЕНИЙ */}
         <PageSection
-            fullContent
+        
+            sectionStyle={{
+                height: '75vh',
+                overflow: 'hidden',
+            }}
+            contentStyle={{
+                width: '100%',
+                height: '100%',
+                paddingTop: '10%',
+                paddingBottom: '10%',
+            }}
             back={(
                 <div style={{
                     width: '100%',
-                    height: '100%',
+                    height: '100vh',
                     backgroundImage: 'url("/static/mapPreview.jpg")',
                     backgroundSize: 'auto 100%',
                     backgroundPosition: '100% top',
