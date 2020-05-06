@@ -353,7 +353,7 @@ const Index: NextPage<PageProps> = props => (
             <Title level={2}>Вопрос / ответ</Title>
 
             <Story
-                pictureSide='right'
+                pictureSide='faq'
             >
                 <Article>
                     <Title level={3}>
@@ -364,7 +364,7 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
             <Story
-                pictureSide='right'
+                pictureSide='faq'
             >
                 <Article>
                     <Title level={3}>
@@ -375,7 +375,7 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
             <Story
-                pictureSide='right'
+                pictureSide='faq'
             >
                 <Article>
                     <Title level={3}>
@@ -386,7 +386,7 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
             <Story
-                pictureSide='right'
+                pictureSide='faq'
             >
                 <Article>
                     <Title level={3}>
