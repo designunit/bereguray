@@ -2,7 +2,11 @@ import s from './styles.module.css'
 import { Button } from "../Button"
 import { useRef } from "react"
 
-export const Menu: React.SFC = props => {
+interface MenuProps {
+    onClick: () => void
+}
+
+export const Menu: React.SFC<MenuProps> = ({ onClick }) => {
 
     const underline = useRef(null)
 
@@ -11,6 +15,7 @@ export const Menu: React.SFC = props => {
             href={'/#about'}
             theme={'link'}
             underlineRef={underline}
+            onClick={onClick}
         >
             О проекте
         </Button>,
@@ -18,6 +23,7 @@ export const Menu: React.SFC = props => {
             href={'/concept'}
             theme={'link'}
             underlineRef={underline}
+            onClick={onClick}
         >
             Концепция
         </Button>,
@@ -25,6 +31,7 @@ export const Menu: React.SFC = props => {
             href={'/#stories'} 
             theme={'link'}
             underlineRef={underline}
+            onClick={onClick}
         >
             Жители о набережной
         </Button>,
@@ -32,6 +39,7 @@ export const Menu: React.SFC = props => {
             href={'/#faq'} 
             theme={'link'}
             underlineRef={underline}
+            onClick={onClick}
         >
             Вопрос/Ответ
         </Button>

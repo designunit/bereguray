@@ -9,6 +9,7 @@ export const PageLayout: React.SFC = props => {
     
     const [isOpen, setIsOpen] = useState(false)
     const onClickMenu = useCallback(() => setIsOpen(!isOpen), [isOpen])
+    const onClick = useCallback(() => setIsOpen(false),[])
 
     return (
         <main>
@@ -16,7 +17,9 @@ export const PageLayout: React.SFC = props => {
                 isOpen={isOpen}
                 onClickMenu={onClickMenu}
                 menu={(
-                    <Menu />
+                    <Menu 
+                        onClick={onClick}
+                    />
                 )}
                 actions={(
                     <Button
