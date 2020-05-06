@@ -62,6 +62,8 @@ export const Story: React.SFC<StoryProps> = props => (
             </div>
         )}
 
+        <div className={s.spacer} />
+
         <div className={s.text}>
             <div className={s.header}>
                 <span className={s.title}> {props.title} </span>
