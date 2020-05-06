@@ -181,8 +181,7 @@ const Index: NextPage<PageProps> = props => (
         <PageSection
         
             sectionStyle={{
-                height: '75vh',
-                overflow: 'hidden',
+                // height: '75vh',
             }}
             contentStyle={{
                 width: '100%',
@@ -224,9 +223,7 @@ const Index: NextPage<PageProps> = props => (
                         </p>
                     </Caption>
                 </div>
-                <MapButton>
-                    Отметь идею на карте
-                </MapButton>
+                <MapButton />
             </div>
         </PageSection>
 
@@ -258,8 +255,7 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
             <Story
-                pictureSide='right'
-                picturePath='/static/blanc2.png'
+                pictureSide='left'
             >
                 <Article>
                     <Title level={3}>
@@ -295,8 +291,7 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
             <Story
-                pictureSide='right'
-                picturePath='/static/blanc2.png'
+                pictureSide='left'
             >
                 <Article>
                     <Title level={3}>

@@ -30,8 +30,9 @@ export type StoryProps = {
 
 export const Story: React.SFC<StoryProps> = props => (
     <div className={`${s.container} ${props.pictureSide === 'right' ? s.pictureRight : null}`}>
-        {!props.picturePath ? null : (
+
             <div className={s.avatar}>
+            {!props.picturePath ? null : (
                 <Ratio ratio={1}>
                     <Bubble
                         style={{
@@ -59,8 +60,8 @@ export const Story: React.SFC<StoryProps> = props => (
                         src={props.picturePath}
                     />
                 </Ratio>
+            )}
             </div>
-        )}
 
         <div className={s.spacer} />
 
