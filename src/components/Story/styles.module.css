@@ -1,8 +1,5 @@
 .container{
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    /* padding: 0 10% 64px 10%; */
     margin-bottom: 64px;
     width: 100%;
 }

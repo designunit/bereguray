@@ -80,16 +80,21 @@ const Index: NextPage<PageProps> = props => (
                     <p>
                         В 2020 году проектная студия <a href='https://unit4.io'>design unit 4</a> (г. Санкт-Петербург) разработала предварительную концепцию набережной, основываясь на пожеланиях горожан, по заказу Администрации города.
                     </p>
-                    <Button
-                        href={'/concept'}
-                        style={{
-                            marginRight: '20px',
-                            marginBottom: '36px',
-                        }}
-                        theme={'primary'}
-                    >
-                        Посмотреть концепцию
-                    </Button>
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        marginBottom: '36px',
+                    }}>
+                        <Button
+                            href={'/concept'}
+                            size='big'
+                            style={{
+                            }}
+                            theme={'primary'}
+                        >
+                            Посмотреть концепцию
+                        </Button>
+                    </div>
                     <p>
                         Сейчас команда проекта уточняет концепцию, проводит интервью с жителями. А также запустила дополнительный опрос для того, чтобы получить обратную связь на предложенные идеи.
                     </p>

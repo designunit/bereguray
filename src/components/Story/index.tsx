@@ -25,13 +25,12 @@ export type StoryProps = {
     title?: React.ReactNode
     subtitle?: React.ReactNode
     text?: React.ReactNode
-    pictureSide: 'left' | 'right'
+    pictureSide: 'left' | 'right' // no longer indicates side of picture but no time to rename
 }
 
 export const Story: React.SFC<StoryProps> = props => (
     <div className={`${s.container} ${props.pictureSide === 'right' ? s.pictureRight : null}`}>
-
-            <div className={s.avatar}>
+            <div className={s.avatar} style={{display : props.pictureSide === 'right' ? 'none' : undefined}}>
             {!props.picturePath ? null : (
                 <Ratio ratio={1}>
                     <Bubble
@@ -63,14 +62,12 @@ export const Story: React.SFC<StoryProps> = props => (
             )}
             </div>
 
-        <div className={s.spacer} />
+        <div className={s.spacer} style={{display : props.pictureSide === 'right' ? 'none' : undefined}} />
 
         <div className={s.text}>
             <div className={s.header}>
                 <span className={s.title}> {props.title} </span>
-                {!props.subtitle ? null : (
-                    <span className={s.subtitle}>{props.subtitle}</span>
-                )}
+                <span className={s.subtitle}>{props.subtitle}</span>
             </div>
             {props.text}
             {props.children}
