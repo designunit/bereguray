@@ -22,8 +22,9 @@
 
 .avatar {
     --s: 200px;
-    width: var(--s);
-    height: var(--s);
+    max-width: var(--s);
+    max-height: var(--s);
+    height: 100%;
     position: relative;
 
     flex: 1;
