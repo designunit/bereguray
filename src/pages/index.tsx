@@ -35,6 +35,7 @@ const MapButton: React.FC = props => {
             size='big'
             theme='primary'
             href={mapUrl}
+            style={{width: '200px'}}
         >
             {props.children}
         </Button>
@@ -192,39 +193,42 @@ const Index: NextPage<PageProps> = props => (
             </Steps>
         </Stories>
 
-        <Stories>
-            <Title level={2}>
-                Онлайн карта идей и предложений
-            </Title>
-
-            <About
-                imageSrc={'/static/latlng-screenshot.png'}
-            >
-                <Article>
-                    <p>
+        {/* КАРТА МНЕНИЙ */}
+        <PageSection
+            fullContent
+            back={(
+                <div style={{
+                    width: '100%',
+                    height: '100%',
+                    backgroundImage: 'url("/static/mapPreview.jpg")',
+                    backgroundSize: 'auto 100%',
+                    backgroundPosition: '100% top',
+                    backgroundRepeat: 'no-repeat',
+                }}/>
+            )}
+        >
+            <div style={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+            }}>
+                <div>
+                    <Title level={2}>
+                        Карта идей и предложений
+                    </Title>
+                    <Caption>
                         Поделиться своим мнением просто: нажмите на кнопку, выберите отметку (идею, проблему или ценность), затем укажите точку на карте и напишите свой комментарий во всплывающем окне.
-                    </p>
-
-                    <p>
-                        Идеи и предложения: Что может появиться на улице Ленина? Чем бы вы хотели здесь заниматься?
-                    </p>
-
-                    <p>
-                        Проблемы: Какие проблемы есть у территории?
-                    </p>
-
-                    <p>
-                        Ценности: Важные и любимые вами места или элементы, которые нужно сохранить или восстановить (исторические, архитектурные, ментальные).
-                    </p>
-                    <MapButton>
-                        Отметь идею на карте
-                    </MapButton>
-                </Article>
-            </About>
-        </Stories>
+                    </Caption>
+                </div>
+                <MapButton>
+                    Отметь идею на карте
+                </MapButton>
+            </div>
+        </PageSection>
 
         {/* ЖИТЕЛИ О НАБЕРЕЖНОЙ */}
-
         <span id='stories' />
         <Stories backgroundColor={'rgba(204, 215, 255, 0.5)'}>
             <Title level={2}>Жители о набережной</Title>

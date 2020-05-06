@@ -4,6 +4,7 @@ import { Parallax } from 'react-scroll-parallax';
 
 export type PageSectionProps = {
     back?: React.ReactNode
+    fullContent?: boolean
 }
 
 export const PageSection: React.SFC<PageSectionProps> = props => {
@@ -25,7 +26,7 @@ export const PageSection: React.SFC<PageSectionProps> = props => {
                     {props.back}
                 </Parallax>
             </div>
-            <div className={s.content}>
+            <div className={`${s.content} ${props.fullContent && s.fullContent}`}>
                 {props.children}
             </div>
         </section>
