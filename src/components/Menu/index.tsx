@@ -1,3 +1,4 @@
+import s from './styles.module.css'
 import { Button } from "../Button"
 import { useRef } from "react"
 
@@ -41,6 +42,7 @@ export const Menu: React.SFC = props => {
            {buttons}
            <div 
                 ref={underline}
+                className={s.underline}
                 style={{
                     position: 'absolute',
                     width: '0',
