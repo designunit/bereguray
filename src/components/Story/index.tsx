@@ -1,57 +1,73 @@
 import s from './styles.module.css'
 import { Bubble } from '../Bubble'
 
+const Ratio: React.SFC<{ ratio: number, className?: string }> = props => (
+    <div className={props.className} style={{
+        width: '100%',
+        height: 0,
+        position: 'relative',
+        paddingBottom: `${props.ratio * 100}%`,
+    }}>
+        <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+        }}>
+            {props.children}
+        </div>
+    </div>
+)
+
 export type StoryProps = {
     picturePath?: string
     title?: React.ReactNode
     subtitle?: React.ReactNode
     text?: React.ReactNode
-    pictureSide: 'left' | 'right'
+    pictureSide: 'left' | 'right' | 'faq' // no longer indicates side of picture but no time to rename
 }
 
 export const Story: React.SFC<StoryProps> = props => (
     <div className={`${s.container} ${props.pictureSide === 'right' ? s.pictureRight : null}`}>
-        <div className={s.picture}>
+            <div className={s.avatar} style={{display : props.pictureSide === 'right' || props.pictureSide === 'faq'  ? 'none' : undefined, }}>
             {!props.picturePath ? null : (
-                <>
+                <Ratio ratio={1}>
                     <Bubble
                         style={{
                             position: 'absolute',
-                            maxWidth: '100%',
+                            maxWidth: '100vw',
                             maxHeight: '100%',
                             height: '100%',
-                            width: 'fit-content',
+                            width: '100%',
+                            transform: 'scale(1.5)',
                         }}
                         color='#B1F4EC'
                     />
                     <Bubble
                         style={{
                             position: 'absolute',
-                            maxWidth: '100%',
+                            maxWidth: '100vw',
                             maxHeight: '100%',
                             height: '100%',
-                            width: 'fit-content',
+                            transform: 'scale(1.25)',
+                            width: '100%',
                         }}
                         color='#FFD166'
                     />
-                    <Bubble
-                        style={{
-                            width: '100%',
-                        }}
-                        picturePath={props.picturePath}
+                    <img
+                        src={props.picturePath}
                     />
-                </>
+                </Ratio>
             )}
-        </div>
+            </div>
 
-        {!props.picturePath ? null : <div className={s.spacer} />}
+        <div className={s.spacer} style={{display : props.pictureSide === 'faq' ? 'none' : undefined}} />
 
-        <div>
+        <div className={s.text}>
             <div className={s.header}>
                 <span className={s.title}> {props.title} </span>
-                {!props.subtitle ? null : (
-                    <span className={s.subtitle}>{props.subtitle}</span>
-                )}
+                <span className={s.subtitle}>{props.subtitle}</span>
             </div>
             {props.text}
             {props.children}

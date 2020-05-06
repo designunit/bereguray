@@ -6,23 +6,19 @@
     align-items: center;
     z-index: 100;
 
-    padding: 4px 5%;
+    padding: 4px 15%;
 
-    z-index: 1000;
+    /* z-index: 1000; */
 
     background-color: var(--color-background);
+    
+    box-shadow: 0 2px 2px #ddd;
 }
 
-.left {
-    flex: 2;
+.menu {
+    flex: 1;
     display: flex;
-    flex-direction: row;
-}
-
-.right {
-    flex: 2;
-    display: flex;
-    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 
 .menuButton {
@@ -30,7 +26,7 @@
 }
 
 .mobileMenu a, .mobileMenu button:not(.closeMenu) {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 2rem;
     font-weight: 900;
     text-align: end;
@@ -59,13 +55,20 @@
     background-color: transparent;
 }
 
+@media screen and (max-width : 1280px) {
+    .header {
+        padding: 4px 5%;
+    }
+}
+
 @media screen and (max-width : 480px) {
-    .left, .right {
+    .menu {
         display: none;
     }
 
     .header {
-        padding: 12px 5%;
+        padding: 12px 5% 12px 10%;
+        justify-content: space-between;
     }
 
     .menuButton {

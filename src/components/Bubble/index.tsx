@@ -16,7 +16,7 @@ const generateKeyFrame = () => {
     const pointCount = 12
     const angle = Math.PI * 2
     const line = d3Shape.lineRadial().curve(d3Shape.curveCardinalClosed)
-        .radius((d, i) => .5 * .5 + Math.random()*.5 * .5)
+        .radius((d, i) => .5 * .75 + Math.random()*.5 * .25)
         .angle((d, i) => angle/pointCount*i + Math.random()*angle/pointCount*.5)
     const str = line({length: pointCount} as any) as string
 

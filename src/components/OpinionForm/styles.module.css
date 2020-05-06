@@ -55,7 +55,7 @@
 
 .caption {
     padding: 0 8px;
-    font-size: 12px;
+    font-size: var(--font-size);
 }
 
 .error {

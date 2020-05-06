@@ -1,41 +1,33 @@
 import s from './styles.module.css'
 import { Title } from '../Title'
-import { Article } from '../Article'
+import Link from 'next/link'
+import { Button } from '../Button'
 
 export const Footer: React.SFC = props => {
- 
-    return (
-        <section className={s.container} id='team'>
-            <span className={s.title}>
-                <Title level={2}>
-                    Команда проекта
-                </Title>
-            </span>
 
+    return (
+        <footer className={s.footer}>
             <div className={s.items}>
                 <div className={s.item}>
-                    <a href="http://uray.ru"><img src='/static/logo_yraygerb.svg'
-                        className={s.picture}
-                    /></a>
+                    <a href="http://uray.ru">
+                        <img
+                            src='/static/logo_yraygerb.png'
+                            className={s.picture}
+                        />
+                    </a>
                     <div className={s.text}>
-                        <Title level={4}>
-                            При поддержке
-                        </Title>
-                        администрация города Урай
+                        Администрация города&nbsp;Урай
                     </div>
                 </div>
 
                 <div className={s.item}>
-                    <a href="https://gorsreda86.ugraces.ru"><img src='/static/logo_senter.svg'
+                    <a href="https://gorsreda86.ugraces.ru"><img src='/static/logo_senter.png'
                         className={s.picture}
                     /></a>
                     <div className={s.text}>
-                        <Title level={4}>
-                            При поддержке
-                        </Title>
-                        центр компетенций<br/>
-                        по вопросам городской среды<br/>
-                        Ханты-Мансийского Автономного Округа - ЮГРЫ
+                        Центр компетенций<br />
+                    по вопросам городской среды<br />
+                    Ханты-Мансийского Автономного Округа - ЮГРЫ
                     </div>
                 </div>
 
@@ -47,23 +39,20 @@ export const Footer: React.SFC = props => {
                         }}
                     /> </a>
                     <div className={s.text}>
-                        <Title level={4}>
-                            Разработчик
-                        </Title>
-                        проектная студия design unit 4
+                    Проектная студия дизайн&nbsp;юнит&nbsp;4
                     </div>
                 </div>
-
-                <div className={s.text}
-                    style={{
-                        flex: '1 0 auto',
-                        alignSelf: 'flex-end',
-                        textAlign: 'center',
-                    }}
-                >
-                    2020
-                </div>
             </div>
-        </section>
+
+            <hr />
+            <div className={`${s.text}`}>
+                <Button
+                    href={'https://unit4.io'}
+                    theme={'link'}
+                >
+                    ©2020 design unit 4
+                </Button>
+            </div>
+        </footer>
     )
 }

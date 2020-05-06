@@ -13,13 +13,14 @@
     --color-button: #111b47;
 
     --font-family: 'Roboto', Helvetica, serif;
+    --font-size: 16px;
 }
 
 html,
 body {
     padding: 0;
     margin: 0;
-
+    font-size: var(--font-size);
     font-family: var(--font-family);
 }
 
@@ -45,4 +46,10 @@ h3 {
     color: #091133;
 
     margin: 0px;
+}
+
+@media screen and (max-width : 480px) {
+    :root {
+        --font-size: 18px;
+    }
 }

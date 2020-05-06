@@ -14,8 +14,7 @@ import { Step } from 'src/components/Step'
 import { Title } from 'src/components/Title'
 import { Footer } from 'src/components/Footer'
 import { Button } from 'src/components/Button'
-import { useContext } from 'react'
-import { ConfigContext } from 'src/context/config'
+import { MapButton } from 'src/components/MapButton'
 
 const Caption: React.SFC = props => (
     <span style={{
@@ -26,20 +25,6 @@ const Caption: React.SFC = props => (
         marginBottom: 8,
     }}>{props.children}</span>
 )
-
-const MapButton: React.FC = props => {
-    const { mapUrl } = useContext(ConfigContext)
-
-    return (
-        <Button
-            size='big'
-            theme='primary'
-            href={mapUrl}
-        >
-            {props.children}
-        </Button>
-    )
-}
 
 interface PageProps {
     meta: IMeta
@@ -95,16 +80,21 @@ const Index: NextPage<PageProps> = props => (
                     <p>
                         В 2020 году проектная студия <a href='https://unit4.io'>design unit 4</a> (г. Санкт-Петербург) разработала предварительную концепцию набережной, основываясь на пожеланиях горожан, по заказу Администрации города.
                     </p>
-                    <Button
-                        href={'/concept'}
-                        style={{
-                            marginRight: '20px',
-                            marginBottom: '36px',
-                        }}
-                        theme={'primary'}
-                    >
-                        Посмотреть концепцию
-                    </Button>
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        marginBottom: '36px',
+                    }}>
+                        <Button
+                            href={'/concept'}
+                            size='big'
+                            style={{
+                            }}
+                            theme={'primary'}
+                        >
+                            Посмотреть концепцию
+                        </Button>
+                    </div>
                     <p>
                         Сейчас команда проекта уточняет концепцию, проводит интервью с жителями. А также запустила дополнительный опрос для того, чтобы получить обратную связь на предложенные идеи.
                     </p>
@@ -192,39 +182,64 @@ const Index: NextPage<PageProps> = props => (
             </Steps>
         </Stories>
 
-        <Stories>
-            <Title level={2}>
-                Онлайн карта идей и предложений
-            </Title>
+        {/* КАРТА МНЕНИЙ */}
+        <span id='map' />
+        <PageSection
+        
+            sectionStyle={{
+                // height: '75vh',
+            }}
+            contentStyle={{
+                width: '100%',
+                height: '100%',
+                paddingTop: '10%',
+                paddingBottom: '10%',
+                
+                display: 'flex',
+                justifyContent: 'center',
+            }}
+            back={(
+                <div style={{
+                    width: '100%',
+                    height: '100vh',
+                    backgroundImage: 'url("/static/mapPreview.jpg")',
+                    backgroundSize: 'auto 100%',
+                    backgroundPosition: '100% top',
+                    backgroundRepeat: 'no-repeat',
+                }}>
+                    <div style={{
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(204, 215, 255, 0.5)',
+                    }}/>
+                </div>
+            )}
+        >
+            <div style={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                alignItems: 'center',
 
-            <About
-                imageSrc={'/static/latlng-screenshot.png'}
-            >
-                <Article>
-                    <p>
-                        Поделиться своим мнением просто: нажмите на кнопку, выберите отметку (идею, проблему или ценность), затем укажите точку на карте и напишите свой комментарий во всплывающем окне.
-                    </p>
-
-                    <p>
-                        Идеи и предложения: Что может появиться на улице Ленина? Чем бы вы хотели здесь заниматься?
-                    </p>
-
-                    <p>
-                        Проблемы: Какие проблемы есть у территории?
-                    </p>
-
-                    <p>
-                        Ценности: Важные и любимые вами места или элементы, которые нужно сохранить или восстановить (исторические, архитектурные, ментальные).
-                    </p>
-                    <MapButton>
-                        Отметь идею на карте
-                    </MapButton>
-                </Article>
-            </About>
-        </Stories>
+                width: '1000px',
+                maxWidth: '100%',
+            }}>
+                <div>
+                    <Title level={2}>
+                        Карта идей и предложений
+                    </Title>
+                    <Caption>
+                        <p style={{textAlign: 'center', padding: '0 10%'}}>
+                            Поделиться своим мнением просто: нажмите на кнопку, выберите отметку (идею, проблему или ценность), затем укажите точку на карте и напишите свой комментарий во всплывающем окне.
+                        </p>
+                    </Caption>
+                </div>
+                <MapButton />
+            </div>
+        </PageSection>
 
         {/* ЖИТЕЛИ О НАБЕРЕЖНОЙ */}
-
         <span id='stories' />
         <Stories backgroundColor={'rgba(204, 215, 255, 0.5)'}>
             <Title level={2}>Жители о набережной</Title>
@@ -252,8 +267,7 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
             <Story
-                pictureSide='right'
-                picturePath='/static/blanc2.png'
+                pictureSide='left'
             >
                 <Article>
                     <Title level={3}>
@@ -289,8 +303,7 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
             <Story
-                pictureSide='right'
-                picturePath='/static/blanc2.png'
+                pictureSide='left'
             >
                 <Article>
                     <Title level={3}>
@@ -341,7 +354,7 @@ const Index: NextPage<PageProps> = props => (
             <Title level={2}>Вопрос / ответ</Title>
 
             <Story
-                pictureSide='right'
+                pictureSide='faq'
             >
                 <Article>
                     <Title level={3}>
@@ -352,7 +365,7 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
             <Story
-                pictureSide='right'
+                pictureSide='faq'
             >
                 <Article>
                     <Title level={3}>
@@ -363,7 +376,7 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
             <Story
-                pictureSide='right'
+                pictureSide='faq'
             >
                 <Article>
                     <Title level={3}>
@@ -374,7 +387,7 @@ const Index: NextPage<PageProps> = props => (
                 </Article>
             </Story>
             <Story
-                pictureSide='right'
+                pictureSide='faq'
             >
                 <Article>
                     <Title level={3}>

@@ -1,7 +1,6 @@
 import s from './styles.module.css'
 
 import cx from 'classnames'
-import { useState, useCallback } from 'react'
 import { slide as MobileMenu } from 'react-burger-menu'
 import { Logo } from '../Logo'
 import { ControlsContext } from 'src/context/controls'
@@ -19,20 +18,18 @@ export const Header: React.SFC<HeaderProps> = ({ transparent = false, isOpen, on
 
     return (
         <ControlsContext.Provider value={{
-            size: 'small'
+            size: 'small',
+            shape: 'pill',
         }}>
             <header className={cx(s.header, {
                 [s.transparent]: transparent,
             })}>
-                <nav className={s.left}>
+                <Logo />
+
+                <nav className={s.menu}>
                     {props.menu}
                 </nav>
 
-                <Logo style={{ flex: 1, padding: '0 5%' }} />
-
-                <div className={s.right} >
-                    {props.actions}
-                </div>
                 <button
                     className={s.menuButton}
                     onClick={onClickMenu}
