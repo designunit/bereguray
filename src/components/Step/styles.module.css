@@ -2,10 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* align-items: center; */
 
-    width: 190px;
-    margin-right: 48px;
+    width: 250px;
+    margin-right: 36px;
 }
 
 .step ul {
@@ -49,4 +48,12 @@
     font-weight: bold;
     
     white-space: nowrap;
+}
+
+
+@media screen and (max-width : 480px) {
+    .step {
+        width: 100%;
+        margin-right: 0;
+    }
 }
