@@ -1,14 +1,44 @@
 .container {
-    display: flex;
-    justify-content: flex-start;
-
     width: 100%;
     padding: 0 5%;
     padding-top: 32px;
 }
 
+.galleryContainer {
+    width: 100%;
+    display: none;
+}
+
+.test {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    height: 600px;
+}
+
+.noGallery {
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width : 1280px) {
+    .noGallery {
+        display: none;
+    }
+    .galleryContainer {
+        display: block;
+    }
+}
+
 @media screen and (max-width : 480px) {
-    .container {
-        flex-wrap: wrap;
+    .noGallery {
+        display: flex;
+    }
+    .galleryContainer {
+        display: none;
+    }
+    .container, .noGallery {
+        overflow-x: scroll;
     }
 }
