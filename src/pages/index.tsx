@@ -83,7 +83,6 @@ const Index: NextPage<PageProps> = props => (
                     <div style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        marginBottom: '36px',
                     }}>
                         <Button
                             href={'/concept'}
