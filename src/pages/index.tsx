@@ -62,6 +62,7 @@ const Index: NextPage<PageProps> = props => (
         >
             <Hero />
         </PageSection>
+        
         <span id='about' />
         <Stories>
             <Title level={2}>
@@ -330,23 +331,6 @@ const Index: NextPage<PageProps> = props => (
                 Поделись мнением
             </Button>
         </Stories>
-        {/* <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-
-            padding: '5%',
-            paddingTop: '0',
-
-            backgroundColor: 'rgba(204, 215, 255, 0.5)',
-        }}>
-            <HeroButton />
-            <div style={{
-                width: '36px',
-                height: '36px',
-            }} /> 
-        </div> */}
-
 
         {/* ФАК */}
         <Stories backgroundColor={'#fff'} faq>

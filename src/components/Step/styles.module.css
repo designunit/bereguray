@@ -2,10 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* align-items: center; */
 
-    width: 190px;
-    margin-right: 24px;
+    width: 250px;
+    margin-right: 36px;
 }
 
 .step ul {
@@ -19,6 +18,9 @@
     position: relative;
     padding: 8px 0px 8px 48px;
     margin: 0px 0px 16px;
+
+    white-space: pre-wrap;
+    text-align: start;
 }
 
 .step ul li:before {
@@ -48,8 +50,10 @@
     white-space: nowrap;
 }
 
-@media screen and (max-width: 1280px) {  /* ! 1280 ! */
-    .head h3 {
-        white-space: normal;
+
+@media screen and (max-width : 480px) {
+    .step {
+        width: 100%;
+        margin-right: 0;
     }
 }

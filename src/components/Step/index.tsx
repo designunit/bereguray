@@ -11,8 +11,6 @@ export const Step: React.SFC<StepProps> = props => (
                 {props.title}
             </h3>
         </div>
-        <p>
-            {props.children}
-        </p>
+        {props.children}
     </div>
 )
