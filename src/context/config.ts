@@ -5,7 +5,7 @@ export type Config = {
 }
 
 export const defaultConfig: Config = {
-    mapUrl: 'https://app.latl.ng/map/bereguray',
+    mapUrl: 'https://mesto.io/bereguray',
 }
 
 export const ConfigContext = createContext<Config>(defaultConfig)
